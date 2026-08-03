@@ -75,6 +75,10 @@ ALTER TABLE fks_wallet_transactions
 ADD CONSTRAINT fks_wallet_transactions_pk
 PRIMARY KEY (txn_id);
 
+ALTER TABLE fks_coupons
+ADD CONSTRAINT fks_coupon_pk
+PRIMARY KEY (coupon_id);
+
 ALTER TABLE fks_coupon_usage
 ADD CONSTRAINT fks_coupon_usage_pk
 PRIMARY KEY (usage_id);
