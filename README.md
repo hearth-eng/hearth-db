@@ -2,6 +2,8 @@
 
 This repository contains PostgreSQL schema, seed data, and optional local/QA test data, plus a deployment script that runs the SQL files in the correct order.
 
+Refer to [Data Dictionary](docs/DATA_DICTIONARY.md) for more details about folks schema design.
+
 ### Repository layout
 
 ```text
@@ -9,6 +11,8 @@ This repository contains PostgreSQL schema, seed data, and optional local/QA tes
 folks-db/
 ├── README.md
 ├── .gitignore
+├── docs/
+│   ├── DATA_DICTIONARY_.md
 ├── 1-schema/
 │   ├── tables.sql
 │   ├── indexes.sql
@@ -125,7 +129,7 @@ CREATE DATABASE folksdb
 
 ```
 
-At this stage, you have created an empty schema for ECM. Now we need to run the db scripts to create the required tables.
+At this stage, you have created an empty schema for Folks. Now we need to run the db scripts to create the required tables.
 
 **Exit from the database prompt** and ...
 
@@ -139,7 +143,7 @@ At this stage, you have created an empty schema for ECM. Now we need to run the 
   -v ON_ERROR_STOP=1 \
   -f scripts/setup.sql
 
-Password for user folks: ******
+Password for user folks: p@$$word
 
 ```
 
@@ -147,7 +151,7 @@ Password for user folks: ******
 
 ```
 /Library/PostgreSQL/17/bin/psql -d folksdb -U folks
-Password for user ecm: p@$$word
+Password for user folks: p@$$word
 
 folksdb=>
 
@@ -188,28 +192,139 @@ folksdb=> \dt
 **Verify the sequence creation**
 
 ```
-folksdb=> SELECT schemaname, sequencename, sequenceowner, data_type, start_value, last_value
-FROM pg_sequences;
-
- schemaname |             sequencename              | sequenceowner | data_type | start_value | last_value 
-------------+---------------------------------------+---------------+-----------+-------------+------------
- public     | fks_users_user_id_seq                 | folks         | integer   |           1 |        100
- public     | fks_addresses_address_id_seq          | folks         | integer   |           1 |        100
- public     | fks_professionals_professional_id_seq | folks         | integer   |           1 |         30
- public     | fks_documents_document_id_seq         | folks         | integer   |           1 |         30
- public     | fks_availability_availability_id_seq  | folks         | integer   |           1 |        200
- public     | fks_categories_category_id_seq        | folks         | integer   |           1 |        100
- public     | fks_services_service_id_seq           | folks         | integer   |           1 |        270
- public     | fks_professional_services_id_seq      | folks         | integer   |           1 |        100
- public     | fks_job_status_log_id_seq             | folks         | integer   |           1 |          1
- public     | fks_payments_payment_id_seq           | folks         | integer   |           1 |        700
- public     | fks_reviews_review_id_seq             | folks         | integer   |           1 |        400
- public     | fks_conversations_conversation_id_seq | folks         | integer   |           1 |          1
- public     | fks_messages_message_id_seq           | folks         | integer   |           1 |          1
- public     | fks_pricing_rules_rule_id_seq         | folks         | integer   |           1 |         80
- public     | fks_coupons_coupon_id_seq             | folks         | integer   |           1 |         40
- public     | fks_coupon_usage_usage_id_seq         | folks         | integer   |           1 |         25
- public     | fks_audit_logs_log_id_seq             | folks         | integer   |           1 |          1
+folksdb=> \ds
+                         List of relations
+ Schema |                 Name                  |   Type   | Owner 
+--------+---------------------------------------+----------+-------
+ public | fks_addresses_address_id_seq          | sequence | folks
+ public | fks_audit_logs_log_id_seq             | sequence | folks
+ public | fks_availability_availability_id_seq  | sequence | folks
+ public | fks_categories_category_id_seq        | sequence | folks
+ public | fks_conversations_conversation_id_seq | sequence | folks
+ public | fks_coupon_usage_usage_id_seq         | sequence | folks
+ public | fks_coupons_coupon_id_seq             | sequence | folks
+ public | fks_documents_document_id_seq         | sequence | folks
+ public | fks_job_status_log_id_seq             | sequence | folks
+ public | fks_messages_message_id_seq           | sequence | folks
+ public | fks_payments_payment_id_seq           | sequence | folks
+ public | fks_pricing_rules_rule_id_seq         | sequence | folks
+ public | fks_professional_services_id_seq      | sequence | folks
+ public | fks_professionals_professional_id_seq | sequence | folks
+ public | fks_reviews_review_id_seq             | sequence | folks
+ public | fks_services_service_id_seq           | sequence | folks
+ public | fks_users_user_id_seq                 | sequence | folks
 (17 rows)
 
 ```
+
+**Check the estimated row count**
+
+```
+SELECT relname AS table_name, n_live_tup AS estimated_row_count
+  FROM pg_stat_user_tables
+ WHERE schemaname = 'public'
+ ORDER BY relname;
+
+```
+
+Output:
+
+```
+        table_name         | estimated_row_count 
+---------------------------+---------------------
+ fks_addresses             |                 100
+ fks_audit_logs            |                   0
+ fks_availability          |                 200
+ fks_bookings              |                1000
+ fks_categories            |                 100
+ fks_conversations         |                   0
+ fks_coupon_usage          |                  25
+ fks_coupons               |                  40
+ fks_documents             |                  30
+ fks_job_status            |                   0
+ fks_messages              |                   0
+ fks_payments              |                 700
+ fks_pricing_rules         |                  80
+ fks_professional_services |                 100
+ fks_professionals         |                  30
+ fks_reviews               |                 400
+ fks_services              |                 270
+ fks_users                 |                 100
+ fks_wallet_transactions   |                 120
+ fks_wallets               |                  50
+(20 rows)
+
+```
+
+### Backup Folks schema
+
+#### Backup Database Objects
+
+To create a backup of all database objects, run the below command:
+
+```
+/Library/PostgreSQL/17/bin/pg_dump -U folks -d folksdb --schema-only -F p -f ./folks_schema.sql
+
+Password: p@$$word
+
+```
+
+It will create a sql file `folks_schema.sql` in the current directory. The file will have the ddl scripts for tables, view, sequences, etc.
+
+#### Backup Table Data
+
+```
+/Library/PostgreSQL/17/bin/pg_dump -U folks -d folksdb --data-only --column-inserts -f ./folks_test_data.sql
+
+Password: p@$$word
+
+```
+
+This will create a file `folks_test_data.sql` in the current directory containing all the sql insert scripts.
+
+
+### View Sequence Status
+
+Since most of the tables in folks do have an identity column as primary key, hence it is important to periodically review the sequences to see whether they have reached their maximum values.
+
+Data type of all the identity columns in folks schema is INT. INT in PostgreSQL is a 32-bit signed integer, so the maximum value is `214,74,83,647`, which is about `214.74 crore`.
+That means the identity column range is finite. However, never make it cyclic, as it might leads to primary key violation in future.
+
+The safer approach is:
+
+1. Keep identity sequences as `NO CYCLE`.
+1. During manual insert use `OVERRIDING SYSTEM VALUE`, **only** if you are hardcoding the identity column value.
+   ```
+    INSERT INTO employees (employee_id, person_name)
+    OVERRIDING SYSTEM VALUE
+    VALUE (234, 'Zulu')
+   ```
+1. Use `setval(...)` after bulk inserts.
+   ```
+    SELECT setval('employees_employee_id_seq', COALESCE(MAX(employee_id), 1)) FROM employees;
+   ```
+1. Switch to `BIGINT` if the table grows very large over time.
+
+Sequences created automatically by SERIAL or IDENTITY columns are linked to specific tables.
+
+**(A)** To map sequences directly to their corresponding tables and columns, query the internal dependency catalog:
+
+```
+SELECT  t.relname AS table_name, a.attname AS column_name, s.relname AS sequence_name
+  FROM pg_class s
+  JOIN pg_depend d ON d.objid = s.oid
+  JOIN pg_class t ON d.refobjid = t.oid
+  JOIN pg_attribute a ON d.refobjid = a.attrelid AND d.refobjsubid = a.attnum
+ WHERE s.relkind = 'S';
+
+```
+
+**(B)** To view comlete sequence metadata use the below query:
+
+```
+SELECT schemaname, sequencename, sequenceowner, data_type, start_value, increment_by, last_value, cycle
+  FROM pg_sequences;
+
+```
+
+Both the above queries should return `17` rows.
