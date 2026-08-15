@@ -46,7 +46,7 @@ Check if the service is up:
 
 ```
 # Check the postgres process:
-ps -aef | grep postgres
+<prompt> ps -aef | grep postgres
 
 
 # Expected Result
@@ -67,7 +67,7 @@ If you see the above output, that indicates the Postgres DB Server is up and run
 #### Stop a Postgres Server
 
 ```
-sudo -u postgres /Library/PostgreSQL/17/bin/pg_ctl -D /Library/PostgreSQL/17/data stop
+<prompt> sudo -u postgres /Library/PostgreSQL/17/bin/pg_ctl -D /Library/PostgreSQL/17/data stop
 Password: <kerberose password>
 
 ```
@@ -75,7 +75,7 @@ Password: <kerberose password>
 #### Start a Postgres Server
 
 ```
-sudo -u postgres /Library/PostgreSQL/17/bin/pg_ctl -D /Library/PostgreSQL/17/data start
+<prompt> sudo -u postgres /Library/PostgreSQL/17/bin/pg_ctl -D /Library/PostgreSQL/17/data start
 Password: <kerberose password>
 
 ```
@@ -100,7 +100,7 @@ password for postgres:<postgres user pwd>
 **Create User:**
 
 ```
-CREATE ROLE folks WITH
+postgres# CREATE ROLE folks WITH
         LOGIN
         NOSUPERUSER
         CREATEDB
@@ -114,14 +114,14 @@ CREATE ROLE folks WITH
 **Set password for the folks role:**
 
 ```
-ALTER ROLE folks  WITH PASSWORD 'p@$$word';
+postgres# ALTER ROLE folks  WITH PASSWORD 'p@$$word';
 
 ```
 
 **Create Database:**
 
 ```
-CREATE DATABASE folksdb
+postgres# CREATE DATABASE folksdb
     WITH
     OWNER = folks
     ENCODING = 'UTF8'
@@ -136,7 +136,7 @@ At this stage, you have created an empty schema for Folks. Now we need to run th
 **Run the below table script:** Ensure to run it with folks user and folksdb database.
 
 ```
-/Library/PostgreSQL/17/bin/psql \
+<prompt> /Library/PostgreSQL/17/bin/psql \
   -h localhost \
   -U folks \
   -d folksdb \
@@ -150,7 +150,7 @@ Password for user folks: p@$$word
 **Login back to Postgres with folks user:**
 
 ```
-/Library/PostgreSQL/17/bin/psql -d folksdb -U folks
+<prompt> /Library/PostgreSQL/17/bin/psql -d folksdb -U folks
 Password for user folks: p@$$word
 
 folksdb=>
@@ -220,7 +220,7 @@ folksdb=> \ds
 **Check the estimated row count**
 
 ```
-SELECT relname AS table_name, n_live_tup AS estimated_row_count
+folksdb=> SELECT relname AS table_name, n_live_tup AS estimated_row_count
   FROM pg_stat_user_tables
  WHERE schemaname = 'public'
  ORDER BY relname;
@@ -263,24 +263,36 @@ Output:
 To create a backup of all database objects, run the below command:
 
 ```
-/Library/PostgreSQL/17/bin/pg_dump -U folks -d folksdb --schema-only -F p -f ./folks_schema.sql
+<prompt> /Library/PostgreSQL/17/pg_dump -U folks -d folksdb --schema-only -F p -f ./folks_schema.sql
 
-Password: p@$$word
+Password: ********
 
 ```
 
 It will create a sql file `folks_schema.sql` in the current directory. The file will have the ddl scripts for tables, view, sequences, etc.
 
-#### Backup Table Data
+#### Backup All Table Data
 
 ```
-/Library/PostgreSQL/17/bin/pg_dump -U folks -d folksdb --data-only --column-inserts -f ./folks_test_data.sql
+<prompt> /Library/PostgreSQL/17/pg_dump -U folks -d folksdb --data-only --column-inserts -f ./folks_test_data.sql
 
-Password: p@$$word
+Password: ********
 
 ```
 
 This will create a file `folks_test_data.sql` in the current directory containing all the sql insert scripts.
+
+
+#### Backup Single Table Data
+
+```
+<prompt> /Library/PostgreSQL/17/pg_dump -U folks -d folksdb --table <table_name> --data-only --column-inserts -f ./folks_test_data_table_name.sql
+
+Password: ********
+
+```
+
+This will create a file `folks_test_data_table_name.sql` in the current directory containing all the sql insert scripts.
 
 
 ### View Sequence Status

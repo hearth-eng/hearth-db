@@ -31,7 +31,10 @@ CREATE TABLE fks_addresses (
     pincode             INT             NOT NULL,
     latitude            NUMERIC(20, 6)  ,
     longitude           NUMERIC(20, 6)  ,
-    is_default          SMALLINT        NOT NULL
+    is_default          SMALLINT        NOT NULL,
+    label               VARCHAR(20)     NOT NULL,
+    created_at          TIMESTAMP       NOT NULL,
+    updated_at          TIMESTAMP     
 );
 
 -- 2. Service Catalog - Categories & Services
