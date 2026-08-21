@@ -487,389 +487,474 @@ VALUES
 -- Data for Name: fks_categories; Type: TABLE DATA; Schema: public; Owner: folks
 --
 
-INSERT INTO public.fks_categories (category_id, name, parent_id) 
-OVERRIDING SYSTEM VALUE
+INSERT INTO public.fks_categories (category_id, name, icon, tag_line, image, parent_id) 
+OVERRIDING SYSTEM VALUE 
 VALUES 
-(1, 'Home Services', NULL),
-(2, 'Cleaning', NULL),
-(3, 'Repairs', NULL),
-(4, 'Beauty & Wellness', NULL),
-(5, 'Appliances', NULL),
-(6, 'Pest & Safety', NULL),
-(7, 'Painting & Renovation', NULL),
-(8, 'Moving & Shifting', NULL),
-(9, 'Fitness & Therapy', NULL),
-(10, 'Outdoor & Gardening', NULL),
-(11, 'Maid Booking', 1),
-(12, 'Laundry Pickup', 1),
-(13, 'Dishwashing', 1),
-(14, 'House Help', 1),
-(15, 'Meal Prep', 1),
-(16, 'Elder Care', 1),
-(17, 'Child Care', 1),
-(18, 'Home Organization', 1),
-(19, 'Society Help', 1),
-(20, 'Basic Home Cleaning', 2),
-(21, 'Deep Cleaning', 2),
-(22, 'Kitchen Cleaning', 2),
-(23, 'Bathroom Cleaning', 2),
-(24, 'Sofa Cleaning', 2),
-(25, 'Carpet Cleaning', 2),
-(26, 'Disinfection', 2),
-(27, 'Water Tank Cleaning', 2),
-(28, 'Post-Construction Cleaning', 2),
-(29, 'Electrician', 3),
-(30, 'Plumbing', 3),
-(31, 'Carpentry', 3),
-(32, 'AC Repair', 3),
-(33, 'Appliance Repair', 3),
-(34, 'TV Repair', 3),
-(35, 'Geyser Repair', 3),
-(36, 'Inverter Repair', 3),
-(37, 'Door Repair', 3),
-(38, 'Women''s Salon', 4),
-(39, 'Men''s Salon', 4),
-(40, 'Hair Spa', 4),
-(41, 'Skin Care', 4),
-(42, 'Bridal Makeup', 4),
-(43, 'Waxing', 4),
-(44, 'Manicure', 4),
-(45, 'Pedicure', 4),
-(46, 'Threading', 4),
-(47, 'Washing Machine', 5),
-(48, 'Refrigerator', 5),
-(49, 'Microwave', 5),
-(50, 'Water Purifier', 5),
-(51, 'Dishwasher', 5),
-(52, 'Hob & Chimney', 5),
-(53, 'Mixer Grinder', 5),
-(54, 'Oven', 5),
-(55, 'Vacuum Cleaner', 5),
-(56, 'Pest Control', 6),
-(57, 'Termite Treatment', 6),
-(58, 'Cockroach Control', 6),
-(59, 'Bed Bug Treatment', 6),
-(60, 'Mosquito Control', 6),
-(61, 'Bird Net Installation', 6),
-(62, 'CCTV Installation', 6),
-(63, 'Fire Safety', 6),
-(64, 'Home Security', 6),
-(65, 'Interior Painting', 7),
-(66, 'Exterior Painting', 7),
-(67, 'Texture Painting', 7),
-(68, 'Waterproofing', 7),
-(69, 'False Ceiling', 7),
-(70, 'Wall Putty', 7),
-(71, 'Wood Polishing', 7),
-(72, 'Tile Work', 7),
-(73, 'Renovation Consultation', 7),
-(74, 'Local Shifting', 8),
-(75, 'Intercity Shifting', 8),
-(76, 'Packing Services', 8),
-(77, 'Unpacking Services', 8),
-(78, 'Storage', 8),
-(79, 'Bike Transport', 8),
-(80, 'Office Shifting', 8),
-(81, 'Furniture Moving', 8),
-(82, 'Vehicle Transport', 8),
-(83, 'Yoga', 9),
-(84, 'Physiotherapy', 9),
-(85, 'Massage', 9),
-(86, 'Posture Correction', 9),
-(87, 'Personal Training', 9),
-(88, 'Nutrition', 9),
-(89, 'Meditation', 9),
-(90, 'Senior Fitness', 9),
-(91, 'Prenatal Care', 9),
-(92, 'Lawn Mowing', 10),
-(93, 'Garden Maintenance', 10),
-(94, 'Plant Care', 10),
-(95, 'Soil Treatment', 10),
-(96, 'Balcony Gardening', 10),
-(97, 'Terrace Gardening', 10),
-(98, 'Fence Repair', 10),
-(99, 'Tree Pruning', 10),
-(100, 'Pest Spray', 10);
-
+(1, 'Home Services', NULL, NULL, NULL, NULL);
+(2, 'Cleaning', NULL, NULL, NULL, NULL);
+(3, 'Repairs', NULL, NULL, NULL, NULL);
+(4, 'Beauty & Wellness', NULL, NULL, NULL, NULL);
+(5, 'Appliances', NULL, NULL, NULL, NULL);
+(6, 'Pest & Safety', NULL, NULL, NULL, NULL);
+(7, 'Painting & Renovation', NULL, NULL, NULL, NULL);
+(8, 'Moving & Shifting', NULL, NULL, NULL, NULL);
+(9, 'Fitness & Therapy', NULL, NULL, NULL, NULL);
+(10, 'Outdoor & Gardening', NULL, NULL, NULL, NULL);
+(11, 'Maid Booking', NULL, NULL, NULL, 1);
+(12, 'Laundry Pickup', NULL, NULL, NULL, 1);
+(13, 'Dishwashing', NULL, NULL, NULL, 1);
+(14, 'House Help', NULL, NULL, NULL, 1);
+(15, 'Meal Prep', NULL, NULL, NULL, 1);
+(16, 'Elder Care', NULL, NULL, NULL, 1);
+(17, 'Child Care', NULL, NULL, NULL, 1);
+(18, 'Home Organization', NULL, NULL, NULL, 1);
+(19, 'Society Help', NULL, NULL, NULL, 1);
+(20, 'Basic Home Cleaning', NULL, NULL, NULL, 2);
+(21, 'Deep Cleaning', NULL, NULL, NULL, 2);
+(22, 'Kitchen Cleaning', NULL, NULL, NULL, 2);
+(23, 'Bathroom Cleaning', NULL, NULL, NULL, 2);
+(24, 'Sofa Cleaning', NULL, NULL, NULL, 2);
+(25, 'Carpet Cleaning', NULL, NULL, NULL, 2);
+(26, 'Disinfection', NULL, NULL, NULL, 2);
+(27, 'Water Tank Cleaning', NULL, NULL, NULL, 2);
+(28, 'Post-Construction Cleaning', NULL, NULL, NULL, 2);
+(29, 'Electrician', NULL, NULL, NULL, 3);
+(30, 'Plumbing', NULL, NULL, NULL, 3);
+(31, 'Carpentry', NULL, NULL, NULL, 3);
+(32, 'AC Repair', NULL, NULL, NULL, 3);
+(33, 'Appliance Repair', NULL, NULL, NULL, 3);
+(34, 'TV Repair', NULL, NULL, NULL, 3);
+(35, 'Geyser Repair', NULL, NULL, NULL, 3);
+(36, 'Inverter Repair', NULL, NULL, NULL, 3);
+(37, 'Door Repair', NULL, NULL, NULL, 3);
+(38, 'Women''s Salon', NULL, NULL, NULL, 4);
+(39, 'Men''s Salon', NULL, NULL, NULL, 4);
+(40, 'Hair Spa', NULL, NULL, NULL, 4);
+(41, 'Skin Care', NULL, NULL, NULL, 4);
+(42, 'Bridal Makeup', NULL, NULL, NULL, 4);
+(43, 'Waxing', NULL, NULL, NULL, 4);
+(44, 'Manicure', NULL, NULL, NULL, 4);
+(45, 'Pedicure', NULL, NULL, NULL, 4);
+(46, 'Threading', NULL, NULL, NULL, 4);
+(47, 'Washing Machine', NULL, NULL, NULL, 5);
+(48, 'Refrigerator', NULL, NULL, NULL, 5);
+(49, 'Microwave', NULL, NULL, NULL, 5);
+(50, 'Water Purifier', NULL, NULL, NULL, 5);
+(51, 'Dishwasher', NULL, NULL, NULL, 5);
+(52, 'Hob & Chimney', NULL, NULL, NULL, 5);
+(53, 'Mixer Grinder', NULL, NULL, NULL, 5);
+(54, 'Oven', NULL, NULL, NULL, 5);
+(55, 'Vacuum Cleaner', NULL, NULL, NULL, 5);
+(56, 'Pest Control', NULL, NULL, NULL, 6);
+(57, 'Termite Treatment', NULL, NULL, NULL, 6);
+(58, 'Cockroach Control', NULL, NULL, NULL, 6);
+(59, 'Bed Bug Treatment', NULL, NULL, NULL, 6);
+(60, 'Mosquito Control', NULL, NULL, NULL, 6);
+(61, 'Bird Net Installation', NULL, NULL, NULL, 6);
+(62, 'CCTV Installation', NULL, NULL, NULL, 6);
+(63, 'Fire Safety', NULL, NULL, NULL, 6);
+(64, 'Home Security', NULL, NULL, NULL, 6);
+(65, 'Interior Painting', NULL, NULL, NULL, 7);
+(66, 'Exterior Painting', NULL, NULL, NULL, 7);
+(67, 'Texture Painting', NULL, NULL, NULL, 7);
+(68, 'Waterproofing', NULL, NULL, NULL, 7);
+(69, 'False Ceiling', NULL, NULL, NULL, 7);
+(70, 'Wall Putty', NULL, NULL, NULL, 7);
+(71, 'Wood Polishing', NULL, NULL, NULL, 7);
+(72, 'Tile Work', NULL, NULL, NULL, 7);
+(73, 'Renovation Consultation', NULL, NULL, NULL, 7);
+(74, 'Local Shifting', NULL, NULL, NULL, 8);
+(75, 'Intercity Shifting', NULL, NULL, NULL, 8);
+(76, 'Packing Services', NULL, NULL, NULL, 8);
+(77, 'Unpacking Services', NULL, NULL, NULL, 8);
+(78, 'Storage', NULL, NULL, NULL, 8);
+(79, 'Bike Transport', NULL, NULL, NULL, 8);
+(80, 'Office Shifting', NULL, NULL, NULL, 8);
+(81, 'Furniture Moving', NULL, NULL, NULL, 8);
+(82, 'Vehicle Transport', NULL, NULL, NULL, 8);
+(83, 'Yoga', NULL, NULL, NULL, 9);
+(84, 'Physiotherapy', NULL, NULL, NULL, 9);
+(85, 'Massage', NULL, NULL, NULL, 9);
+(86, 'Posture Correction', NULL, NULL, NULL, 9);
+(87, 'Personal Training', NULL, NULL, NULL, 9);
+(88, 'Nutrition', NULL, NULL, NULL, 9);
+(89, 'Meditation', NULL, NULL, NULL, 9);
+(90, 'Senior Fitness', NULL, NULL, NULL, 9);
+(91, 'Prenatal Care', NULL, NULL, NULL, 9);
+(92, 'Lawn Mowing', NULL, NULL, NULL, 10);
+(93, 'Garden Maintenance', NULL, NULL, NULL, 10);
+(94, 'Plant Care', NULL, NULL, NULL, 10);
+(95, 'Soil Treatment', NULL, NULL, NULL, 10);
+(96, 'Balcony Gardening', NULL, NULL, NULL, 10);
+(97, 'Terrace Gardening', NULL, NULL, NULL, 10);
+(98, 'Fence Repair', NULL, NULL, NULL, 10);
+(99, 'Tree Pruning', NULL, NULL, NULL, 10);
+(100, 'Pest Spray', NULL, NULL, NULL, 10);
+(101, 'Salon & Makeup', NULL, 'scissors', 'Professional grooming and beauty services at home.', 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop');
+(102, 'Cleaning & Pest Control', NULL, 'broom', 'Deep cleaning and pest treatments that actually last.', 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop');
+(103, 'Appliance Repair', NULL, 'wrench', 'Fast, reliable repairs for the appliances you rely on daily.', 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop');
+(104, 'Electrician, Plumbing & Carpentry', NULL, 'bolt', 'Trusted hands for wiring, leaks and everyday fixes.', 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop');
+(105, 'Painting & Décor', NULL, 'paint-roller', 'Fresh coats and finishing touches, handled end to end.', 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop');
+(106, 'Women''s Salon', NULL, NULL, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 101);
+(107, 'Men''s Salon', NULL, NULL, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', 101);
+(108, 'Bridal & Party Makeup', NULL, NULL, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 101);
+(109, 'Home Cleaning', NULL, NULL, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 102);
+(110, 'Pest Control', NULL, NULL, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 102);
+(111, 'Office Cleaning', NULL, NULL, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 102);
+(112, 'AC Service & Repair', NULL, NULL, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 103);
+(113, 'Kitchen & Home Appliances', NULL, NULL, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 103);
+(114, 'Electronics Repair', NULL, NULL, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 103);
+(115, 'Electrician', NULL, NULL, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 104);
+(116, 'Plumbing', NULL, NULL, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 104);
+(117, 'Carpentry', NULL, NULL, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 104);
+(118, 'Interior Painting', NULL, NULL, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 105);
+(119, 'Exterior Painting', NULL, NULL, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 105);
 
 --
 -- Data for Name: fks_services; Type: TABLE DATA; Schema: public; Owner: folks
 --
 
-INSERT INTO public.fks_services (service_id, category_id, name, description, base_price, duration_minutes) 
-OVERRIDING SYSTEM VALUE
-VALUES 
-(1, 11, 'Basic Maid Booking', 'Basic package for maid booking under home services. Includes trained professionals, standard tools, and service support.', 304.00, 63),
-(2, 11, 'Standard Maid Booking', 'Standard package for maid booking under home services. Includes trained professionals, standard tools, and service support.', 497.00, 104),
-(3, 11, 'Premium Maid Booking', 'Premium package for maid booking under home services. Includes trained professionals, standard tools, and service support.', 644.00, 130),
-(4, 12, 'Basic Laundry Pickup', 'Basic package for laundry pickup under home services. Includes trained professionals, standard tools, and service support.', 304.00, 68),
-(5, 12, 'Standard Laundry Pickup', 'Standard package for laundry pickup under home services. Includes trained professionals, standard tools, and service support.', 468.00, 98),
-(6, 12, 'Premium Laundry Pickup', 'Premium package for laundry pickup under home services. Includes trained professionals, standard tools, and service support.', 631.00, 122),
-(7, 13, 'Basic Dishwashing', 'Basic package for dishwashing under home services. Includes trained professionals, standard tools, and service support.', 350.00, 72),
-(8, 13, 'Standard Dishwashing', 'Standard package for dishwashing under home services. Includes trained professionals, standard tools, and service support.', 475.00, 92),
-(9, 13, 'Premium Dishwashing', 'Premium package for dishwashing under home services. Includes trained professionals, standard tools, and service support.', 605.00, 120),
-(10, 14, 'Basic House Help', 'Basic package for house help under home services. Includes trained professionals, standard tools, and service support.', 342.00, 74),
-(11, 14, 'Standard House Help', 'Standard package for house help under home services. Includes trained professionals, standard tools, and service support.', 499.00, 103),
-(12, 14, 'Premium House Help', 'Premium package for house help under home services. Includes trained professionals, standard tools, and service support.', 625.00, 123),
-(13, 15, 'Basic Meal Prep', 'Basic package for meal prep under home services. Includes trained professionals, standard tools, and service support.', 367.00, 66),
-(14, 15, 'Standard Meal Prep', 'Standard package for meal prep under home services. Includes trained professionals, standard tools, and service support.', 504.00, 103),
-(15, 15, 'Premium Meal Prep', 'Premium package for meal prep under home services. Includes trained professionals, standard tools, and service support.', 636.00, 126),
-(16, 16, 'Basic Elder Care', 'Basic package for elder care under home services. Includes trained professionals, standard tools, and service support.', 354.00, 66),
-(17, 16, 'Standard Elder Care', 'Standard package for elder care under home services. Includes trained professionals, standard tools, and service support.', 454.00, 95),
-(18, 16, 'Premium Elder Care', 'Premium package for elder care under home services. Includes trained professionals, standard tools, and service support.', 616.00, 122),
-(19, 17, 'Basic Child Care', 'Basic package for child care under home services. Includes trained professionals, standard tools, and service support.', 311.00, 73),
-(20, 17, 'Standard Child Care', 'Standard package for child care under home services. Includes trained professionals, standard tools, and service support.', 462.00, 99),
-(21, 17, 'Premium Child Care', 'Premium package for child care under home services. Includes trained professionals, standard tools, and service support.', 628.00, 130),
-(22, 18, 'Basic Home Organization', 'Basic package for home organization under home services. Includes trained professionals, standard tools, and service support.', 322.00, 67),
-(23, 18, 'Standard Home Organization', 'Standard package for home organization under home services. Includes trained professionals, standard tools, and service support.', 499.00, 99),
-(24, 18, 'Premium Home Organization', 'Premium package for home organization under home services. Includes trained professionals, standard tools, and service support.', 606.00, 125),
-(25, 19, 'Basic Society Help', 'Basic package for society help under home services. Includes trained professionals, standard tools, and service support.', 306.00, 73),
-(26, 19, 'Standard Society Help', 'Standard package for society help under home services. Includes trained professionals, standard tools, and service support.', 492.00, 95),
-(27, 19, 'Premium Society Help', 'Premium package for society help under home services. Includes trained professionals, standard tools, and service support.', 607.00, 121),
-(28, 20, 'Basic Basic Home Cleaning', 'Basic package for basic home cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 534.00, 130),
-(29, 20, 'Standard Basic Home Cleaning', 'Standard package for basic home cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 662.00, 154),
-(30, 20, 'Premium Basic Home Cleaning', 'Premium package for basic home cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 835.00, 183),
-(31, 21, 'Basic Deep Cleaning', 'Basic package for deep cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 521.00, 134),
-(32, 21, 'Standard Deep Cleaning', 'Standard package for deep cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 651.00, 151),
-(33, 21, 'Premium Deep Cleaning', 'Premium package for deep cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 843.00, 194),
-(34, 22, 'Basic Kitchen Cleaning', 'Basic package for kitchen cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 522.00, 124),
-(35, 22, 'Standard Kitchen Cleaning', 'Standard package for kitchen cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 649.00, 159),
-(36, 22, 'Premium Kitchen Cleaning', 'Premium package for kitchen cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 839.00, 191),
-(37, 23, 'Basic Bathroom Cleaning', 'Basic package for bathroom cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 527.00, 124),
-(38, 23, 'Standard Bathroom Cleaning', 'Standard package for bathroom cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 722.00, 158),
-(39, 23, 'Premium Bathroom Cleaning', 'Premium package for bathroom cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 810.00, 190),
-(40, 24, 'Basic Sofa Cleaning', 'Basic package for sofa cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 549.00, 123),
-(41, 24, 'Standard Sofa Cleaning', 'Standard package for sofa cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 649.00, 154),
-(42, 24, 'Premium Sofa Cleaning', 'Premium package for sofa cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 852.00, 182),
-(43, 25, 'Basic Carpet Cleaning', 'Basic package for carpet cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 506.00, 123),
-(44, 25, 'Standard Carpet Cleaning', 'Standard package for carpet cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 658.00, 159),
-(45, 25, 'Premium Carpet Cleaning', 'Premium package for carpet cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 822.00, 184),
-(46, 26, 'Basic Disinfection', 'Basic package for disinfection under cleaning. Includes trained professionals, standard tools, and service support.', 571.00, 126),
-(47, 26, 'Standard Disinfection', 'Standard package for disinfection under cleaning. Includes trained professionals, standard tools, and service support.', 697.00, 150),
-(48, 26, 'Premium Disinfection', 'Premium package for disinfection under cleaning. Includes trained professionals, standard tools, and service support.', 858.00, 183),
-(49, 27, 'Basic Water Tank Cleaning', 'Basic package for water tank cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 553.00, 126),
-(50, 27, 'Standard Water Tank Cleaning', 'Standard package for water tank cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 675.00, 163),
-(51, 27, 'Premium Water Tank Cleaning', 'Premium package for water tank cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 844.00, 190),
-(52, 28, 'Basic Post-Construction Cleaning', 'Basic package for post-construction cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 556.00, 124),
-(53, 28, 'Standard Post-Construction Cleaning', 'Standard package for post-construction cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 657.00, 151),
-(54, 28, 'Premium Post-Construction Cleaning', 'Premium package for post-construction cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 808.00, 191),
-(55, 29, 'Basic Electrician', 'Basic package for electrician under repairs. Includes trained professionals, standard tools, and service support.', 374.00, 47),
-(56, 29, 'Standard Electrician', 'Standard package for electrician under repairs. Includes trained professionals, standard tools, and service support.', 570.00, 79),
-(57, 29, 'Premium Electrician', 'Premium package for electrician under repairs. Includes trained professionals, standard tools, and service support.', 721.00, 106),
-(58, 30, 'Basic Plumbing', 'Basic package for plumbing under repairs. Includes trained professionals, standard tools, and service support.', 355.00, 45),
-(59, 30, 'Standard Plumbing', 'Standard package for plumbing under repairs. Includes trained professionals, standard tools, and service support.', 530.00, 85),
-(60, 30, 'Premium Plumbing', 'Premium package for plumbing under repairs. Includes trained professionals, standard tools, and service support.', 705.00, 114),
-(61, 31, 'Basic Carpentry', 'Basic package for carpentry under repairs. Includes trained professionals, standard tools, and service support.', 370.00, 48),
-(62, 31, 'Standard Carpentry', 'Standard package for carpentry under repairs. Includes trained professionals, standard tools, and service support.', 507.00, 88),
-(63, 31, 'Premium Carpentry', 'Premium package for carpentry under repairs. Includes trained professionals, standard tools, and service support.', 651.00, 117),
-(64, 32, 'Basic AC Repair', 'Basic package for ac repair under repairs. Includes trained professionals, standard tools, and service support.', 371.00, 48),
-(65, 32, 'Standard AC Repair', 'Standard package for ac repair under repairs. Includes trained professionals, standard tools, and service support.', 557.00, 82),
-(66, 32, 'Premium AC Repair', 'Premium package for ac repair under repairs. Includes trained professionals, standard tools, and service support.', 701.00, 107),
-(67, 33, 'Basic Appliance Repair', 'Basic package for appliance repair under repairs. Includes trained professionals, standard tools, and service support.', 362.00, 52),
-(68, 33, 'Standard Appliance Repair', 'Standard package for appliance repair under repairs. Includes trained professionals, standard tools, and service support.', 571.00, 83),
-(69, 33, 'Premium Appliance Repair', 'Premium package for appliance repair under repairs. Includes trained professionals, standard tools, and service support.', 649.00, 107),
-(70, 34, 'Basic TV Repair', 'Basic package for tv repair under repairs. Includes trained professionals, standard tools, and service support.', 351.00, 58),
-(71, 34, 'Standard TV Repair', 'Standard package for tv repair under repairs. Includes trained professionals, standard tools, and service support.', 522.00, 77),
-(72, 34, 'Premium TV Repair', 'Premium package for tv repair under repairs. Includes trained professionals, standard tools, and service support.', 695.00, 113),
-(73, 35, 'Basic Geyser Repair', 'Basic package for geyser repair under repairs. Includes trained professionals, standard tools, and service support.', 378.00, 53),
-(74, 35, 'Standard Geyser Repair', 'Standard package for geyser repair under repairs. Includes trained professionals, standard tools, and service support.', 502.00, 83),
-(75, 35, 'Premium Geyser Repair', 'Premium package for geyser repair under repairs. Includes trained professionals, standard tools, and service support.', 671.00, 116),
-(76, 36, 'Basic Inverter Repair', 'Basic package for inverter repair under repairs. Includes trained professionals, standard tools, and service support.', 404.00, 50),
-(77, 36, 'Standard Inverter Repair', 'Standard package for inverter repair under repairs. Includes trained professionals, standard tools, and service support.', 570.00, 75),
-(78, 36, 'Premium Inverter Repair', 'Premium package for inverter repair under repairs. Includes trained professionals, standard tools, and service support.', 680.00, 109),
-(79, 37, 'Basic Door Repair', 'Basic package for door repair under repairs. Includes trained professionals, standard tools, and service support.', 399.00, 56),
-(80, 37, 'Standard Door Repair', 'Standard package for door repair under repairs. Includes trained professionals, standard tools, and service support.', 516.00, 81),
-(81, 37, 'Premium Door Repair', 'Premium package for door repair under repairs. Includes trained professionals, standard tools, and service support.', 683.00, 111),
-(82, 38, 'Basic Women''s Salon', 'Basic package for women''s salon under beauty & wellness. Includes trained professionals, standard tools, and service support.', 464.00, 50),
-(83, 38, 'Standard Women''s Salon', 'Standard package for women''s salon under beauty & wellness. Includes trained professionals, standard tools, and service support.', 589.00, 75),
-(84, 38, 'Premium Women''s Salon', 'Premium package for women''s salon under beauty & wellness. Includes trained professionals, standard tools, and service support.', 704.00, 114),
-(85, 39, 'Basic Men''s Salon', 'Basic package for men''s salon under beauty & wellness. Includes trained professionals, standard tools, and service support.', 428.00, 46),
-(86, 39, 'Standard Men''s Salon', 'Standard package for men''s salon under beauty & wellness. Includes trained professionals, standard tools, and service support.', 623.00, 89),
-(87, 39, 'Premium Men''s Salon', 'Premium package for men''s salon under beauty & wellness. Includes trained professionals, standard tools, and service support.', 765.00, 108),
-(88, 40, 'Basic Hair Spa', 'Basic package for hair spa under beauty & wellness. Includes trained professionals, standard tools, and service support.', 430.00, 51),
-(89, 40, 'Standard Hair Spa', 'Standard package for hair spa under beauty & wellness. Includes trained professionals, standard tools, and service support.', 561.00, 81),
-(90, 40, 'Premium Hair Spa', 'Premium package for hair spa under beauty & wellness. Includes trained professionals, standard tools, and service support.', 703.00, 112),
-(91, 41, 'Basic Skin Care', 'Basic package for skin care under beauty & wellness. Includes trained professionals, standard tools, and service support.', 470.00, 49),
-(92, 41, 'Standard Skin Care', 'Standard package for skin care under beauty & wellness. Includes trained professionals, standard tools, and service support.', 584.00, 79),
-(93, 41, 'Premium Skin Care', 'Premium package for skin care under beauty & wellness. Includes trained professionals, standard tools, and service support.', 723.00, 110),
-(94, 42, 'Basic Bridal Makeup', 'Basic package for bridal makeup under beauty & wellness. Includes trained professionals, standard tools, and service support.', 435.00, 45),
-(95, 42, 'Standard Bridal Makeup', 'Standard package for bridal makeup under beauty & wellness. Includes trained professionals, standard tools, and service support.', 591.00, 81),
-(96, 42, 'Premium Bridal Makeup', 'Premium package for bridal makeup under beauty & wellness. Includes trained professionals, standard tools, and service support.', 722.00, 108),
-(97, 43, 'Basic Waxing', 'Basic package for waxing under beauty & wellness. Includes trained professionals, standard tools, and service support.', 440.00, 58),
-(98, 43, 'Standard Waxing', 'Standard package for waxing under beauty & wellness. Includes trained professionals, standard tools, and service support.', 615.00, 89),
-(99, 43, 'Premium Waxing', 'Premium package for waxing under beauty & wellness. Includes trained professionals, standard tools, and service support.', 713.00, 113),
-(100, 44, 'Basic Manicure', 'Basic package for manicure under beauty & wellness. Includes trained professionals, standard tools, and service support.', 442.00, 54),
-(101, 44, 'Standard Manicure', 'Standard package for manicure under beauty & wellness. Includes trained professionals, standard tools, and service support.', 558.00, 83),
-(102, 44, 'Premium Manicure', 'Premium package for manicure under beauty & wellness. Includes trained professionals, standard tools, and service support.', 702.00, 113),
-(103, 45, 'Basic Pedicure', 'Basic package for pedicure under beauty & wellness. Includes trained professionals, standard tools, and service support.', 443.00, 52),
-(104, 45, 'Standard Pedicure', 'Standard package for pedicure under beauty & wellness. Includes trained professionals, standard tools, and service support.', 621.00, 76),
-(105, 45, 'Premium Pedicure', 'Premium package for pedicure under beauty & wellness. Includes trained professionals, standard tools, and service support.', 703.00, 110),
-(106, 46, 'Basic Threading', 'Basic package for threading under beauty & wellness. Includes trained professionals, standard tools, and service support.', 399.00, 58),
-(107, 46, 'Standard Threading', 'Standard package for threading under beauty & wellness. Includes trained professionals, standard tools, and service support.', 587.00, 88),
-(108, 46, 'Premium Threading', 'Premium package for threading under beauty & wellness. Includes trained professionals, standard tools, and service support.', 718.00, 115),
-(109, 47, 'Basic Washing Machine', 'Basic package for washing machine under appliances. Includes trained professionals, standard tools, and service support.', 508.00, 71),
-(110, 47, 'Standard Washing Machine', 'Standard package for washing machine under appliances. Includes trained professionals, standard tools, and service support.', 607.00, 103),
-(111, 47, 'Premium Washing Machine', 'Premium package for washing machine under appliances. Includes trained professionals, standard tools, and service support.', 799.00, 131),
-(112, 48, 'Basic Refrigerator', 'Basic package for refrigerator under appliances. Includes trained professionals, standard tools, and service support.', 510.00, 68),
-(113, 48, 'Standard Refrigerator', 'Standard package for refrigerator under appliances. Includes trained professionals, standard tools, and service support.', 647.00, 98),
-(114, 48, 'Premium Refrigerator', 'Premium package for refrigerator under appliances. Includes trained professionals, standard tools, and service support.', 765.00, 133),
-(115, 49, 'Basic Microwave', 'Basic package for microwave under appliances. Includes trained professionals, standard tools, and service support.', 498.00, 67),
-(116, 49, 'Standard Microwave', 'Standard package for microwave under appliances. Includes trained professionals, standard tools, and service support.', 629.00, 97),
-(117, 49, 'Premium Microwave', 'Premium package for microwave under appliances. Includes trained professionals, standard tools, and service support.', 792.00, 132),
-(118, 50, 'Basic Water Purifier', 'Basic package for water purifier under appliances. Includes trained professionals, standard tools, and service support.', 515.00, 69),
-(119, 50, 'Standard Water Purifier', 'Standard package for water purifier under appliances. Includes trained professionals, standard tools, and service support.', 636.00, 90),
-(120, 50, 'Premium Water Purifier', 'Premium package for water purifier under appliances. Includes trained professionals, standard tools, and service support.', 802.00, 120),
-(121, 51, 'Basic Dishwasher', 'Basic package for dishwasher under appliances. Includes trained professionals, standard tools, and service support.', 485.00, 66),
-(122, 51, 'Standard Dishwasher', 'Standard package for dishwasher under appliances. Includes trained professionals, standard tools, and service support.', 655.00, 100),
-(123, 51, 'Premium Dishwasher', 'Premium package for dishwasher under appliances. Includes trained professionals, standard tools, and service support.', 812.00, 126),
-(124, 52, 'Basic Hob & Chimney', 'Basic package for hob & chimney under appliances. Includes trained professionals, standard tools, and service support.', 465.00, 71),
-(125, 52, 'Standard Hob & Chimney', 'Standard package for hob & chimney under appliances. Includes trained professionals, standard tools, and service support.', 629.00, 100),
-(126, 52, 'Premium Hob & Chimney', 'Premium package for hob & chimney under appliances. Includes trained professionals, standard tools, and service support.', 767.00, 120),
-(127, 53, 'Basic Mixer Grinder', 'Basic package for mixer grinder under appliances. Includes trained professionals, standard tools, and service support.', 505.00, 60),
-(128, 53, 'Standard Mixer Grinder', 'Standard package for mixer grinder under appliances. Includes trained professionals, standard tools, and service support.', 602.00, 90),
-(129, 53, 'Premium Mixer Grinder', 'Premium package for mixer grinder under appliances. Includes trained professionals, standard tools, and service support.', 808.00, 129),
-(130, 54, 'Basic Oven', 'Basic package for oven under appliances. Includes trained professionals, standard tools, and service support.', 464.00, 61),
-(131, 54, 'Standard Oven', 'Standard package for oven under appliances. Includes trained professionals, standard tools, and service support.', 607.00, 99),
-(132, 54, 'Premium Oven', 'Premium package for oven under appliances. Includes trained professionals, standard tools, and service support.', 809.00, 121),
-(133, 55, 'Basic Vacuum Cleaner', 'Basic package for vacuum cleaner under appliances. Includes trained professionals, standard tools, and service support.', 513.00, 67),
-(134, 55, 'Standard Vacuum Cleaner', 'Standard package for vacuum cleaner under appliances. Includes trained professionals, standard tools, and service support.', 664.00, 92),
-(135, 55, 'Premium Vacuum Cleaner', 'Premium package for vacuum cleaner under appliances. Includes trained professionals, standard tools, and service support.', 773.00, 126),
-(136, 56, 'Basic Pest Control', 'Basic package for pest control under pest & safety. Includes trained professionals, standard tools, and service support.', 843.00, 90),
-(137, 56, 'Standard Pest Control', 'Standard package for pest control under pest & safety. Includes trained professionals, standard tools, and service support.', 1012.00, 121),
-(138, 56, 'Premium Pest Control', 'Premium package for pest control under pest & safety. Includes trained professionals, standard tools, and service support.', 1134.00, 159),
-(139, 57, 'Basic Termite Treatment', 'Basic package for termite treatment under pest & safety. Includes trained professionals, standard tools, and service support.', 835.00, 91),
-(140, 57, 'Standard Termite Treatment', 'Standard package for termite treatment under pest & safety. Includes trained professionals, standard tools, and service support.', 967.00, 127),
-(141, 57, 'Premium Termite Treatment', 'Premium package for termite treatment under pest & safety. Includes trained professionals, standard tools, and service support.', 1166.00, 164),
-(142, 58, 'Basic Cockroach Control', 'Basic package for cockroach control under pest & safety. Includes trained professionals, standard tools, and service support.', 826.00, 102),
-(143, 58, 'Standard Cockroach Control', 'Standard package for cockroach control under pest & safety. Includes trained professionals, standard tools, and service support.', 959.00, 126),
-(144, 58, 'Premium Cockroach Control', 'Premium package for cockroach control under pest & safety. Includes trained professionals, standard tools, and service support.', 1118.00, 158),
-(145, 59, 'Basic Bed Bug Treatment', 'Basic package for bed bug treatment under pest & safety. Includes trained professionals, standard tools, and service support.', 799.00, 95),
-(146, 59, 'Standard Bed Bug Treatment', 'Standard package for bed bug treatment under pest & safety. Includes trained professionals, standard tools, and service support.', 964.00, 123),
-(147, 59, 'Premium Bed Bug Treatment', 'Premium package for bed bug treatment under pest & safety. Includes trained professionals, standard tools, and service support.', 1118.00, 152),
-(148, 60, 'Basic Mosquito Control', 'Basic package for mosquito control under pest & safety. Includes trained professionals, standard tools, and service support.', 831.00, 92),
-(149, 60, 'Standard Mosquito Control', 'Standard package for mosquito control under pest & safety. Includes trained professionals, standard tools, and service support.', 1012.00, 130),
-(150, 60, 'Premium Mosquito Control', 'Premium package for mosquito control under pest & safety. Includes trained professionals, standard tools, and service support.', 1140.00, 163),
-(151, 61, 'Basic Bird Net Installation', 'Basic package for bird net installation under pest & safety. Includes trained professionals, standard tools, and service support.', 846.00, 94),
-(152, 61, 'Standard Bird Net Installation', 'Standard package for bird net installation under pest & safety. Includes trained professionals, standard tools, and service support.', 958.00, 126),
-(153, 61, 'Premium Bird Net Installation', 'Premium package for bird net installation under pest & safety. Includes trained professionals, standard tools, and service support.', 1159.00, 159),
-(154, 62, 'Basic CCTV Installation', 'Basic package for cctv installation under pest & safety. Includes trained professionals, standard tools, and service support.', 812.00, 103),
-(155, 62, 'Standard CCTV Installation', 'Standard package for cctv installation under pest & safety. Includes trained professionals, standard tools, and service support.', 965.00, 122),
-(156, 62, 'Premium CCTV Installation', 'Premium package for cctv installation under pest & safety. Includes trained professionals, standard tools, and service support.', 1164.00, 158),
-(157, 63, 'Basic Fire Safety', 'Basic package for fire safety under pest & safety. Includes trained professionals, standard tools, and service support.', 833.00, 104),
-(158, 63, 'Standard Fire Safety', 'Standard package for fire safety under pest & safety. Includes trained professionals, standard tools, and service support.', 1017.00, 134),
-(159, 63, 'Premium Fire Safety', 'Premium package for fire safety under pest & safety. Includes trained professionals, standard tools, and service support.', 1154.00, 163),
-(160, 64, 'Basic Home Security', 'Basic package for home security under pest & safety. Includes trained professionals, standard tools, and service support.', 829.00, 95),
-(161, 64, 'Standard Home Security', 'Standard package for home security under pest & safety. Includes trained professionals, standard tools, and service support.', 961.00, 130),
-(162, 64, 'Premium Home Security', 'Premium package for home security under pest & safety. Includes trained professionals, standard tools, and service support.', 1168.00, 154),
-(163, 65, 'Basic Interior Painting', 'Basic package for interior painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1537.00, 183),
-(164, 65, 'Standard Interior Painting', 'Standard package for interior painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1678.00, 221),
-(165, 65, 'Premium Interior Painting', 'Premium package for interior painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1835.00, 252),
-(166, 66, 'Basic Exterior Painting', 'Basic package for exterior painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1522.00, 188),
-(167, 66, 'Standard Exterior Painting', 'Standard package for exterior painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1690.00, 217),
-(168, 66, 'Premium Exterior Painting', 'Premium package for exterior painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1810.00, 251),
-(169, 67, 'Basic Texture Painting', 'Basic package for texture painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1506.00, 193),
-(170, 67, 'Standard Texture Painting', 'Standard package for texture painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1695.00, 221),
-(171, 67, 'Premium Texture Painting', 'Premium package for texture painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1808.00, 249),
-(172, 68, 'Basic Waterproofing', 'Basic package for waterproofing under painting & renovation. Includes trained professionals, standard tools, and service support.', 1556.00, 186),
-(173, 68, 'Standard Waterproofing', 'Standard package for waterproofing under painting & renovation. Includes trained professionals, standard tools, and service support.', 1710.00, 218),
-(174, 68, 'Premium Waterproofing', 'Premium package for waterproofing under painting & renovation. Includes trained professionals, standard tools, and service support.', 1866.00, 243),
-(175, 69, 'Basic False Ceiling', 'Basic package for false ceiling under painting & renovation. Includes trained professionals, standard tools, and service support.', 1508.00, 188),
-(176, 69, 'Standard False Ceiling', 'Standard package for false ceiling under painting & renovation. Includes trained professionals, standard tools, and service support.', 1673.00, 217),
-(177, 69, 'Premium False Ceiling', 'Premium package for false ceiling under painting & renovation. Includes trained professionals, standard tools, and service support.', 1865.00, 246),
-(178, 70, 'Basic Wall Putty', 'Basic package for wall putty under painting & renovation. Includes trained professionals, standard tools, and service support.', 1559.00, 184),
-(179, 70, 'Standard Wall Putty', 'Standard package for wall putty under painting & renovation. Includes trained professionals, standard tools, and service support.', 1680.00, 212),
-(180, 70, 'Premium Wall Putty', 'Premium package for wall putty under painting & renovation. Includes trained professionals, standard tools, and service support.', 1806.00, 247),
-(181, 71, 'Basic Wood Polishing', 'Basic package for wood polishing under painting & renovation. Includes trained professionals, standard tools, and service support.', 1522.00, 182),
-(182, 71, 'Standard Wood Polishing', 'Standard package for wood polishing under painting & renovation. Includes trained professionals, standard tools, and service support.', 1679.00, 217),
-(183, 71, 'Premium Wood Polishing', 'Premium package for wood polishing under painting & renovation. Includes trained professionals, standard tools, and service support.', 1830.00, 249),
-(184, 72, 'Basic Tile Work', 'Basic package for tile work under painting & renovation. Includes trained professionals, standard tools, and service support.', 1564.00, 186),
-(185, 72, 'Standard Tile Work', 'Standard package for tile work under painting & renovation. Includes trained professionals, standard tools, and service support.', 1720.00, 215),
-(186, 72, 'Premium Tile Work', 'Premium package for tile work under painting & renovation. Includes trained professionals, standard tools, and service support.', 1844.00, 246),
-(187, 73, 'Basic Renovation Consultation', 'Basic package for renovation consultation under painting & renovation. Includes trained professionals, standard tools, and service support.', 1542.00, 186),
-(188, 73, 'Standard Renovation Consultation', 'Standard package for renovation consultation under painting & renovation. Includes trained professionals, standard tools, and service support.', 1651.00, 211),
-(189, 73, 'Premium Renovation Consultation', 'Premium package for renovation consultation under painting & renovation. Includes trained professionals, standard tools, and service support.', 1803.00, 254),
-(190, 74, 'Basic Local Shifting', 'Basic package for local shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1064.00, 133),
-(191, 74, 'Standard Local Shifting', 'Standard package for local shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1176.00, 152),
-(192, 74, 'Premium Local Shifting', 'Premium package for local shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1326.00, 190),
-(193, 75, 'Basic Intercity Shifting', 'Basic package for intercity shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1026.00, 122),
-(194, 75, 'Standard Intercity Shifting', 'Standard package for intercity shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1166.00, 160),
-(195, 75, 'Premium Intercity Shifting', 'Premium package for intercity shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1364.00, 186),
-(196, 76, 'Basic Packing Services', 'Basic package for packing services under moving & shifting. Includes trained professionals, standard tools, and service support.', 1031.00, 130),
-(197, 76, 'Standard Packing Services', 'Standard package for packing services under moving & shifting. Includes trained professionals, standard tools, and service support.', 1172.00, 164),
-(198, 76, 'Premium Packing Services', 'Premium package for packing services under moving & shifting. Includes trained professionals, standard tools, and service support.', 1354.00, 191),
-(199, 77, 'Basic Unpacking Services', 'Basic package for unpacking services under moving & shifting. Includes trained professionals, standard tools, and service support.', 1041.00, 131),
-(200, 77, 'Standard Unpacking Services', 'Standard package for unpacking services under moving & shifting. Includes trained professionals, standard tools, and service support.', 1191.00, 160),
-(201, 77, 'Premium Unpacking Services', 'Premium package for unpacking services under moving & shifting. Includes trained professionals, standard tools, and service support.', 1342.00, 187),
-(202, 78, 'Basic Storage', 'Basic package for storage under moving & shifting. Includes trained professionals, standard tools, and service support.', 1021.00, 128),
-(203, 78, 'Standard Storage', 'Standard package for storage under moving & shifting. Includes trained professionals, standard tools, and service support.', 1177.00, 158),
-(204, 78, 'Premium Storage', 'Premium package for storage under moving & shifting. Includes trained professionals, standard tools, and service support.', 1342.00, 191),
-(205, 79, 'Basic Bike Transport', 'Basic package for bike transport under moving & shifting. Includes trained professionals, standard tools, and service support.', 1059.00, 127),
-(206, 79, 'Standard Bike Transport', 'Standard package for bike transport under moving & shifting. Includes trained professionals, standard tools, and service support.', 1219.00, 156),
-(207, 79, 'Premium Bike Transport', 'Premium package for bike transport under moving & shifting. Includes trained professionals, standard tools, and service support.', 1336.00, 183),
-(208, 80, 'Basic Office Shifting', 'Basic package for office shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1057.00, 129),
-(209, 80, 'Standard Office Shifting', 'Standard package for office shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1182.00, 152),
-(210, 80, 'Premium Office Shifting', 'Premium package for office shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1312.00, 185),
-(211, 81, 'Basic Furniture Moving', 'Basic package for furniture moving under moving & shifting. Includes trained professionals, standard tools, and service support.', 1048.00, 123),
-(212, 81, 'Standard Furniture Moving', 'Standard package for furniture moving under moving & shifting. Includes trained professionals, standard tools, and service support.', 1217.00, 150),
-(213, 81, 'Premium Furniture Moving', 'Premium package for furniture moving under moving & shifting. Includes trained professionals, standard tools, and service support.', 1373.00, 190),
-(214, 82, 'Basic Vehicle Transport', 'Basic package for vehicle transport under moving & shifting. Includes trained professionals, standard tools, and service support.', 1046.00, 123),
-(215, 82, 'Standard Vehicle Transport', 'Standard package for vehicle transport under moving & shifting. Includes trained professionals, standard tools, and service support.', 1158.00, 153),
-(216, 82, 'Premium Vehicle Transport', 'Premium package for vehicle transport under moving & shifting. Includes trained professionals, standard tools, and service support.', 1328.00, 184),
-(217, 83, 'Basic Yoga', 'Basic package for yoga under fitness & therapy. Includes trained professionals, standard tools, and service support.', 760.00, 73),
-(218, 83, 'Standard Yoga', 'Standard package for yoga under fitness & therapy. Includes trained professionals, standard tools, and service support.', 910.00, 99),
-(219, 83, 'Premium Yoga', 'Premium package for yoga under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1028.00, 131),
-(220, 84, 'Basic Physiotherapy', 'Basic package for physiotherapy under fitness & therapy. Includes trained professionals, standard tools, and service support.', 728.00, 65),
-(221, 84, 'Standard Physiotherapy', 'Standard package for physiotherapy under fitness & therapy. Includes trained professionals, standard tools, and service support.', 903.00, 98),
-(222, 84, 'Premium Physiotherapy', 'Premium package for physiotherapy under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1065.00, 125),
-(223, 85, 'Basic Massage', 'Basic package for massage under fitness & therapy. Includes trained professionals, standard tools, and service support.', 768.00, 63),
-(224, 85, 'Standard Massage', 'Standard package for massage under fitness & therapy. Includes trained professionals, standard tools, and service support.', 851.00, 91),
-(225, 85, 'Premium Massage', 'Premium package for massage under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1020.00, 132),
-(226, 86, 'Basic Posture Correction', 'Basic package for posture correction under fitness & therapy. Includes trained professionals, standard tools, and service support.', 729.00, 63),
-(227, 86, 'Standard Posture Correction', 'Standard package for posture correction under fitness & therapy. Includes trained professionals, standard tools, and service support.', 859.00, 98),
-(228, 86, 'Premium Posture Correction', 'Premium package for posture correction under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1046.00, 127),
-(229, 87, 'Basic Personal Training', 'Basic package for personal training under fitness & therapy. Includes trained professionals, standard tools, and service support.', 763.00, 61),
-(230, 87, 'Standard Personal Training', 'Standard package for personal training under fitness & therapy. Includes trained professionals, standard tools, and service support.', 862.00, 100),
-(231, 87, 'Premium Personal Training', 'Premium package for personal training under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1005.00, 132),
-(232, 88, 'Basic Nutrition', 'Basic package for nutrition under fitness & therapy. Includes trained professionals, standard tools, and service support.', 708.00, 69),
-(233, 88, 'Standard Nutrition', 'Standard package for nutrition under fitness & therapy. Includes trained professionals, standard tools, and service support.', 882.00, 102),
-(234, 88, 'Premium Nutrition', 'Premium package for nutrition under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1017.00, 134),
-(235, 89, 'Basic Meditation', 'Basic package for meditation under fitness & therapy. Includes trained professionals, standard tools, and service support.', 723.00, 66),
-(236, 89, 'Standard Meditation', 'Standard package for meditation under fitness & therapy. Includes trained professionals, standard tools, and service support.', 893.00, 97),
-(237, 89, 'Premium Meditation', 'Premium package for meditation under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1006.00, 126),
-(238, 90, 'Basic Senior Fitness', 'Basic package for senior fitness under fitness & therapy. Includes trained professionals, standard tools, and service support.', 755.00, 69),
-(239, 90, 'Standard Senior Fitness', 'Standard package for senior fitness under fitness & therapy. Includes trained professionals, standard tools, and service support.', 879.00, 90),
-(240, 90, 'Premium Senior Fitness', 'Premium package for senior fitness under fitness & therapy. Includes trained professionals, standard tools, and service support.', 999.00, 121),
-(241, 91, 'Basic Prenatal Care', 'Basic package for prenatal care under fitness & therapy. Includes trained professionals, standard tools, and service support.', 731.00, 68),
-(242, 91, 'Standard Prenatal Care', 'Standard package for prenatal care under fitness & therapy. Includes trained professionals, standard tools, and service support.', 864.00, 98),
-(243, 91, 'Premium Prenatal Care', 'Premium package for prenatal care under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1029.00, 132),
-(244, 92, 'Basic Lawn Mowing', 'Basic package for lawn mowing under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 410.00, 69),
-(245, 92, 'Standard Lawn Mowing', 'Standard package for lawn mowing under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 615.00, 91),
-(246, 92, 'Premium Lawn Mowing', 'Premium package for lawn mowing under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 714.00, 122),
-(247, 93, 'Basic Garden Maintenance', 'Basic package for garden maintenance under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 433.00, 64),
-(248, 93, 'Standard Garden Maintenance', 'Standard package for garden maintenance under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 562.00, 91),
-(249, 93, 'Premium Garden Maintenance', 'Premium package for garden maintenance under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 748.00, 129),
-(250, 94, 'Basic Plant Care', 'Basic package for plant care under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 415.00, 63),
-(251, 94, 'Standard Plant Care', 'Standard package for plant care under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 572.00, 91),
-(252, 94, 'Premium Plant Care', 'Premium package for plant care under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 715.00, 128),
-(253, 95, 'Basic Soil Treatment', 'Basic package for soil treatment under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 449.00, 60),
-(254, 95, 'Standard Soil Treatment', 'Standard package for soil treatment under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 552.00, 90),
-(255, 95, 'Premium Soil Treatment', 'Premium package for soil treatment under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 728.00, 124),
-(256, 96, 'Basic Balcony Gardening', 'Basic package for balcony gardening under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 443.00, 73),
-(257, 96, 'Standard Balcony Gardening', 'Standard package for balcony gardening under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 598.00, 94),
-(258, 96, 'Premium Balcony Gardening', 'Premium package for balcony gardening under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 745.00, 122),
-(259, 97, 'Basic Terrace Gardening', 'Basic package for terrace gardening under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 409.00, 61),
-(260, 97, 'Standard Terrace Gardening', 'Standard package for terrace gardening under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 612.00, 100),
-(261, 97, 'Premium Terrace Gardening', 'Premium package for terrace gardening under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 717.00, 124),
-(262, 98, 'Basic Fence Repair', 'Basic package for fence repair under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 449.00, 66),
-(263, 98, 'Standard Fence Repair', 'Standard package for fence repair under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 555.00, 95),
-(264, 98, 'Premium Fence Repair', 'Premium package for fence repair under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 716.00, 123),
-(265, 99, 'Basic Tree Pruning', 'Basic package for tree pruning under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 462.00, 72),
-(266, 99, 'Standard Tree Pruning', 'Standard package for tree pruning under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 588.00, 99),
-(267, 99, 'Premium Tree Pruning', 'Premium package for tree pruning under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 706.00, 130),
-(268, 100, 'Basic Pest Spray', 'Basic package for pest spray under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 400.00, 65),
-(269, 100, 'Standard Pest Spray', 'Standard package for pest spray under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 564.00, 90),
-(270, 100, 'Premium Pest Spray', 'Premium package for pest spray under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 712.00, 126);
-
+INSERT INTO public.fks_services (service_id, category_id, name, description, base_price, currency, duration_minutes, image, rating_avg, reviews)
+OVERRIDING SYSTEM VALUE 
+VALUES (1, 11, 'Basic Maid Booking', 'Basic package for maid booking under home services. Includes trained professionals, standard tools, and service support.', 304.00, 'INR', 63, NULL, NULL, NULL);
+(2, 11, 'Standard Maid Booking', 'Standard package for maid booking under home services. Includes trained professionals, standard tools, and service support.', 497.00, 'INR', 104, NULL, NULL, NULL);
+(3, 11, 'Premium Maid Booking', 'Premium package for maid booking under home services. Includes trained professionals, standard tools, and service support.', 644.00, 'INR', 130, NULL, NULL, NULL);
+(4, 12, 'Basic Laundry Pickup', 'Basic package for laundry pickup under home services. Includes trained professionals, standard tools, and service support.', 304.00, 'INR', 68, NULL, NULL, NULL);
+(5, 12, 'Standard Laundry Pickup', 'Standard package for laundry pickup under home services. Includes trained professionals, standard tools, and service support.', 468.00, 'INR', 98, NULL, NULL, NULL);
+(6, 12, 'Premium Laundry Pickup', 'Premium package for laundry pickup under home services. Includes trained professionals, standard tools, and service support.', 631.00, 'INR', 122, NULL, NULL, NULL);
+(7, 13, 'Basic Dishwashing', 'Basic package for dishwashing under home services. Includes trained professionals, standard tools, and service support.', 350.00, 'INR', 72, NULL, NULL, NULL);
+(8, 13, 'Standard Dishwashing', 'Standard package for dishwashing under home services. Includes trained professionals, standard tools, and service support.', 475.00, 'INR', 92, NULL, NULL, NULL);
+(9, 13, 'Premium Dishwashing', 'Premium package for dishwashing under home services. Includes trained professionals, standard tools, and service support.', 605.00, 'INR', 120, NULL, NULL, NULL);
+(10, 14, 'Basic House Help', 'Basic package for house help under home services. Includes trained professionals, standard tools, and service support.', 342.00, 'INR', 74, NULL, NULL, NULL);
+(11, 14, 'Standard House Help', 'Standard package for house help under home services. Includes trained professionals, standard tools, and service support.', 499.00, 'INR', 103, NULL, NULL, NULL);
+(12, 14, 'Premium House Help', 'Premium package for house help under home services. Includes trained professionals, standard tools, and service support.', 625.00, 'INR', 123, NULL, NULL, NULL);
+(13, 15, 'Basic Meal Prep', 'Basic package for meal prep under home services. Includes trained professionals, standard tools, and service support.', 367.00, 'INR', 66, NULL, NULL, NULL);
+(14, 15, 'Standard Meal Prep', 'Standard package for meal prep under home services. Includes trained professionals, standard tools, and service support.', 504.00, 'INR', 103, NULL, NULL, NULL);
+(15, 15, 'Premium Meal Prep', 'Premium package for meal prep under home services. Includes trained professionals, standard tools, and service support.', 636.00, 'INR', 126, NULL, NULL, NULL);
+(16, 16, 'Basic Elder Care', 'Basic package for elder care under home services. Includes trained professionals, standard tools, and service support.', 354.00, 'INR', 66, NULL, NULL, NULL);
+(17, 16, 'Standard Elder Care', 'Standard package for elder care under home services. Includes trained professionals, standard tools, and service support.', 454.00, 'INR', 95, NULL, NULL, NULL);
+(18, 16, 'Premium Elder Care', 'Premium package for elder care under home services. Includes trained professionals, standard tools, and service support.', 616.00, 'INR', 122, NULL, NULL, NULL);
+(19, 17, 'Basic Child Care', 'Basic package for child care under home services. Includes trained professionals, standard tools, and service support.', 311.00, 'INR', 73, NULL, NULL, NULL);
+(20, 17, 'Standard Child Care', 'Standard package for child care under home services. Includes trained professionals, standard tools, and service support.', 462.00, 'INR', 99, NULL, NULL, NULL);
+(21, 17, 'Premium Child Care', 'Premium package for child care under home services. Includes trained professionals, standard tools, and service support.', 628.00, 'INR', 130, NULL, NULL, NULL);
+(22, 18, 'Basic Home Organization', 'Basic package for home organization under home services. Includes trained professionals, standard tools, and service support.', 322.00, 'INR', 67, NULL, NULL, NULL);
+(23, 18, 'Standard Home Organization', 'Standard package for home organization under home services. Includes trained professionals, standard tools, and service support.', 499.00, 'INR', 99, NULL, NULL, NULL);
+(24, 18, 'Premium Home Organization', 'Premium package for home organization under home services. Includes trained professionals, standard tools, and service support.', 606.00, 'INR', 125, NULL, NULL, NULL);
+(25, 19, 'Basic Society Help', 'Basic package for society help under home services. Includes trained professionals, standard tools, and service support.', 306.00, 'INR', 73, NULL, NULL, NULL);
+(26, 19, 'Standard Society Help', 'Standard package for society help under home services. Includes trained professionals, standard tools, and service support.', 492.00, 'INR', 95, NULL, NULL, NULL);
+(27, 19, 'Premium Society Help', 'Premium package for society help under home services. Includes trained professionals, standard tools, and service support.', 607.00, 'INR', 121, NULL, NULL, NULL);
+(28, 20, 'Basic Basic Home Cleaning', 'Basic package for basic home cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 534.00, 'INR', 130, NULL, NULL, NULL);
+(29, 20, 'Standard Basic Home Cleaning', 'Standard package for basic home cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 662.00, 'INR', 154, NULL, NULL, NULL);
+(30, 20, 'Premium Basic Home Cleaning', 'Premium package for basic home cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 835.00, 'INR', 183, NULL, NULL, NULL);
+(31, 21, 'Basic Deep Cleaning', 'Basic package for deep cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 521.00, 'INR', 134, NULL, NULL, NULL);
+(32, 21, 'Standard Deep Cleaning', 'Standard package for deep cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 651.00, 'INR', 151, NULL, NULL, NULL);
+(33, 21, 'Premium Deep Cleaning', 'Premium package for deep cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 843.00, 'INR', 194, NULL, NULL, NULL);
+(34, 22, 'Basic Kitchen Cleaning', 'Basic package for kitchen cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 522.00, 'INR', 124, NULL, NULL, NULL);
+(35, 22, 'Standard Kitchen Cleaning', 'Standard package for kitchen cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 649.00, 'INR', 159, NULL, NULL, NULL);
+(36, 22, 'Premium Kitchen Cleaning', 'Premium package for kitchen cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 839.00, 'INR', 191, NULL, NULL, NULL);
+(37, 23, 'Basic Bathroom Cleaning', 'Basic package for bathroom cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 527.00, 'INR', 124, NULL, NULL, NULL);
+(38, 23, 'Standard Bathroom Cleaning', 'Standard package for bathroom cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 722.00, 'INR', 158, NULL, NULL, NULL);
+(39, 23, 'Premium Bathroom Cleaning', 'Premium package for bathroom cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 810.00, 'INR', 190, NULL, NULL, NULL);
+(40, 24, 'Basic Sofa Cleaning', 'Basic package for sofa cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 549.00, 'INR', 123, NULL, NULL, NULL);
+(41, 24, 'Standard Sofa Cleaning', 'Standard package for sofa cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 649.00, 'INR', 154, NULL, NULL, NULL);
+(42, 24, 'Premium Sofa Cleaning', 'Premium package for sofa cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 852.00, 'INR', 182, NULL, NULL, NULL);
+(43, 25, 'Basic Carpet Cleaning', 'Basic package for carpet cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 506.00, 'INR', 123, NULL, NULL, NULL);
+(44, 25, 'Standard Carpet Cleaning', 'Standard package for carpet cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 658.00, 'INR', 159, NULL, NULL, NULL);
+(45, 25, 'Premium Carpet Cleaning', 'Premium package for carpet cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 822.00, 'INR', 184, NULL, NULL, NULL);
+(46, 26, 'Basic Disinfection', 'Basic package for disinfection under cleaning. Includes trained professionals, standard tools, and service support.', 571.00, 'INR', 126, NULL, NULL, NULL);
+(47, 26, 'Standard Disinfection', 'Standard package for disinfection under cleaning. Includes trained professionals, standard tools, and service support.', 697.00, 'INR', 150, NULL, NULL, NULL);
+(48, 26, 'Premium Disinfection', 'Premium package for disinfection under cleaning. Includes trained professionals, standard tools, and service support.', 858.00, 'INR', 183, NULL, NULL, NULL);
+(49, 27, 'Basic Water Tank Cleaning', 'Basic package for water tank cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 553.00, 'INR', 126, NULL, NULL, NULL);
+(50, 27, 'Standard Water Tank Cleaning', 'Standard package for water tank cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 675.00, 'INR', 163, NULL, NULL, NULL);
+(51, 27, 'Premium Water Tank Cleaning', 'Premium package for water tank cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 844.00, 'INR', 190, NULL, NULL, NULL);
+(52, 28, 'Basic Post-Construction Cleaning', 'Basic package for post-construction cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 556.00, 'INR', 124, NULL, NULL, NULL);
+(53, 28, 'Standard Post-Construction Cleaning', 'Standard package for post-construction cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 657.00, 'INR', 151, NULL, NULL, NULL);
+(54, 28, 'Premium Post-Construction Cleaning', 'Premium package for post-construction cleaning under cleaning. Includes trained professionals, standard tools, and service support.', 808.00, 'INR', 191, NULL, NULL, NULL);
+(55, 29, 'Basic Electrician', 'Basic package for electrician under repairs. Includes trained professionals, standard tools, and service support.', 374.00, 'INR', 47, NULL, NULL, NULL);
+(56, 29, 'Standard Electrician', 'Standard package for electrician under repairs. Includes trained professionals, standard tools, and service support.', 570.00, 'INR', 79, NULL, NULL, NULL);
+(57, 29, 'Premium Electrician', 'Premium package for electrician under repairs. Includes trained professionals, standard tools, and service support.', 721.00, 'INR', 106, NULL, NULL, NULL);
+(58, 30, 'Basic Plumbing', 'Basic package for plumbing under repairs. Includes trained professionals, standard tools, and service support.', 355.00, 'INR', 45, NULL, NULL, NULL);
+(59, 30, 'Standard Plumbing', 'Standard package for plumbing under repairs. Includes trained professionals, standard tools, and service support.', 530.00, 'INR', 85, NULL, NULL, NULL);
+(60, 30, 'Premium Plumbing', 'Premium package for plumbing under repairs. Includes trained professionals, standard tools, and service support.', 705.00, 'INR', 114, NULL, NULL, NULL);
+(61, 31, 'Basic Carpentry', 'Basic package for carpentry under repairs. Includes trained professionals, standard tools, and service support.', 370.00, 'INR', 48, NULL, NULL, NULL);
+(62, 31, 'Standard Carpentry', 'Standard package for carpentry under repairs. Includes trained professionals, standard tools, and service support.', 507.00, 'INR', 88, NULL, NULL, NULL);
+(63, 31, 'Premium Carpentry', 'Premium package for carpentry under repairs. Includes trained professionals, standard tools, and service support.', 651.00, 'INR', 117, NULL, NULL, NULL);
+(64, 32, 'Basic AC Repair', 'Basic package for ac repair under repairs. Includes trained professionals, standard tools, and service support.', 371.00, 'INR', 48, NULL, NULL, NULL);
+(65, 32, 'Standard AC Repair', 'Standard package for ac repair under repairs. Includes trained professionals, standard tools, and service support.', 557.00, 'INR', 82, NULL, NULL, NULL);
+(66, 32, 'Premium AC Repair', 'Premium package for ac repair under repairs. Includes trained professionals, standard tools, and service support.', 701.00, 'INR', 107, NULL, NULL, NULL);
+(67, 33, 'Basic Appliance Repair', 'Basic package for appliance repair under repairs. Includes trained professionals, standard tools, and service support.', 362.00, 'INR', 52, NULL, NULL, NULL);
+(68, 33, 'Standard Appliance Repair', 'Standard package for appliance repair under repairs. Includes trained professionals, standard tools, and service support.', 571.00, 'INR', 83, NULL, NULL, NULL);
+(69, 33, 'Premium Appliance Repair', 'Premium package for appliance repair under repairs. Includes trained professionals, standard tools, and service support.', 649.00, 'INR', 107, NULL, NULL, NULL);
+(70, 34, 'Basic TV Repair', 'Basic package for tv repair under repairs. Includes trained professionals, standard tools, and service support.', 351.00, 'INR', 58, NULL, NULL, NULL);
+(71, 34, 'Standard TV Repair', 'Standard package for tv repair under repairs. Includes trained professionals, standard tools, and service support.', 522.00, 'INR', 77, NULL, NULL, NULL);
+(72, 34, 'Premium TV Repair', 'Premium package for tv repair under repairs. Includes trained professionals, standard tools, and service support.', 695.00, 'INR', 113, NULL, NULL, NULL);
+(73, 35, 'Basic Geyser Repair', 'Basic package for geyser repair under repairs. Includes trained professionals, standard tools, and service support.', 378.00, 'INR', 53, NULL, NULL, NULL);
+(74, 35, 'Standard Geyser Repair', 'Standard package for geyser repair under repairs. Includes trained professionals, standard tools, and service support.', 502.00, 'INR', 83, NULL, NULL, NULL);
+(75, 35, 'Premium Geyser Repair', 'Premium package for geyser repair under repairs. Includes trained professionals, standard tools, and service support.', 671.00, 'INR', 116, NULL, NULL, NULL);
+(76, 36, 'Basic Inverter Repair', 'Basic package for inverter repair under repairs. Includes trained professionals, standard tools, and service support.', 404.00, 'INR', 50, NULL, NULL, NULL);
+(77, 36, 'Standard Inverter Repair', 'Standard package for inverter repair under repairs. Includes trained professionals, standard tools, and service support.', 570.00, 'INR', 75, NULL, NULL, NULL);
+(78, 36, 'Premium Inverter Repair', 'Premium package for inverter repair under repairs. Includes trained professionals, standard tools, and service support.', 680.00, 'INR', 109, NULL, NULL, NULL);
+(79, 37, 'Basic Door Repair', 'Basic package for door repair under repairs. Includes trained professionals, standard tools, and service support.', 399.00, 'INR', 56, NULL, NULL, NULL);
+(80, 37, 'Standard Door Repair', 'Standard package for door repair under repairs. Includes trained professionals, standard tools, and service support.', 516.00, 'INR', 81, NULL, NULL, NULL);
+(81, 37, 'Premium Door Repair', 'Premium package for door repair under repairs. Includes trained professionals, standard tools, and service support.', 683.00, 'INR', 111, NULL, NULL, NULL);
+(82, 38, 'Basic Women''s Salon', 'Basic package for women''s salon under beauty & wellness. Includes trained professionals, standard tools, and service support.', 464.00, 'INR', 50, NULL, NULL, NULL);
+(83, 38, 'Standard Women''s Salon', 'Standard package for women''s salon under beauty & wellness. Includes trained professionals, standard tools, and service support.', 589.00, 'INR', 75, NULL, NULL, NULL);
+(84, 38, 'Premium Women''s Salon', 'Premium package for women''s salon under beauty & wellness. Includes trained professionals, standard tools, and service support.', 704.00, 'INR', 114, NULL, NULL, NULL);
+(85, 39, 'Basic Men''s Salon', 'Basic package for men''s salon under beauty & wellness. Includes trained professionals, standard tools, and service support.', 428.00, 'INR', 46, NULL, NULL, NULL);
+(86, 39, 'Standard Men''s Salon', 'Standard package for men''s salon under beauty & wellness. Includes trained professionals, standard tools, and service support.', 623.00, 'INR', 89, NULL, NULL, NULL);
+(87, 39, 'Premium Men''s Salon', 'Premium package for men''s salon under beauty & wellness. Includes trained professionals, standard tools, and service support.', 765.00, 'INR', 108, NULL, NULL, NULL);
+(88, 40, 'Basic Hair Spa', 'Basic package for hair spa under beauty & wellness. Includes trained professionals, standard tools, and service support.', 430.00, 'INR', 51, NULL, NULL, NULL);
+(89, 40, 'Standard Hair Spa', 'Standard package for hair spa under beauty & wellness. Includes trained professionals, standard tools, and service support.', 561.00, 'INR', 81, NULL, NULL, NULL);
+(90, 40, 'Premium Hair Spa', 'Premium package for hair spa under beauty & wellness. Includes trained professionals, standard tools, and service support.', 703.00, 'INR', 112, NULL, NULL, NULL);
+(91, 41, 'Basic Skin Care', 'Basic package for skin care under beauty & wellness. Includes trained professionals, standard tools, and service support.', 470.00, 'INR', 49, NULL, NULL, NULL);
+(92, 41, 'Standard Skin Care', 'Standard package for skin care under beauty & wellness. Includes trained professionals, standard tools, and service support.', 584.00, 'INR', 79, NULL, NULL, NULL);
+(93, 41, 'Premium Skin Care', 'Premium package for skin care under beauty & wellness. Includes trained professionals, standard tools, and service support.', 723.00, 'INR', 110, NULL, NULL, NULL);
+(94, 42, 'Basic Bridal Makeup', 'Basic package for bridal makeup under beauty & wellness. Includes trained professionals, standard tools, and service support.', 435.00, 'INR', 45, NULL, NULL, NULL);
+(95, 42, 'Standard Bridal Makeup', 'Standard package for bridal makeup under beauty & wellness. Includes trained professionals, standard tools, and service support.', 591.00, 'INR', 81, NULL, NULL, NULL);
+(96, 42, 'Premium Bridal Makeup', 'Premium package for bridal makeup under beauty & wellness. Includes trained professionals, standard tools, and service support.', 722.00, 'INR', 108, NULL, NULL, NULL);
+(97, 43, 'Basic Waxing', 'Basic package for waxing under beauty & wellness. Includes trained professionals, standard tools, and service support.', 440.00, 'INR', 58, NULL, NULL, NULL);
+(98, 43, 'Standard Waxing', 'Standard package for waxing under beauty & wellness. Includes trained professionals, standard tools, and service support.', 615.00, 'INR', 89, NULL, NULL, NULL);
+(99, 43, 'Premium Waxing', 'Premium package for waxing under beauty & wellness. Includes trained professionals, standard tools, and service support.', 713.00, 'INR', 113, NULL, NULL, NULL);
+(100, 44, 'Basic Manicure', 'Basic package for manicure under beauty & wellness. Includes trained professionals, standard tools, and service support.', 442.00, 'INR', 54, NULL, NULL, NULL);
+(101, 44, 'Standard Manicure', 'Standard package for manicure under beauty & wellness. Includes trained professionals, standard tools, and service support.', 558.00, 'INR', 83, NULL, NULL, NULL);
+(102, 44, 'Premium Manicure', 'Premium package for manicure under beauty & wellness. Includes trained professionals, standard tools, and service support.', 702.00, 'INR', 113, NULL, NULL, NULL);
+(103, 45, 'Basic Pedicure', 'Basic package for pedicure under beauty & wellness. Includes trained professionals, standard tools, and service support.', 443.00, 'INR', 52, NULL, NULL, NULL);
+(104, 45, 'Standard Pedicure', 'Standard package for pedicure under beauty & wellness. Includes trained professionals, standard tools, and service support.', 621.00, 'INR', 76, NULL, NULL, NULL);
+(105, 45, 'Premium Pedicure', 'Premium package for pedicure under beauty & wellness. Includes trained professionals, standard tools, and service support.', 703.00, 'INR', 110, NULL, NULL, NULL);
+(106, 46, 'Basic Threading', 'Basic package for threading under beauty & wellness. Includes trained professionals, standard tools, and service support.', 399.00, 'INR', 58, NULL, NULL, NULL);
+(107, 46, 'Standard Threading', 'Standard package for threading under beauty & wellness. Includes trained professionals, standard tools, and service support.', 587.00, 'INR', 88, NULL, NULL, NULL);
+(108, 46, 'Premium Threading', 'Premium package for threading under beauty & wellness. Includes trained professionals, standard tools, and service support.', 718.00, 'INR', 115, NULL, NULL, NULL);
+(109, 47, 'Basic Washing Machine', 'Basic package for washing machine under appliances. Includes trained professionals, standard tools, and service support.', 508.00, 'INR', 71, NULL, NULL, NULL);
+(110, 47, 'Standard Washing Machine', 'Standard package for washing machine under appliances. Includes trained professionals, standard tools, and service support.', 607.00, 'INR', 103, NULL, NULL, NULL);
+(111, 47, 'Premium Washing Machine', 'Premium package for washing machine under appliances. Includes trained professionals, standard tools, and service support.', 799.00, 'INR', 131, NULL, NULL, NULL);
+(112, 48, 'Basic Refrigerator', 'Basic package for refrigerator under appliances. Includes trained professionals, standard tools, and service support.', 510.00, 'INR', 68, NULL, NULL, NULL);
+(113, 48, 'Standard Refrigerator', 'Standard package for refrigerator under appliances. Includes trained professionals, standard tools, and service support.', 647.00, 'INR', 98, NULL, NULL, NULL);
+(114, 48, 'Premium Refrigerator', 'Premium package for refrigerator under appliances. Includes trained professionals, standard tools, and service support.', 765.00, 'INR', 133, NULL, NULL, NULL);
+(115, 49, 'Basic Microwave', 'Basic package for microwave under appliances. Includes trained professionals, standard tools, and service support.', 498.00, 'INR', 67, NULL, NULL, NULL);
+(116, 49, 'Standard Microwave', 'Standard package for microwave under appliances. Includes trained professionals, standard tools, and service support.', 629.00, 'INR', 97, NULL, NULL, NULL);
+(117, 49, 'Premium Microwave', 'Premium package for microwave under appliances. Includes trained professionals, standard tools, and service support.', 792.00, 'INR', 132, NULL, NULL, NULL);
+(118, 50, 'Basic Water Purifier', 'Basic package for water purifier under appliances. Includes trained professionals, standard tools, and service support.', 515.00, 'INR', 69, NULL, NULL, NULL);
+(119, 50, 'Standard Water Purifier', 'Standard package for water purifier under appliances. Includes trained professionals, standard tools, and service support.', 636.00, 'INR', 90, NULL, NULL, NULL);
+(120, 50, 'Premium Water Purifier', 'Premium package for water purifier under appliances. Includes trained professionals, standard tools, and service support.', 802.00, 'INR', 120, NULL, NULL, NULL);
+(121, 51, 'Basic Dishwasher', 'Basic package for dishwasher under appliances. Includes trained professionals, standard tools, and service support.', 485.00, 'INR', 66, NULL, NULL, NULL);
+(122, 51, 'Standard Dishwasher', 'Standard package for dishwasher under appliances. Includes trained professionals, standard tools, and service support.', 655.00, 'INR', 100, NULL, NULL, NULL);
+(123, 51, 'Premium Dishwasher', 'Premium package for dishwasher under appliances. Includes trained professionals, standard tools, and service support.', 812.00, 'INR', 126, NULL, NULL, NULL);
+(124, 52, 'Basic Hob & Chimney', 'Basic package for hob & chimney under appliances. Includes trained professionals, standard tools, and service support.', 465.00, 'INR', 71, NULL, NULL, NULL);
+(125, 52, 'Standard Hob & Chimney', 'Standard package for hob & chimney under appliances. Includes trained professionals, standard tools, and service support.', 629.00, 'INR', 100, NULL, NULL, NULL);
+(126, 52, 'Premium Hob & Chimney', 'Premium package for hob & chimney under appliances. Includes trained professionals, standard tools, and service support.', 767.00, 'INR', 120, NULL, NULL, NULL);
+(127, 53, 'Basic Mixer Grinder', 'Basic package for mixer grinder under appliances. Includes trained professionals, standard tools, and service support.', 505.00, 'INR', 60, NULL, NULL, NULL);
+(128, 53, 'Standard Mixer Grinder', 'Standard package for mixer grinder under appliances. Includes trained professionals, standard tools, and service support.', 602.00, 'INR', 90, NULL, NULL, NULL);
+(129, 53, 'Premium Mixer Grinder', 'Premium package for mixer grinder under appliances. Includes trained professionals, standard tools, and service support.', 808.00, 'INR', 129, NULL, NULL, NULL);
+(130, 54, 'Basic Oven', 'Basic package for oven under appliances. Includes trained professionals, standard tools, and service support.', 464.00, 'INR', 61, NULL, NULL, NULL);
+(131, 54, 'Standard Oven', 'Standard package for oven under appliances. Includes trained professionals, standard tools, and service support.', 607.00, 'INR', 99, NULL, NULL, NULL);
+(132, 54, 'Premium Oven', 'Premium package for oven under appliances. Includes trained professionals, standard tools, and service support.', 809.00, 'INR', 121, NULL, NULL, NULL);
+(133, 55, 'Basic Vacuum Cleaner', 'Basic package for vacuum cleaner under appliances. Includes trained professionals, standard tools, and service support.', 513.00, 'INR', 67, NULL, NULL, NULL);
+(134, 55, 'Standard Vacuum Cleaner', 'Standard package for vacuum cleaner under appliances. Includes trained professionals, standard tools, and service support.', 664.00, 'INR', 92, NULL, NULL, NULL);
+(135, 55, 'Premium Vacuum Cleaner', 'Premium package for vacuum cleaner under appliances. Includes trained professionals, standard tools, and service support.', 773.00, 'INR', 126, NULL, NULL, NULL);
+(136, 56, 'Basic Pest Control', 'Basic package for pest control under pest & safety. Includes trained professionals, standard tools, and service support.', 843.00, 'INR', 90, NULL, NULL, NULL);
+(137, 56, 'Standard Pest Control', 'Standard package for pest control under pest & safety. Includes trained professionals, standard tools, and service support.', 1012.00, 'INR', 121, NULL, NULL, NULL);
+(138, 56, 'Premium Pest Control', 'Premium package for pest control under pest & safety. Includes trained professionals, standard tools, and service support.', 1134.00, 'INR', 159, NULL, NULL, NULL);
+(139, 57, 'Basic Termite Treatment', 'Basic package for termite treatment under pest & safety. Includes trained professionals, standard tools, and service support.', 835.00, 'INR', 91, NULL, NULL, NULL);
+(140, 57, 'Standard Termite Treatment', 'Standard package for termite treatment under pest & safety. Includes trained professionals, standard tools, and service support.', 967.00, 'INR', 127, NULL, NULL, NULL);
+(141, 57, 'Premium Termite Treatment', 'Premium package for termite treatment under pest & safety. Includes trained professionals, standard tools, and service support.', 1166.00, 'INR', 164, NULL, NULL, NULL);
+(142, 58, 'Basic Cockroach Control', 'Basic package for cockroach control under pest & safety. Includes trained professionals, standard tools, and service support.', 826.00, 'INR', 102, NULL, NULL, NULL);
+(143, 58, 'Standard Cockroach Control', 'Standard package for cockroach control under pest & safety. Includes trained professionals, standard tools, and service support.', 959.00, 'INR', 126, NULL, NULL, NULL);
+(144, 58, 'Premium Cockroach Control', 'Premium package for cockroach control under pest & safety. Includes trained professionals, standard tools, and service support.', 1118.00, 'INR', 158, NULL, NULL, NULL);
+(145, 59, 'Basic Bed Bug Treatment', 'Basic package for bed bug treatment under pest & safety. Includes trained professionals, standard tools, and service support.', 799.00, 'INR', 95, NULL, NULL, NULL);
+(146, 59, 'Standard Bed Bug Treatment', 'Standard package for bed bug treatment under pest & safety. Includes trained professionals, standard tools, and service support.', 964.00, 'INR', 123, NULL, NULL, NULL);
+(147, 59, 'Premium Bed Bug Treatment', 'Premium package for bed bug treatment under pest & safety. Includes trained professionals, standard tools, and service support.', 1118.00, 'INR', 152, NULL, NULL, NULL);
+(148, 60, 'Basic Mosquito Control', 'Basic package for mosquito control under pest & safety. Includes trained professionals, standard tools, and service support.', 831.00, 'INR', 92, NULL, NULL, NULL);
+(149, 60, 'Standard Mosquito Control', 'Standard package for mosquito control under pest & safety. Includes trained professionals, standard tools, and service support.', 1012.00, 'INR', 130, NULL, NULL, NULL);
+(150, 60, 'Premium Mosquito Control', 'Premium package for mosquito control under pest & safety. Includes trained professionals, standard tools, and service support.', 1140.00, 'INR', 163, NULL, NULL, NULL);
+(151, 61, 'Basic Bird Net Installation', 'Basic package for bird net installation under pest & safety. Includes trained professionals, standard tools, and service support.', 846.00, 'INR', 94, NULL, NULL, NULL);
+(152, 61, 'Standard Bird Net Installation', 'Standard package for bird net installation under pest & safety. Includes trained professionals, standard tools, and service support.', 958.00, 'INR', 126, NULL, NULL, NULL);
+(153, 61, 'Premium Bird Net Installation', 'Premium package for bird net installation under pest & safety. Includes trained professionals, standard tools, and service support.', 1159.00, 'INR', 159, NULL, NULL, NULL);
+(154, 62, 'Basic CCTV Installation', 'Basic package for cctv installation under pest & safety. Includes trained professionals, standard tools, and service support.', 812.00, 'INR', 103, NULL, NULL, NULL);
+(155, 62, 'Standard CCTV Installation', 'Standard package for cctv installation under pest & safety. Includes trained professionals, standard tools, and service support.', 965.00, 'INR', 122, NULL, NULL, NULL);
+(156, 62, 'Premium CCTV Installation', 'Premium package for cctv installation under pest & safety. Includes trained professionals, standard tools, and service support.', 1164.00, 'INR', 158, NULL, NULL, NULL);
+(157, 63, 'Basic Fire Safety', 'Basic package for fire safety under pest & safety. Includes trained professionals, standard tools, and service support.', 833.00, 'INR', 104, NULL, NULL, NULL);
+(158, 63, 'Standard Fire Safety', 'Standard package for fire safety under pest & safety. Includes trained professionals, standard tools, and service support.', 1017.00, 'INR', 134, NULL, NULL, NULL);
+(159, 63, 'Premium Fire Safety', 'Premium package for fire safety under pest & safety. Includes trained professionals, standard tools, and service support.', 1154.00, 'INR', 163, NULL, NULL, NULL);
+(160, 64, 'Basic Home Security', 'Basic package for home security under pest & safety. Includes trained professionals, standard tools, and service support.', 829.00, 'INR', 95, NULL, NULL, NULL);
+(161, 64, 'Standard Home Security', 'Standard package for home security under pest & safety. Includes trained professionals, standard tools, and service support.', 961.00, 'INR', 130, NULL, NULL, NULL);
+(162, 64, 'Premium Home Security', 'Premium package for home security under pest & safety. Includes trained professionals, standard tools, and service support.', 1168.00, 'INR', 154, NULL, NULL, NULL);
+(163, 65, 'Basic Interior Painting', 'Basic package for interior painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1537.00, 'INR', 183, NULL, NULL, NULL);
+(164, 65, 'Standard Interior Painting', 'Standard package for interior painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1678.00, 'INR', 221, NULL, NULL, NULL);
+(165, 65, 'Premium Interior Painting', 'Premium package for interior painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1835.00, 'INR', 252, NULL, NULL, NULL);
+(166, 66, 'Basic Exterior Painting', 'Basic package for exterior painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1522.00, 'INR', 188, NULL, NULL, NULL);
+(167, 66, 'Standard Exterior Painting', 'Standard package for exterior painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1690.00, 'INR', 217, NULL, NULL, NULL);
+(168, 66, 'Premium Exterior Painting', 'Premium package for exterior painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1810.00, 'INR', 251, NULL, NULL, NULL);
+(169, 67, 'Basic Texture Painting', 'Basic package for texture painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1506.00, 'INR', 193, NULL, NULL, NULL);
+(170, 67, 'Standard Texture Painting', 'Standard package for texture painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1695.00, 'INR', 221, NULL, NULL, NULL);
+(171, 67, 'Premium Texture Painting', 'Premium package for texture painting under painting & renovation. Includes trained professionals, standard tools, and service support.', 1808.00, 'INR', 249, NULL, NULL, NULL);
+(172, 68, 'Basic Waterproofing', 'Basic package for waterproofing under painting & renovation. Includes trained professionals, standard tools, and service support.', 1556.00, 'INR', 186, NULL, NULL, NULL);
+(173, 68, 'Standard Waterproofing', 'Standard package for waterproofing under painting & renovation. Includes trained professionals, standard tools, and service support.', 1710.00, 'INR', 218, NULL, NULL, NULL);
+(174, 68, 'Premium Waterproofing', 'Premium package for waterproofing under painting & renovation. Includes trained professionals, standard tools, and service support.', 1866.00, 'INR', 243, NULL, NULL, NULL);
+(175, 69, 'Basic False Ceiling', 'Basic package for false ceiling under painting & renovation. Includes trained professionals, standard tools, and service support.', 1508.00, 'INR', 188, NULL, NULL, NULL);
+(176, 69, 'Standard False Ceiling', 'Standard package for false ceiling under painting & renovation. Includes trained professionals, standard tools, and service support.', 1673.00, 'INR', 217, NULL, NULL, NULL);
+(177, 69, 'Premium False Ceiling', 'Premium package for false ceiling under painting & renovation. Includes trained professionals, standard tools, and service support.', 1865.00, 'INR', 246, NULL, NULL, NULL);
+(178, 70, 'Basic Wall Putty', 'Basic package for wall putty under painting & renovation. Includes trained professionals, standard tools, and service support.', 1559.00, 'INR', 184, NULL, NULL, NULL);
+(179, 70, 'Standard Wall Putty', 'Standard package for wall putty under painting & renovation. Includes trained professionals, standard tools, and service support.', 1680.00, 'INR', 212, NULL, NULL, NULL);
+(180, 70, 'Premium Wall Putty', 'Premium package for wall putty under painting & renovation. Includes trained professionals, standard tools, and service support.', 1806.00, 'INR', 247, NULL, NULL, NULL);
+(181, 71, 'Basic Wood Polishing', 'Basic package for wood polishing under painting & renovation. Includes trained professionals, standard tools, and service support.', 1522.00, 'INR', 182, NULL, NULL, NULL);
+(182, 71, 'Standard Wood Polishing', 'Standard package for wood polishing under painting & renovation. Includes trained professionals, standard tools, and service support.', 1679.00, 'INR', 217, NULL, NULL, NULL);
+(183, 71, 'Premium Wood Polishing', 'Premium package for wood polishing under painting & renovation. Includes trained professionals, standard tools, and service support.', 1830.00, 'INR', 249, NULL, NULL, NULL);
+(184, 72, 'Basic Tile Work', 'Basic package for tile work under painting & renovation. Includes trained professionals, standard tools, and service support.', 1564.00, 'INR', 186, NULL, NULL, NULL);
+(185, 72, 'Standard Tile Work', 'Standard package for tile work under painting & renovation. Includes trained professionals, standard tools, and service support.', 1720.00, 'INR', 215, NULL, NULL, NULL);
+(186, 72, 'Premium Tile Work', 'Premium package for tile work under painting & renovation. Includes trained professionals, standard tools, and service support.', 1844.00, 'INR', 246, NULL, NULL, NULL);
+(187, 73, 'Basic Renovation Consultation', 'Basic package for renovation consultation under painting & renovation. Includes trained professionals, standard tools, and service support.', 1542.00, 'INR', 186, NULL, NULL, NULL);
+(188, 73, 'Standard Renovation Consultation', 'Standard package for renovation consultation under painting & renovation. Includes trained professionals, standard tools, and service support.', 1651.00, 'INR', 211, NULL, NULL, NULL);
+(189, 73, 'Premium Renovation Consultation', 'Premium package for renovation consultation under painting & renovation. Includes trained professionals, standard tools, and service support.', 1803.00, 'INR', 254, NULL, NULL, NULL);
+(190, 74, 'Basic Local Shifting', 'Basic package for local shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1064.00, 'INR', 133, NULL, NULL, NULL);
+(191, 74, 'Standard Local Shifting', 'Standard package for local shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1176.00, 'INR', 152, NULL, NULL, NULL);
+(192, 74, 'Premium Local Shifting', 'Premium package for local shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1326.00, 'INR', 190, NULL, NULL, NULL);
+(193, 75, 'Basic Intercity Shifting', 'Basic package for intercity shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1026.00, 'INR', 122, NULL, NULL, NULL);
+(194, 75, 'Standard Intercity Shifting', 'Standard package for intercity shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1166.00, 'INR', 160, NULL, NULL, NULL);
+(195, 75, 'Premium Intercity Shifting', 'Premium package for intercity shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1364.00, 'INR', 186, NULL, NULL, NULL);
+(196, 76, 'Basic Packing Services', 'Basic package for packing services under moving & shifting. Includes trained professionals, standard tools, and service support.', 1031.00, 'INR', 130, NULL, NULL, NULL);
+(197, 76, 'Standard Packing Services', 'Standard package for packing services under moving & shifting. Includes trained professionals, standard tools, and service support.', 1172.00, 'INR', 164, NULL, NULL, NULL);
+(198, 76, 'Premium Packing Services', 'Premium package for packing services under moving & shifting. Includes trained professionals, standard tools, and service support.', 1354.00, 'INR', 191, NULL, NULL, NULL);
+(199, 77, 'Basic Unpacking Services', 'Basic package for unpacking services under moving & shifting. Includes trained professionals, standard tools, and service support.', 1041.00, 'INR', 131, NULL, NULL, NULL);
+(200, 77, 'Standard Unpacking Services', 'Standard package for unpacking services under moving & shifting. Includes trained professionals, standard tools, and service support.', 1191.00, 'INR', 160, NULL, NULL, NULL);
+(201, 77, 'Premium Unpacking Services', 'Premium package for unpacking services under moving & shifting. Includes trained professionals, standard tools, and service support.', 1342.00, 'INR', 187, NULL, NULL, NULL);
+(202, 78, 'Basic Storage', 'Basic package for storage under moving & shifting. Includes trained professionals, standard tools, and service support.', 1021.00, 'INR', 128, NULL, NULL, NULL);
+(203, 78, 'Standard Storage', 'Standard package for storage under moving & shifting. Includes trained professionals, standard tools, and service support.', 1177.00, 'INR', 158, NULL, NULL, NULL);
+(204, 78, 'Premium Storage', 'Premium package for storage under moving & shifting. Includes trained professionals, standard tools, and service support.', 1342.00, 'INR', 191, NULL, NULL, NULL);
+(205, 79, 'Basic Bike Transport', 'Basic package for bike transport under moving & shifting. Includes trained professionals, standard tools, and service support.', 1059.00, 'INR', 127, NULL, NULL, NULL);
+(206, 79, 'Standard Bike Transport', 'Standard package for bike transport under moving & shifting. Includes trained professionals, standard tools, and service support.', 1219.00, 'INR', 156, NULL, NULL, NULL);
+(207, 79, 'Premium Bike Transport', 'Premium package for bike transport under moving & shifting. Includes trained professionals, standard tools, and service support.', 1336.00, 'INR', 183, NULL, NULL, NULL);
+(208, 80, 'Basic Office Shifting', 'Basic package for office shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1057.00, 'INR', 129, NULL, NULL, NULL);
+(209, 80, 'Standard Office Shifting', 'Standard package for office shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1182.00, 'INR', 152, NULL, NULL, NULL);
+(210, 80, 'Premium Office Shifting', 'Premium package for office shifting under moving & shifting. Includes trained professionals, standard tools, and service support.', 1312.00, 'INR', 185, NULL, NULL, NULL);
+(211, 81, 'Basic Furniture Moving', 'Basic package for furniture moving under moving & shifting. Includes trained professionals, standard tools, and service support.', 1048.00, 'INR', 123, NULL, NULL, NULL);
+(212, 81, 'Standard Furniture Moving', 'Standard package for furniture moving under moving & shifting. Includes trained professionals, standard tools, and service support.', 1217.00, 'INR', 150, NULL, NULL, NULL);
+(213, 81, 'Premium Furniture Moving', 'Premium package for furniture moving under moving & shifting. Includes trained professionals, standard tools, and service support.', 1373.00, 'INR', 190, NULL, NULL, NULL);
+(214, 82, 'Basic Vehicle Transport', 'Basic package for vehicle transport under moving & shifting. Includes trained professionals, standard tools, and service support.', 1046.00, 'INR', 123, NULL, NULL, NULL);
+(215, 82, 'Standard Vehicle Transport', 'Standard package for vehicle transport under moving & shifting. Includes trained professionals, standard tools, and service support.', 1158.00, 'INR', 153, NULL, NULL, NULL);
+(216, 82, 'Premium Vehicle Transport', 'Premium package for vehicle transport under moving & shifting. Includes trained professionals, standard tools, and service support.', 1328.00, 'INR', 184, NULL, NULL, NULL);
+(217, 83, 'Basic Yoga', 'Basic package for yoga under fitness & therapy. Includes trained professionals, standard tools, and service support.', 760.00, 'INR', 73, NULL, NULL, NULL);
+(218, 83, 'Standard Yoga', 'Standard package for yoga under fitness & therapy. Includes trained professionals, standard tools, and service support.', 910.00, 'INR', 99, NULL, NULL, NULL);
+(219, 83, 'Premium Yoga', 'Premium package for yoga under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1028.00, 'INR', 131, NULL, NULL, NULL);
+(220, 84, 'Basic Physiotherapy', 'Basic package for physiotherapy under fitness & therapy. Includes trained professionals, standard tools, and service support.', 728.00, 'INR', 65, NULL, NULL, NULL);
+(221, 84, 'Standard Physiotherapy', 'Standard package for physiotherapy under fitness & therapy. Includes trained professionals, standard tools, and service support.', 903.00, 'INR', 98, NULL, NULL, NULL);
+(222, 84, 'Premium Physiotherapy', 'Premium package for physiotherapy under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1065.00, 'INR', 125, NULL, NULL, NULL);
+(223, 85, 'Basic Massage', 'Basic package for massage under fitness & therapy. Includes trained professionals, standard tools, and service support.', 768.00, 'INR', 63, NULL, NULL, NULL);
+(224, 85, 'Standard Massage', 'Standard package for massage under fitness & therapy. Includes trained professionals, standard tools, and service support.', 851.00, 'INR', 91, NULL, NULL, NULL);
+(225, 85, 'Premium Massage', 'Premium package for massage under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1020.00, 'INR', 132, NULL, NULL, NULL);
+(226, 86, 'Basic Posture Correction', 'Basic package for posture correction under fitness & therapy. Includes trained professionals, standard tools, and service support.', 729.00, 'INR', 63, NULL, NULL, NULL);
+(227, 86, 'Standard Posture Correction', 'Standard package for posture correction under fitness & therapy. Includes trained professionals, standard tools, and service support.', 859.00, 'INR', 98, NULL, NULL, NULL);
+(228, 86, 'Premium Posture Correction', 'Premium package for posture correction under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1046.00, 'INR', 127, NULL, NULL, NULL);
+(229, 87, 'Basic Personal Training', 'Basic package for personal training under fitness & therapy. Includes trained professionals, standard tools, and service support.', 763.00, 'INR', 61, NULL, NULL, NULL);
+(230, 87, 'Standard Personal Training', 'Standard package for personal training under fitness & therapy. Includes trained professionals, standard tools, and service support.', 862.00, 'INR', 100, NULL, NULL, NULL);
+(231, 87, 'Premium Personal Training', 'Premium package for personal training under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1005.00, 'INR', 132, NULL, NULL, NULL);
+(232, 88, 'Basic Nutrition', 'Basic package for nutrition under fitness & therapy. Includes trained professionals, standard tools, and service support.', 708.00, 'INR', 69, NULL, NULL, NULL);
+(233, 88, 'Standard Nutrition', 'Standard package for nutrition under fitness & therapy. Includes trained professionals, standard tools, and service support.', 882.00, 'INR', 102, NULL, NULL, NULL);
+(234, 88, 'Premium Nutrition', 'Premium package for nutrition under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1017.00, 'INR', 134, NULL, NULL, NULL);
+(235, 89, 'Basic Meditation', 'Basic package for meditation under fitness & therapy. Includes trained professionals, standard tools, and service support.', 723.00, 'INR', 66, NULL, NULL, NULL);
+(236, 89, 'Standard Meditation', 'Standard package for meditation under fitness & therapy. Includes trained professionals, standard tools, and service support.', 893.00, 'INR', 97, NULL, NULL, NULL);
+(237, 89, 'Premium Meditation', 'Premium package for meditation under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1006.00, 'INR', 126, NULL, NULL, NULL);
+(238, 90, 'Basic Senior Fitness', 'Basic package for senior fitness under fitness & therapy. Includes trained professionals, standard tools, and service support.', 755.00, 'INR', 69, NULL, NULL, NULL);
+(239, 90, 'Standard Senior Fitness', 'Standard package for senior fitness under fitness & therapy. Includes trained professionals, standard tools, and service support.', 879.00, 'INR', 90, NULL, NULL, NULL);
+(240, 90, 'Premium Senior Fitness', 'Premium package for senior fitness under fitness & therapy. Includes trained professionals, standard tools, and service support.', 999.00, 'INR', 121, NULL, NULL, NULL);
+(241, 91, 'Basic Prenatal Care', 'Basic package for prenatal care under fitness & therapy. Includes trained professionals, standard tools, and service support.', 731.00, 'INR', 68, NULL, NULL, NULL);
+(242, 91, 'Standard Prenatal Care', 'Standard package for prenatal care under fitness & therapy. Includes trained professionals, standard tools, and service support.', 864.00, 'INR', 98, NULL, NULL, NULL);
+(243, 91, 'Premium Prenatal Care', 'Premium package for prenatal care under fitness & therapy. Includes trained professionals, standard tools, and service support.', 1029.00, 'INR', 132, NULL, NULL, NULL);
+(244, 92, 'Basic Lawn Mowing', 'Basic package for lawn mowing under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 410.00, 'INR', 69, NULL, NULL, NULL);
+(245, 92, 'Standard Lawn Mowing', 'Standard package for lawn mowing under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 615.00, 'INR', 91, NULL, NULL, NULL);
+(246, 92, 'Premium Lawn Mowing', 'Premium package for lawn mowing under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 714.00, 'INR', 122, NULL, NULL, NULL);
+(247, 93, 'Basic Garden Maintenance', 'Basic package for garden maintenance under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 433.00, 'INR', 64, NULL, NULL, NULL);
+(248, 93, 'Standard Garden Maintenance', 'Standard package for garden maintenance under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 562.00, 'INR', 91, NULL, NULL, NULL);
+(249, 93, 'Premium Garden Maintenance', 'Premium package for garden maintenance under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 748.00, 'INR', 129, NULL, NULL, NULL);
+(250, 94, 'Basic Plant Care', 'Basic package for plant care under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 415.00, 'INR', 63, NULL, NULL, NULL);
+(251, 94, 'Standard Plant Care', 'Standard package for plant care under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 572.00, 'INR', 91, NULL, NULL, NULL);
+(252, 94, 'Premium Plant Care', 'Premium package for plant care under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 715.00, 'INR', 128, NULL, NULL, NULL);
+(253, 95, 'Basic Soil Treatment', 'Basic package for soil treatment under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 449.00, 'INR', 60, NULL, NULL, NULL);
+(254, 95, 'Standard Soil Treatment', 'Standard package for soil treatment under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 552.00, 'INR', 90, NULL, NULL, NULL);
+(255, 95, 'Premium Soil Treatment', 'Premium package for soil treatment under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 728.00, 'INR', 124, NULL, NULL, NULL);
+(256, 96, 'Basic Balcony Gardening', 'Basic package for balcony gardening under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 443.00, 'INR', 73, NULL, NULL, NULL);
+(257, 96, 'Standard Balcony Gardening', 'Standard package for balcony gardening under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 598.00, 'INR', 94, NULL, NULL, NULL);
+(258, 96, 'Premium Balcony Gardening', 'Premium package for balcony gardening under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 745.00, 'INR', 122, NULL, NULL, NULL);
+(259, 97, 'Basic Terrace Gardening', 'Basic package for terrace gardening under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 409.00, 'INR', 61, NULL, NULL, NULL);
+(260, 97, 'Standard Terrace Gardening', 'Standard package for terrace gardening under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 612.00, 'INR', 100, NULL, NULL, NULL);
+(261, 97, 'Premium Terrace Gardening', 'Premium package for terrace gardening under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 717.00, 'INR', 124, NULL, NULL, NULL);
+(262, 98, 'Basic Fence Repair', 'Basic package for fence repair under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 449.00, 'INR', 66, NULL, NULL, NULL);
+(263, 98, 'Standard Fence Repair', 'Standard package for fence repair under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 555.00, 'INR', 95, NULL, NULL, NULL);
+(264, 98, 'Premium Fence Repair', 'Premium package for fence repair under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 716.00, 'INR', 123, NULL, NULL, NULL);
+(265, 99, 'Basic Tree Pruning', 'Basic package for tree pruning under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 462.00, 'INR', 72, NULL, NULL, NULL);
+(266, 99, 'Standard Tree Pruning', 'Standard package for tree pruning under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 588.00, 'INR', 99, NULL, NULL, NULL);
+(267, 99, 'Premium Tree Pruning', 'Premium package for tree pruning under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 706.00, 'INR', 130, NULL, NULL, NULL);
+(268, 100, 'Basic Pest Spray', 'Basic package for pest spray under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 400.00, 'INR', 65, NULL, NULL, NULL);
+(269, 100, 'Standard Pest Spray', 'Standard package for pest spray under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 564.00, 'INR', 90, NULL, NULL, NULL);
+(270, 100, 'Premium Pest Spray', 'Premium package for pest spray under outdoor & gardening. Includes trained professionals, standard tools, and service support.', 712.00, 'INR', 126, NULL, NULL, NULL);
+(271, 106, 'Fruit Facial Glow', 'A refreshing fruit-based facial that brightens and hydrates tired skin.', 799.00, 'INR', 60, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.80, 2140);
+(272, 106, 'Hair Spa & Care', 'A deep-conditioning hair spa that repairs damage and restores natural shine.', 899.00, 'INR', 75, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.70, 1560);
+(273, 106, 'Full Arms & Legs Waxing', 'Smooth, salon-grade waxing for arms and legs using a gentle wax.', 599.00, 'INR', 45, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.60, 3200);
+(274, 106, 'Threading (Eyebrows + Upper Lip)', 'Quick, precise threading for perfectly shaped brows and upper lip.', 149.00, 'INR', 20, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.50, 4100);
+(275, 106, 'Manicure & Pedicure', 'A classic mani-pedi that leaves hands and feet soft, neat and polished.', 649.00, 'INR', 60, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.60, 2450);
+(276, 106, 'Global Hair Colour', 'Ammonia-friendly global colour application for full, even coverage.', 1299.00, 'INR', 90, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.50, 870);
+(277, 107, 'Haircut & Styling', 'A precision haircut and styling from an experienced men''s stylist.', 299.00, 'INR', 30, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', 4.70, 5200);
+(278, 107, 'Beard Shape-up & Trim', 'Sharp beard shaping and trim to keep your look fresh.', 199.00, 'INR', 20, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', 4.60, 4700);
+(279, 107, 'Head & Shoulder Massage', 'A relaxing head and shoulder massage to relieve stress and tension.', 399.00, 'INR', 30, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', 4.80, 2300);
+(280, 107, 'De-Tan Facial for Men', 'A de-tan facial that clears dullness and refreshes sun-exposed skin.', 549.00, 'INR', 45, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', 4.50, 1340);
+(281, 107, 'Beard & Hair Colour', 'Natural-looking colour touch-up for greying hair and beard.', 349.00, 'INR', 30, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', 4.40, 980);
+(282, 108, 'Party Makeup', 'Camera-ready party makeup tailored to your outfit and occasion.', 1499.00, 'INR', 90, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.90, 860);
+(283, 108, 'Bridal Makeup (HD)', 'Long-lasting HD bridal makeup with draping and hairstyling included.', 6999.00, 'INR', 150, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.90, 410);
+(284, 108, 'Nail Art & Manicure', 'A gel manicure with custom nail art finished by a trained nail artist.', 499.00, 'INR', 40, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.60, 1980);
+(285, 108, 'Engagement Makeup', 'Soft-glam engagement makeup designed to photograph beautifully.', 2999.00, 'INR', 100, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.80, 320);
+(286, 109, 'Full Home Deep Cleaning', 'A comprehensive deep clean covering every room, kitchen and bathroom.', 3499.00, 'INR', 240, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.80, 6200);
+(287, 109, 'Kitchen Deep Cleaning', 'Degreasing and sanitising of chimney, hob, cabinets and countertops.', 899.00, 'INR', 90, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.70, 3100);
+(288, 109, 'Bathroom Deep Cleaning', 'Descaling and disinfecting tiles, fittings and fixtures until spotless.', 499.00, 'INR', 60, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.60, 4400);
+(289, 109, 'Sofa & Carpet Shampooing', 'A machine shampoo wash to lift dirt and stains from sofas and carpets.', 799.00, 'INR', 75, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.50, 1870);
+(290, 109, 'Balcony & Grille Cleaning', 'Scrubbing and de-staining of balcony floors, grilles and railings.', 399.00, 'INR', 40, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.40, 760);
+(291, 109, 'Move-in / Move-out Cleaning', 'A thorough top-to-bottom clean to prep a home before or after moving.', 2799.00, 'INR', 180, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.70, 1120);
+(292, 110, 'General Pest Control', 'An odourless spray treatment that keeps common household pests away.', 999.00, 'INR', 60, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.60, 2800);
+(293, 110, 'Cockroach Control', 'A gel-based treatment that targets cockroaches at the source.', 699.00, 'INR', 45, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.50, 2100);
+(294, 110, 'Termite Control', 'An anti-termite treatment with long-lasting protection for wood and walls.', 2499.00, 'INR', 120, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.70, 940);
+(295, 110, 'Mosquito Fogging', 'A fogging treatment that clears mosquito breeding spots indoors and out.', 599.00, 'INR', 30, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.40, 1330);
+(296, 110, 'Bed Bug Treatment', 'A targeted treatment that eliminates bed bugs from mattresses and furniture.', 1299.00, 'INR', 90, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.50, 640);
+(297, 110, 'Rodent Control', 'Safe trapping and sealing to keep rodents out for good.', 899.00, 'INR', 50, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.40, 510);
+(298, 111, 'Office Deep Cleaning', 'A full deep clean for workstations, common areas and pantries.', 4999.00, 'INR', 300, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.60, 380);
+(299, 111, 'Carpet & Upholstery Cleaning', 'Machine cleaning for office carpets, chairs and fabric partitions.', 1899.00, 'INR', 120, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.50, 210);
+(300, 111, 'Sanitization Service', 'Disinfectant fogging across surfaces, desks and high-touch points.', 2499.00, 'INR', 90, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.60, 300);
+(301, 112, 'AC General Service', 'A foam-jet cleaning that restores cooling efficiency and airflow.', 549.00, 'INR', 45, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.70, 7100);
+(302, 112, 'AC Repair Visit', 'A diagnostic visit to identify and fix cooling or noise issues.', 299.00, 'INR', 30, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.50, 3900);
+(303, 112, 'AC Gas Refill', 'A refrigerant top-up for ACs that have lost cooling performance.', 2199.00, 'INR', 90, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.60, 1200);
+(304, 112, 'Split AC Installation', 'Professional mounting and installation of a new split AC unit.', 1499.00, 'INR', 120, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.60, 860);
+(305, 112, 'Window AC Installation', 'Secure fitting and sealing for a new window AC unit.', 999.00, 'INR', 90, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.50, 540);
+(306, 113, 'Refrigerator Repair', 'A diagnostic and repair visit for cooling, noise or leakage issues.', 399.00, 'INR', 45, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.50, 2600);
+(307, 113, 'Washing Machine Repair', 'Troubleshooting and repair for drainage, spin or drum issues.', 399.00, 'INR', 45, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.50, 3300);
+(308, 113, 'Microwave Repair', 'A repair visit for heating, sparking or control panel problems.', 349.00, 'INR', 30, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.40, 1150);
+(309, 113, 'Water Purifier Service', 'A filter check and service to keep your RO purifier running safely.', 449.00, 'INR', 40, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.60, 1980);
+(310, 113, 'Chimney Repair & Cleaning', 'Degreasing filters and checking suction for a smoke-free kitchen.', 599.00, 'INR', 50, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.50, 890);
+(311, 113, 'Geyser Repair & Service', 'A safety check and repair for heating elements and thermostats.', 449.00, 'INR', 40, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.40, 760);
+(312, 114, 'TV Repair', 'A diagnostic visit for display, sound or power issues on any TV.', 449.00, 'INR', 45, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.40, 720);
+(313, 114, 'Laptop Repair', 'Hardware and software troubleshooting for slow or malfunctioning laptops.', 599.00, 'INR', 60, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.30, 480);
+(314, 114, 'Inverter & Battery Repair', 'Testing and repair to keep your home inverter backup reliable.', 499.00, 'INR', 45, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.40, 390);
+(315, 115, 'Switch & Socket Repair', 'Fix or replace faulty switches and sockets safely.', 149.00, 'INR', 20, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.60, 3400);
+(316, 115, 'Ceiling Fan Installation', 'Secure mounting and wiring of a new ceiling fan.', 249.00, 'INR', 30, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.60, 2700);
+(317, 115, 'House Wiring Inspection', 'A full electrical safety check to catch wiring issues early.', 499.00, 'INR', 60, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.50, 980);
+(318, 115, 'MCB & Fuse Repair', 'Diagnosis and repair of tripping MCBs or blown fuses.', 299.00, 'INR', 30, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.50, 1340);
+(319, 115, 'Inverter Installation', 'Wiring and setup for a new home inverter and battery backup.', 799.00, 'INR', 75, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.50, 610);
+(320, 115, 'CCTV / Video Doorbell Install', 'Mounting and wiring for a smart camera or video doorbell.', 649.00, 'INR', 60, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.60, 540);
+(321, 116, 'Tap & Mixer Repair', 'Fix leaking or jammed taps and mixers in the kitchen or bathroom.', 149.00, 'INR', 20, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 4.60, 3900);
+(322, 116, 'Pipe Leakage Repair', 'Locate and seal pipe leaks before they cause water damage.', 349.00, 'INR', 40, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 4.50, 2200);
+(323, 116, 'Toilet & Flush Repair', 'Repair of flush tanks, jets or toilet seat fittings.', 299.00, 'INR', 35, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 4.50, 1870);
+(324, 116, 'Water Tank Cleaning', 'Deep cleaning and disinfection of overhead or underground tanks.', 599.00, 'INR', 60, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 4.40, 990);
+(325, 116, 'Water Heater Installation', 'Safe mounting and plumbing connection for a new geyser.', 549.00, 'INR', 60, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 4.50, 720);
+(326, 116, 'Drainage Cleaning', 'Clearing clogged drains to restore normal water flow.', 449.00, 'INR', 45, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 4.30, 650);
+(327, 117, 'Furniture Assembly', 'Assembly of flat-pack furniture like beds, wardrobes and desks.', 349.00, 'INR', 45, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.60, 1650);
+(328, 117, 'Door & Lock Repair', 'Fix sticking doors, loose hinges or faulty locks.', 299.00, 'INR', 30, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.50, 1420);
+(329, 117, 'Furniture Repair', 'Repair of wobbly, broken or damaged wooden furniture.', 399.00, 'INR', 40, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.40, 870);
+(330, 117, 'Curtain Rod Installation', 'Levelled mounting of curtain rods and brackets on any wall.', 249.00, 'INR', 30, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.50, 610);
+(331, 117, 'Wall Shelf Installation', 'Secure fitting of wall-mounted shelves and storage units.', 299.00, 'INR', 35, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.40, 480);
+(332, 118, 'Single Room Painting', 'Two coats of premium emulsion for one room''s walls and ceiling.', 3999.00, 'INR', 480, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.60, 610);
+(333, 118, 'Full Home Painting', 'A complete interior painting package sized for 2-3 BHK homes.', 24999.00, 'INR', 2400, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.70, 340);
+(334, 118, 'Accent Wall Texture Design', 'A textured finish applied to a feature wall for a design accent.', 4999.00, 'INR', 480, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.50, 210);
+(335, 118, 'Wood Polish & Varnish', 'Refinishing for doors, furniture and wood trims to restore their shine.', 2499.00, 'INR', 480, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.50, 260);
+(336, 118, 'Wall Stencil Art', 'A custom stencil design hand-painted onto a wall of your choice.', 1999.00, 'INR', 300, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.40, 180);
+(337, 119, 'Exterior Wall Painting', 'A weatherproof exterior painting package for independent houses.', 18999.00, 'INR', 2040, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.60, 260);
+(338, 119, 'Waterproofing Treatment', 'Preventive waterproofing for terraces, walls and bathrooms.', 5999.00, 'INR', 480, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.70, 430);
+(339, 119, 'Metal Grill & Gate Painting', 'Anti-rust primer and enamel finish for grilles, gates and railings.', 2999.00, 'INR', 480, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.40, 150);
 
 --
 -- Data for Name: fks_pricing_rules; Type: TABLE DATA; Schema: public; Owner: folks
