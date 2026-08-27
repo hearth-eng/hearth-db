@@ -263,7 +263,7 @@ Output:
 To create a backup of all database objects, run the below command:
 
 ```
-<prompt> /Library/PostgreSQL/17/pg_dump -U folks -d folksdb --schema-only -F p -f ./folks_schema.sql
+<prompt> /Library/PostgreSQL/17/bin/pg_dump -U folks -d folksdb --schema-only -F p -f ./folks_schema.sql
 
 Password: ********
 
@@ -274,7 +274,7 @@ It will create a sql file `folks_schema.sql` in the current directory. The file 
 #### Backup All Table Data
 
 ```
-<prompt> /Library/PostgreSQL/17/pg_dump -U folks -d folksdb --data-only --column-inserts -f ./folks_test_data.sql
+<prompt> /Library/PostgreSQL/17/bin/pg_dump -U folks -d folksdb --data-only --column-inserts -f ./folks_test_data.sql
 
 Password: ********
 
@@ -286,7 +286,7 @@ This will create a file `folks_test_data.sql` in the current directory containin
 #### Backup Single Table Data
 
 ```
-<prompt> /Library/PostgreSQL/17/pg_dump -U folks -d folksdb --table <table_name> --data-only --column-inserts -f ./folks_test_data_table_name.sql
+<prompt> /Library/PostgreSQL/17/bin/pg_dump -U folks -d folksdb --table <table_name> --data-only --column-inserts -f ./folks_test_data_table_name.sql
 
 Password: ********
 
