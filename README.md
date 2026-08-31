@@ -91,8 +91,7 @@ issue with the UI, you can always use the above set of commands.
 **Connect to Postgres:**
 
 ```
-sudo -u postgres /Library/PostgreSQL/17/bin/psql
-password:<kerberose password>
+/Library/PostgreSQL/17/bin/psql -U postgres
 password for postgres:<postgres user pwd>
 
 ```
@@ -340,3 +339,29 @@ SELECT schemaname, sequencename, sequenceowner, data_type, start_value, incremen
 ```
 
 Both the above queries should return `17` rows.
+
+### Drop Database
+
+```
+DROP DATABASE IF EXISTS folksdb;
+```
+
+### Drop a Role
+
+```
+DROP ROLE folks;
+```
+
+### Check The Available Databases
+
+```
+SELECT datname
+ FROM pg_database;
+```
+
+### Check The Available Roles
+
+```
+SELECT rolname
+  FROM pg_roles;
+```

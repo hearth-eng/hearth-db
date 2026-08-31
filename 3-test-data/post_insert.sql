@@ -10,7 +10,7 @@ SELECT setval('public.fks_documents_document_id_seq', COALESCE(MAX(document_id),
 SELECT setval('public.fks_categories_category_id_seq', COALESCE(MAX(category_id), 1)) FROM public.fks_categories;
 SELECT setval('public.fks_services_service_id_seq', COALESCE(MAX(service_id), 1)) FROM public.fks_services;
 SELECT setval('public.fks_professional_services_id_seq', COALESCE(MAX(id), 1)) FROM public.fks_professional_services;
-SELECT setval('public.fks_availability_availability_id_seq', COALESCE(MAX(availability_id), 1)) FROM public.fks_availability;
+SELECT setval('public.fks_availabilities_availability_id_seq', COALESCE(MAX(availability_id), 1)) FROM public.fks_availabilities;
 SELECT setval('public.fks_payments_payment_id_seq', COALESCE(MAX(payment_id), 1)) FROM public.fks_payments;
 SELECT setval('public.fks_pricing_rules_rule_id_seq', COALESCE(MAX(rule_id), 1)) FROM public.fks_pricing_rules;
 SELECT setval('public.fks_reviews_review_id_seq', COALESCE(MAX(review_id), 1)) FROM public.fks_reviews;

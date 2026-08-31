@@ -35,8 +35,8 @@ ALTER TABLE fks_bookings
 ADD CONSTRAINT fks_bookings_pk
 PRIMARY KEY (booking_id);
 
-ALTER TABLE fks_availability
-ADD CONSTRAINT fks_availability_pk
+ALTER TABLE fks_availabilities
+ADD CONSTRAINT fks_availabilities_pk
 PRIMARY KEY (availability_id);
 
 ALTER TABLE fks_reviews
@@ -83,6 +83,12 @@ ALTER TABLE fks_coupon_usage
 ADD CONSTRAINT fks_coupon_usage_pk
 PRIMARY KEY (usage_id);
 
+-- Unique Key Constraint --
+
+ALTER TABLE fks_professional_services
+ADD CONSTRAINT fks_professional_services_uk
+UNIQUE (professional_id, service_id);
+
 -- Foreign Key Constraint --
 
 ALTER TABLE fks_addresses
@@ -110,8 +116,8 @@ ADD CONSTRAINT fks_bookings_fk2
 FOREIGN KEY (address_id)
 REFERENCES fks_addresses (address_id);
 
-ALTER TABLE fks_availability
-ADD CONSTRAINT fks_availability_fk1
+ALTER TABLE fks_availabilities
+ADD CONSTRAINT fks_availabilities_fk1
 FOREIGN KEY (professional_id)
 REFERENCES fks_professionals (professional_id);
 
