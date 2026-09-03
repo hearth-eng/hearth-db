@@ -144,11 +144,14 @@ CREATE TABLE fks_payments (
 
 CREATE TABLE fks_coupons (
     coupon_id           INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
-    code                VARCHAR(50)     NOT NULL,
+    code                VARCHAR(16)     NOT NULL,
+    title               VARCHAR(48)     NOT NULL,
+    description         VARCHAR(128)    NOT NULL,
+    terms               VARCHAR(128)    NOT NULL,
     discount_type       VARCHAR(16)     NOT NULL,
     discount_value      NUMERIC(7, 2)   ,
     max_discount        NUMERIC(7, 2)   ,
-    expiry_date         DATE            NOT NULL,
+    expiry_date         DATE            ,
     usage_limit         SMALLINT        ,
     created_at          TIMESTAMP       NOT NULL,
     updated_at          TIMESTAMP     

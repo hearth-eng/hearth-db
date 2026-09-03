@@ -1941,46 +1941,10 @@ VALUES
 -- Data for Name: fks_coupons; Type: TABLE DATA; Schema: public; Owner: folks
 --
 
-INSERT INTO public.fks_coupons (coupon_id, code, discount_type, discount_value, max_discount, expiry_date, usage_limit, created_at, updated_at) 
-OVERRIDING SYSTEM VALUE
-VALUES 
-(1, 'SUPER861', 'PERCENT', 40.00, 687.00, '2026-07-03', 397, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(2, 'MEGA192', 'FLAT', 150.00, 150.00, '2026-09-09', 536, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(3, 'DEAL203', 'FLAT', 100.00, 100.00, '2026-07-19', 225, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(4, 'BEAUTY254', 'FLAT', 300.00, 300.00, '2026-08-20', 509, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(5, 'HOME415', 'FLAT', 200.00, 200.00, '2026-05-19', NULL, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(6, 'CLEAN456', 'PERCENT', 20.00, 306.00, '2026-06-02', 81, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(7, 'UC497', 'FLAT', 500.00, 500.00, '2026-05-22', 449, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(8, 'WELCOME378', 'PERCENT', 50.00, 719.00, '2026-07-26', 490, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(9, 'MEGA599', 'FLAT', 300.00, 300.00, '2026-08-04', NULL, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(10, 'SUPER5310', 'PERCENT', 10.00, 534.00, '2026-07-24', 463, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(11, 'SAVE5611', 'FLAT', 200.00, 200.00, '2026-08-25', NULL, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(12, 'DEAL2412', 'PERCENT', 20.00, 405.00, '2026-08-07', 544, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(13, 'SAVE4813', 'FLAT', 250.00, 250.00, '2026-08-28', 298, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(14, 'SUPER2114', 'FLAT', 250.00, 250.00, '2026-07-14', 321, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(15, 'UC4915', 'FLAT', 250.00, 250.00, '2026-08-23', 392, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(16, 'BEAUTY4916', 'FLAT', 700.00, 700.00, '2026-06-25', 410, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(17, 'SAVE2617', 'PERCENT', 15.00, 532.00, '2026-08-10', 352, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(18, 'FIRST6418', 'PERCENT', 25.00, 596.00, '2026-06-08', 268, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(19, 'BEAUTY1219', 'PERCENT', 25.00, 894.00, '2026-05-24', 542, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(20, 'WELCOME6520', 'PERCENT', 20.00, 392.00, '2026-06-13', NULL, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(21, 'FIX2021', 'PERCENT', 30.00, 755.00, '2026-09-12', 142, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(22, 'FIRST8322', 'FLAT', 500.00, 500.00, '2026-06-11', 518, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(23, 'SUPER1023', 'PERCENT', 40.00, 531.00, '2026-08-24', 144, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(24, 'WELCOME8724', 'FLAT', 500.00, 500.00, '2026-07-07', 145, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(25, 'UC3525', 'FLAT', 200.00, 200.00, '2026-07-12', 519, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(26, 'CLEAN9826', 'FLAT', 200.00, 200.00, '2026-07-17', 150, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(27, 'MEGA7827', 'PERCENT', 40.00, 894.00, '2026-06-06', NULL, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(28, 'BEAUTY8228', 'FLAT', 150.00, 150.00, '2026-06-28', NULL, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(29, 'CLEAN1429', 'FLAT', 200.00, 200.00, '2026-08-12', 109, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(30, 'HOME5830', 'FLAT', 500.00, 500.00, '2026-06-02', 394, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(31, 'SAVE1731', 'PERCENT', 10.00, 594.00, '2026-05-19', 76, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(32, 'SUPER4832', 'PERCENT', 30.00, 530.00, '2026-08-14', 266, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(33, 'SAVE4033', 'FLAT', 300.00, 300.00, '2026-05-23', NULL, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(34, 'OFFER3434', 'FLAT', 250.00, 250.00, '2026-09-09', NULL, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(35, 'DEAL9035', 'PERCENT', 40.00, 1195.00, '2026-08-31', NULL, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(36, 'SAVE1436', 'PERCENT', 20.00, 557.00, '2026-08-12', 425, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(37, 'WELCOME1437', 'FLAT', 100.00, 100.00, '2026-07-09', 448, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(38, 'MEGA8238', 'PERCENT', 10.00, 382.00, '2026-07-28', 140, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(39, 'HOME5339', 'PERCENT', 25.00, 901.00, '2026-09-05', NULL, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(40, 'MEGA3440', 'PERCENT', 15.00, 525.00, '2026-05-27', 386, CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL);
+INSERT INTO public.fks_coupons (coupon_id, code, title, description, terms, discount_type, discount_value, max_discount, expiry_date, usage_limit, created_at, updated_at)
+ OVERRIDING SYSTEM VALUE
+ VALUES
+ (1, 'WELCOME50', 'Welcome offer', 'Flat ₹50 off your first booking on Folks.', 'Valid on orders above ₹299. One-time use per account.', 'FLAT', 50.00, 50.00, NULL, 1, '2026-09-02 23:22:47.717698', '2026-09-02 23:22:47.717698'),
+ (2, 'FOLKS100', '₹100 off', '₹100 off any booking above ₹999.', 'Valid on all categories. Cannot be combined with other offers.', 'FLAT', 100.00, 100.00, '2026-08-31', NULL, '2026-09-02 23:22:47.717698', '2026-09-02 23:22:47.717698'),
+ (3, 'SALON20', '20% off Salon & Makeup', '20% off on any Salon & Makeup service, up to ₹200.', 'Applicable on Women''s Salon, Men''s Salon and Bridal & Party Makeup.', 'PERCENTAGE', 20.00, 200.00, '2026-08-15', NULL, '2026-09-02 23:22:47.717698', '2026-09-02 23:22:47.717698'),
+ (4, 'REFER200', 'Refer & earn', '₹200 Folks credit for every friend who completes their first booking.', 'Credit is added to your account within 24 hours of their booking.', 'CREDIT', 200.00, 200.00, NULL, NULL, '2026-09-02 23:22:47.717698', '2026-09-02 23:22:47.717698');
