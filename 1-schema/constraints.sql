@@ -3,6 +3,22 @@
 
 -- Primary Key Constraint --
 
+ALTER TABLE fks_countries
+ADD CONSTRAINT fks_countries_pk
+PRIMARY KEY (country_id);
+
+ALTER TABLE fks_provinces
+ADD CONSTRAINT fks_provinces_pk
+PRIMARY KEY (province_id);
+
+ALTER TABLE fks_cities
+ADD CONSTRAINT fks_cities_pk
+PRIMARY KEY (city_id);
+
+ALTER TABLE fks_neighbourhoods
+ADD CONSTRAINT fks_neighbourhoods_pk
+PRIMARY KEY (neighbourhood_id);
+
 ALTER TABLE fks_payments
 ADD CONSTRAINT fks_payments_pk
 PRIMARY KEY (payment_id);
@@ -29,6 +45,10 @@ PRIMARY KEY (professional_id);
 
 ALTER TABLE fks_professional_services
 ADD CONSTRAINT fks_professional_services_pk
+PRIMARY KEY (id);
+
+ALTER TABLE fks_professional_neighbourhoods
+ADD CONSTRAINT fks_professional_neighbourhoods_pk
 PRIMARY KEY (id);
 
 ALTER TABLE fks_bookings
@@ -83,13 +103,49 @@ ALTER TABLE fks_coupon_usage
 ADD CONSTRAINT fks_coupon_usage_pk
 PRIMARY KEY (usage_id);
 
+
 -- Unique Key Constraint --
 
-ALTER TABLE fks_professional_services
-ADD CONSTRAINT fks_professional_services_uk
-UNIQUE (professional_id, service_id);
+ALTER TABLE fks_countries
+ADD CONSTRAINT fks_countries_uk
+UNIQUE (country_code, country_name);
+
+ALTER TABLE fks_provinces
+ADD CONSTRAINT fks_provinces_uk
+UNIQUE (country_id, province_name);
+
+ALTER TABLE fks_cities
+ADD CONSTRAINT fks_cities_uk
+UNIQUE (province_id, city_name);
+
+ALTER TABLE fks_users
+ADD CONSTRAINT fks_users_uk1
+UNIQUE (external_id);
+
+ALTER TABLE fks_users
+ADD CONSTRAINT fks_users_uk2
+UNIQUE (phone1);
+
+ALTER TABLE fks_professional_neighbourhoods
+ADD CONSTRAINT fks_professional_neighbourhoods_uk
+UNIQUE (professional_id, neighbourhood_id);
 
 -- Foreign Key Constraint --
+
+ALTER TABLE fks_provinces
+ADD CONSTRAINT fks_provines_fk1
+FOREIGN KEY (country_id)
+REFERENCES fks_countries (country_id);
+
+ALTER TABLE fks_cities
+ADD CONSTRAINT fks_cities_fk1
+FOREIGN KEY (province_id)
+REFERENCES fks_provinces (province_id);
+
+ALTER TABLE fks_neighbourhoods
+ADD CONSTRAINT fks_neighbourhoods_fk1
+FOREIGN KEY (city_id)
+REFERENCES fks_cities (city_id);
 
 ALTER TABLE fks_addresses
 ADD CONSTRAINT fks_addresses_fk1
@@ -135,6 +191,16 @@ ALTER TABLE fks_professional_services
 ADD CONSTRAINT fks_professional_services_fk2
 FOREIGN KEY (service_id)
 REFERENCES fks_services (service_id);
+
+ALTER TABLE fks_professional_neighbourhoods
+ADD CONSTRAINT fks_professional_neighbourhoods_fk1
+FOREIGN KEY (professional_id)
+REFERENCES fks_professionals(professional_id);
+
+ALTER TABLE fks_professional_neighbourhoods
+ADD CONSTRAINT fks_professional_neighbourhoods_fk2
+FOREIGN KEY (neighbourhood_id)
+REFERENCES fks_neighbourhoods(neighbourhood_id);
 
 ALTER TABLE fks_categories
 ADD CONSTRAINT fks_categories_fk1

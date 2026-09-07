@@ -3,10 +3,3 @@
 
 -- Indexes --
 
-CREATE UNIQUE INDEX fks_users_uk1
-ON fks_users
-USING BTREE (external_id);
-
-CREATE UNIQUE INDEX fks_users_uk2
-ON fks_users
-USING BTREE (phone1);

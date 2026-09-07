@@ -1,7 +1,57 @@
 -- Run the below script to generate the tables --
 -- h2-script.sh -url jdbc:h2:tcp://localhost:9092/~/testdb -user test -password test123 -script /Users/schan280/temp/folks-app/src/main/resources/db/schema.sql --
 
--- Table Script --
+-- Table Script (Maintain the order of creation) --
+
+-- 0. Serving/Operating Cities --
+
+CREATE TABLE fks_countries (
+    country_id          INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
+    country_code        VARCHAR(3)      NOT NULL,
+    country_name        VARCHAR(128)    NOT NULL,
+    language_code       VARCHAR(3)      NOT NULL,
+    language            VARCHAR(30)     NOT NULL,
+    locale_code         VARCHAR(8)      NOT NULL,
+    currency_code       VARCHAR(3)      NOT NULL,
+    currency            VARCHAR(20)     NOT NULL,
+    timezone            VARCHAR(32)     NOT NULL,
+    created_at          TIMESTAMP       NOT NULL,
+    updated_at          TIMESTAMP       
+);
+
+CREATE TABLE fks_provinces (
+    province_id         INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
+    country_id          INT             NOT NULL,
+    province_name       VARCHAR(128)    ,
+    region              VARCHAR(32)     ,
+    language            VARCHAR(30)     NOT NULL,
+    created_at          TIMESTAMP       NOT NULL,
+    updated_at          TIMESTAMP       
+);
+
+CREATE TABLE fks_cities (
+    city_id             INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
+    province_id         INT             NOT NULL,
+    city_name           VARCHAR(50)     NOT NULL,
+    image_key           VARCHAR(128)    ,
+    status              VARCHAR(20)     NOT NULL CHECK (status IN ('PLANNED', 'ACTIVE', 'PAUSED', 'INACTIVE')),
+    launched_at         DATE            ,
+    created_at          TIMESTAMP       NOT NULL,
+    updated_at          TIMESTAMP       
+);
+
+CREATE TABLE fks_neighbourhoods (
+    neighbourhood_id    INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
+    city_id             INT             NOT NULL,
+    locality            VARCHAR(80)     NOT NULL,
+    pincode             INT             NOT NULL,
+    latitude            NUMERIC(20, 6)  ,
+    longitude           NUMERIC(20, 6)  ,
+    is_serviceable      SMALLINT        NOT NULL,
+    created_at          TIMESTAMP       NOT NULL,
+    updated_at          TIMESTAMP       
+);
+
 
 -- 1. Users (Customers + Service Professionals + Admins)
 
@@ -27,6 +77,7 @@ CREATE TABLE fks_addresses (
     address_line1       VARCHAR(128)    NOT NULL,
     address_line2       VARCHAR(128)    ,
     city                VARCHAR(64)     NOT NULL,
+    locality            VARCHAR(80)     NOT NULL,
     state               VARCHAR(64)     NOT NULL,
     pincode             INT             NOT NULL,
     latitude            NUMERIC(20, 6)  ,
@@ -65,7 +116,7 @@ CREATE TABLE fks_services (
     updated_at          TIMESTAMP     
 );
 
--- Professional Profiles
+-- 3. Professional Profiles
 
 CREATE TABLE fks_professionals (
     professional_id     INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
@@ -91,7 +142,32 @@ CREATE TABLE fks_professional_services (
     updated_at          TIMESTAMP     
 );
 
--- 3. Booking & Scheduling
+-- Professional Service Areas
+
+CREATE TABLE fks_professional_neighbourhoods (
+    id                  INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
+    professional_id     INT             NOT NULL,
+    neighbourhood_id    INT             NOT NULL,
+    status              VARCHAR(20)     NOT NULL CHECK (status IN ('PACTIVE', 'INACTIVE')),
+    created_at          TIMESTAMP       NOT NULL,
+    updated_at          TIMESTAMP       
+);
+
+-- Professional's Availability
+
+CREATE TABLE fks_availabilities (
+    availability_id     INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
+    professional_id     INT             NOT NULL,
+    date                DATE            NOT NULL,
+    start_time          TIME            ,
+    end_time            TIME            ,
+    is_booked           SMALLINT        NOT NULL,
+    created_at          TIMESTAMP       NOT NULL,
+    updated_at          TIMESTAMP     
+);
+
+
+-- 4. Booking & Scheduling
 
 -- Booking
 
@@ -111,20 +187,7 @@ CREATE TABLE fks_bookings (
     updated_at          TIMESTAMP       
 );
 
--- Time Slots / Availability
-
-CREATE TABLE fks_availabilities (
-    availability_id     INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
-    professional_id     INT             NOT NULL,
-    date                DATE            NOT NULL,
-    start_time          TIME            ,
-    end_time            TIME            ,
-    is_booked           SMALLINT        NOT NULL,
-    created_at          TIMESTAMP       NOT NULL,
-    updated_at          TIMESTAMP     
-);
-
--- 4. Payments & Pricing
+-- 5. Payments & Pricing
 
 -- Payments
 
@@ -167,7 +230,7 @@ CREATE TABLE fks_coupon_usage (
     updated_at          TIMESTAMP     
 );
 
--- 5. Ratings & Reviews
+-- 6. Ratings & Reviews
 
 CREATE TABLE fks_reviews (
     review_id           INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
@@ -180,7 +243,7 @@ CREATE TABLE fks_reviews (
     updated_at          TIMESTAMP     
 );
 
--- 6. Communication
+-- 7. Communication
 
 CREATE TABLE fks_conversations (
     conversation_id     INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
@@ -199,7 +262,7 @@ CREATE TABLE fks_messages (
     updated_at          TIMESTAMP     
 );
 
--- 7. Operations & Logistics
+-- 8. Operations & Logistics
 
 CREATE TABLE fks_job_status (
     log_id              INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
@@ -210,7 +273,7 @@ CREATE TABLE fks_job_status (
     updated_at          TIMESTAMP     
 );
 
--- 8. Admin & Compliance
+-- 9. Admin & Compliance
 
 -- Documents (KYC, Verification)
 
@@ -227,7 +290,7 @@ CREATE TABLE fks_documents (
     updated_at          TIMESTAMP     
 );
 
--- 9. Surge Pricing
+-- 10. Surge Pricing
 
 CREATE TABLE fks_pricing_rules (
     rule_id             INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
@@ -240,7 +303,7 @@ CREATE TABLE fks_pricing_rules (
     updated_at          TIMESTAMP     
 );
 
--- 10. Wallet Systems
+-- 11. Wallet Systems
 
 CREATE TABLE fks_wallets (
     wallet_id           VARCHAR(36)     NOT NULL,
@@ -259,7 +322,7 @@ CREATE TABLE fks_wallet_transactions (
     updated_at          TIMESTAMP     
 );
 
--- 11. Analytics / Audit
+-- 12. Analytics / Audit
 
 CREATE TABLE fks_audit_logs (
     log_id              INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
