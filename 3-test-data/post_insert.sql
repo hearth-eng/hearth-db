@@ -3,10 +3,10 @@
 
 -- Reset Sequences --
 
-SELECT setval('public.fks_countries_country_id_seq', COALESCE(MAX(user_id), 1)) FROM public.fks_countries;
-SELECT setval('public.fks_provinces_province_id_seq', COALESCE(MAX(user_id), 1)) FROM public.fks_provinces;
-SELECT setval('public.fks_cities_city_id_seq', COALESCE(MAX(user_id), 1)) FROM public.fks_cities;
-SELECT setval('public.fks_neighbourhoods_neighbourhood_id_seq', COALESCE(MAX(user_id), 1)) FROM public.fks_neighbourhoods;
+SELECT setval('public.fks_countries_country_id_seq', COALESCE(MAX(country_id), 1)) FROM public.fks_countries;
+SELECT setval('public.fks_provinces_province_id_seq', COALESCE(MAX(province_id), 1)) FROM public.fks_provinces;
+SELECT setval('public.fks_cities_city_id_seq', COALESCE(MAX(city_id), 1)) FROM public.fks_cities;
+SELECT setval('public.fks_neighbourhoods_neighbourhood_id_seq', COALESCE(MAX(neighbourhood_id), 1)) FROM public.fks_neighbourhoods;
 SELECT setval('public.fks_users_user_id_seq', COALESCE(MAX(user_id), 1)) FROM public.fks_users;
 SELECT setval('public.fks_addresses_address_id_seq', COALESCE(MAX(address_id), 1)) FROM public.fks_addresses;
 SELECT setval('public.fks_professionals_professional_id_seq', COALESCE(MAX(professional_id), 1)) FROM public.fks_professionals;
