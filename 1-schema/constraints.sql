@@ -118,6 +118,10 @@ ALTER TABLE fks_cities
 ADD CONSTRAINT fks_cities_uk
 UNIQUE (province_id, city_name);
 
+ALTER TABLE fks_neighbourhoods
+ADD CONSTRAINT fks_neighbourhoods_uk
+UNIQUE (locality, pincode);
+
 ALTER TABLE fks_users
 ADD CONSTRAINT fks_users_uk1
 UNIQUE (external_id);
@@ -151,6 +155,11 @@ ALTER TABLE fks_addresses
 ADD CONSTRAINT fks_addresses_fk1
 FOREIGN KEY (user_id)
 REFERENCES fks_users (user_id);
+
+ALTER TABLE fks_addresses
+ADD CONSTRAINT fks_addresses_fk2
+FOREIGN KEY (neighbourhood_id)
+REFERENCES fks_neighbourhoods (neighbourhood_id);
 
 ALTER TABLE fks_professionals
 ADD CONSTRAINT fks_professionals_fk1

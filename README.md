@@ -40,25 +40,44 @@ we will need it in subsequent steps.
 
 Once Postgres is installed (in the default installation directory), you can use the below command to stop and start the service.
 
-Open a new Terminal.
+Open a new Terminal. Check if the service is up:
 
-Check if the service is up:
+In `Mac`
 
 ```
-# Check the postgres process:
 <prompt> ps -aef | grep postgres
-
 
 # Expected Result
 
-  502 68256     1   0  5:55PM ??         0:00.04 /Library/PostgreSQL/17/bin/postgres -D /Library/PostgreSQL/17/data
-  502 68257 68256   0  5:55PM ??         0:00.00 postgres: logger
-  502 68259 68256   0  5:55PM ??         0:00.00 postgres: checkpointer
-  502 68260 68256   0  5:55PM ??         0:00.00 postgres: background writer
-  502 68261 68256   0  5:55PM ??         0:00.00 postgres: walwriter
-  502 68262 68256   0  5:55PM ??         0:00.00 postgres: autovacuum launcher   
-  502 68263 68256   0  5:55PM ??         0:00.00 postgres: stats collector
-  502 68264 68256   0  5:55PM ??         0:00.00 postgres: logical replication launcher
+    502 68256     1   0  5:55PM ??         0:00.04 /Library/PostgreSQL/17/bin/postgres -D /Library/PostgreSQL/17/data
+    502 68257 68256   0  5:55PM ??         0:00.00 postgres: logger
+    502 68259 68256   0  5:55PM ??         0:00.00 postgres: checkpointer
+    502 68260 68256   0  5:55PM ??         0:00.00 postgres: background writer
+    502 68261 68256   0  5:55PM ??         0:00.00 postgres: walwriter
+    502 68262 68256   0  5:55PM ??         0:00.00 postgres: autovacuum launcher   
+    502 68263 68256   0  5:55PM ??         0:00.00 postgres: stats collector
+    502 68264 68256   0  5:55PM ??         0:00.00 postgres: logical replication launcher
+
+```
+
+In `Windows`
+
+```
+<prompt> C:\Project\folks-db>tasklist | findstr /I "postgres"
+
+# Expected Result
+
+    postgres.exe                  6984 Services                   0     14,332 K
+    postgres.exe                  8208 Services                   0     10,904 K
+    postgres.exe                  8264 Services                   0     11,076 K
+    postgres.exe                  8276 Services                   0     11,416 K
+    postgres.exe                  8292 Services                   0     13,120 K
+    postgres.exe                  8304 Services                   0     18,064 K
+    postgres.exe                  8312 Services                   0     12,416 K
+    postgres.exe                  8616 Services                   0     15,312 K
+    postgres.exe                  8628 Services                   0     11,888 K
+    postgres.exe                  8636 Services                   0     11,740 K
+    postgres.exe                 18380 Services                   0     19,300 K
 
 ```
 
@@ -74,11 +93,20 @@ Password: <kerberose password>
 
 #### Start a Postgres Server
 
+In `Mac`
+
 ```
 <prompt> sudo -u postgres /Library/PostgreSQL/17/bin/pg_ctl -D /Library/PostgreSQL/17/data start
 Password: <kerberose password>
 
 ```
+
+In `Windows`
+
+1. Press the Windows Key + R to open the Run dialog box.
+1. Type services.msc and press Enter.
+1. Scroll down to find the PostgreSQL service (named like postgresql-x64-18 or your specific version number).
+1. Right-click the service and select Start (or click Start in the left panel)
 
 Although the recent version of Postgres may provide the UI to manage the database server, but in case there is some 
 issue with the UI, you can always use the above set of commands.
@@ -145,6 +173,13 @@ At this stage, you have created an empty schema for Folks. Now we need to run th
 Password for user folks: p@$$word
 
 ```
+
+For Windows
+
+```
+<prompt> C:\Progra~1\PostgreSQL\18\bin\psql -h localhost -U folks -d folksdb -v ON_ERROR_STOP=1 -f scripts/setup.sql
+```
+
 
 **Login back to Postgres with folks user:**
 
