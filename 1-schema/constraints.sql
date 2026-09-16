@@ -168,8 +168,8 @@ REFERENCES fks_users (user_id);
 
 ALTER TABLE fks_documents
 ADD CONSTRAINT fks_documents_fk1
-FOREIGN KEY (user_id)
-REFERENCES fks_users (user_id);
+FOREIGN KEY (professional_id)
+REFERENCES fks_professionals (professional_id);
 
 ALTER TABLE fks_bookings
 ADD CONSTRAINT fks_bookings_fk1

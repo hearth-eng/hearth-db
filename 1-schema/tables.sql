@@ -277,7 +277,7 @@ CREATE TABLE fks_job_status (
 
 CREATE TABLE fks_documents (
     document_id         INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
-    user_id             INT             NOT NULL,
+    professional_id     INT             NOT NULL,
     application_id      VARCHAR(36)     NOT NULL,
     document_type       VARCHAR(50)     NOT NULL,
     document_number     VARCHAR(50)     NOT NULL,
