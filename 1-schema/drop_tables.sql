@@ -22,11 +22,11 @@ DROP TABLE IF EXISTS fks_coupons;
 DROP TABLE IF EXISTS fks_availabilities;
 DROP TABLE IF EXISTS fks_professional_neighbourhoods;
 DROP TABLE IF EXISTS fks_professional_services;
-DROP TABLE IF EXISTS fks_professionals;
 
 -- user related
 DROP TABLE IF EXISTS fks_documents;
 DROP TABLE IF EXISTS fks_addresses;
+DROP TABLE IF EXISTS fks_professionals;
 DROP TABLE IF EXISTS fks_users;
 
 -- category related
