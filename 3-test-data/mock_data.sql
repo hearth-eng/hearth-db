@@ -18,6 +18,109 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Data for Name: fks_pricing_rules; Type: TABLE DATA; Schema: public; Owner: folks
+--
+
+INSERT INTO public.fks_pricing_rules (rule_id, service_id, city, multiplier, start_time, end_time, created_at, updated_at) 
+OVERRIDING SYSTEM VALUE
+VALUES 
+(1, 1, 'Kolkata', 1.08, '2026-08-25 12:45:00', '2026-09-23 18:24:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(2, 2, 'Kolkata', 1.30, '2026-08-30 19:15:00', '2026-09-27 19:25:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(3, 3, 'Kolkata', 1.10, '2026-08-07 14:00:00', '2026-09-07 18:02:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(4, 4, 'Kolkata', 1.19, '2026-09-10 17:30:00', '2026-10-10 22:24:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(5, 5, 'Kolkata', 1.06, '2026-06-04 01:00:00', '2026-06-16 03:38:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(6, 6, 'Kolkata', 1.26, '2026-06-27 19:00:00', '2026-07-17 00:27:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(7, 7, 'Bangalore', 1.14, '2026-09-17 06:00:00', '2026-10-17 12:42:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(8, 8, 'Bangalore', 1.33, '2026-10-13 20:15:00', '2026-11-23 21:46:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(9, 9, 'Bangalore', 1.18, '2026-06-21 00:45:00', '2026-08-05 05:18:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(10, 10, 'Bangalore', 1.15, '2026-07-07 09:15:00', '2026-07-23 11:01:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(11, 11, 'Bangalore', 1.14, '2026-06-26 17:30:00', '2026-07-13 21:54:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(12, 12, 'Bangalore', 1.26, '2026-09-21 15:00:00', '2026-10-05 21:32:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(13, 13, 'Bangalore', 1.24, '2026-09-27 04:00:00', '2026-10-24 04:25:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(14, 14, 'Bangalore', 1.30, '2026-09-27 11:45:00', '2026-10-24 12:53:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(15, 15, 'Mumbai', 1.18, '2026-07-24 02:00:00', '2026-09-06 03:37:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(16, 16, 'Mumbai', 1.13, '2026-06-23 16:15:00', '2026-07-03 23:55:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(17, 17, 'Mumbai', 1.30, '2026-09-01 06:30:00', '2026-09-25 08:20:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(18, 18, 'Mumbai', 1.28, '2026-09-26 14:30:00', '2026-10-14 15:24:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(19, 19, 'Mumbai', 1.19, '2026-07-23 16:15:00', '2026-08-14 18:56:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(20, 20, 'Mumbai', 1.13, '2026-09-21 15:30:00', '2026-09-28 16:02:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(21, 21, 'Mumbai', 1.08, '2026-07-30 06:15:00', '2026-08-08 08:22:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(22, 22, 'Mumbai', 1.16, '2026-05-19 09:45:00', '2026-06-13 10:33:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(23, 23, 'Chennai', 1.22, '2026-09-15 18:30:00', '2026-09-30 02:06:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(24, 24, 'Chennai', 1.27, '2026-07-22 09:30:00', '2026-09-02 12:15:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(25, 25, 'Chennai', 1.11, '2026-09-25 06:45:00', '2026-10-03 10:32:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(26, 26, 'Chennai', 1.10, '2026-08-27 10:15:00', '2026-09-04 11:08:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(27, 27, 'Chennai', 1.21, '2026-07-24 18:30:00', '2026-09-06 00:04:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(28, 28, 'Chennai', 1.12, '2026-11-05 01:30:00', '2026-11-28 06:18:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(29, 29, 'Chennai', 1.32, '2026-10-23 03:45:00', '2026-11-28 09:03:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(30, 30, 'Chennai', 1.20, '2026-07-14 22:00:00', '2026-07-23 00:30:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(31, 31, 'Hyderabad', 1.15, '2026-08-26 01:45:00', '2026-09-19 06:51:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(32, 32, 'Hyderabad', 1.23, '2026-08-06 08:45:00', '2026-09-12 10:23:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(33, 33, 'Hyderabad', 1.33, '2026-07-13 07:45:00', '2026-08-22 12:13:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(34, 34, 'Hyderabad', 1.21, '2026-06-11 09:15:00', '2026-07-03 09:50:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(35, 35, 'Hyderabad', 1.21, '2026-09-05 18:45:00', '2026-10-17 01:35:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(36, 36, 'Hyderabad', 1.16, '2026-06-17 12:00:00', '2026-07-25 16:37:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(37, 37, 'Hyderabad', 1.17, '2026-05-24 08:00:00', '2026-06-27 10:09:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(38, 38, 'Hyderabad', 1.23, '2026-05-20 13:15:00', '2026-06-20 13:53:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(39, 39, 'Hyderabad', 1.21, '2026-08-09 05:00:00', '2026-08-16 08:28:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(40, 40, 'Hyderabad', 1.16, '2026-09-12 06:30:00', '2026-09-26 15:23:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(41, 1, 'Hyderabad', 1.26, '2026-08-18 22:15:00', '2026-09-17 04:38:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(42, 2, 'Hyderabad', 1.16, '2026-10-30 14:00:00', '2026-11-29 15:47:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(43, 3, 'Dispur', 1.10, '2026-07-12 10:15:00', '2026-07-31 16:11:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(44, 4, 'Dispur', 1.22, '2026-08-13 13:45:00', '2026-08-30 18:25:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(45, 5, 'Dispur', 1.29, '2026-08-26 13:30:00', '2026-09-03 21:11:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(46, 6, 'Dispur', 1.15, '2026-07-24 04:45:00', '2026-08-03 06:13:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(47, 7, 'Dispur', 1.13, '2026-11-02 07:45:00', '2026-11-28 12:10:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(48, 8, 'Dispur', 1.10, '2026-10-27 08:15:00', '2026-12-09 11:08:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(49, 9, 'Dispur', 1.20, '2026-08-12 15:15:00', '2026-08-20 19:15:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(50, 10, 'Dispur', 1.04, '2026-08-31 17:45:00', '2026-09-17 00:36:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(51, 11, 'Dispur', 1.24, '2026-07-18 07:00:00', '2026-08-22 11:18:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(52, 12, 'Dispur', 1.22, '2026-05-12 16:00:00', '2026-06-10 22:50:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(53, 13, 'Dispur', 1.16, '2026-10-02 20:15:00', '2026-10-13 23:55:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(54, 14, 'Dispur', 1.17, '2026-06-23 10:30:00', '2026-07-20 18:46:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(55, 15, 'Dispur', 1.08, '2026-10-26 17:15:00', '2026-12-08 22:14:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(56, 16, 'Dispur', 1.29, '2026-08-21 20:00:00', '2026-09-18 01:44:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(57, 17, 'Dispur', 1.37, '2026-08-04 01:15:00', '2026-09-16 02:24:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(58, 18, 'Gandhinagar', 1.10, '2026-09-08 18:45:00', '2026-10-05 22:05:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(59, 19, 'Gandhinagar', 1.24, '2026-05-27 10:00:00', '2026-07-02 18:22:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(60, 20, 'Gandhinagar', 1.29, '2026-08-14 21:45:00', '2026-09-13 04:56:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(61, 21, 'Gandhinagar', 1.18, '2026-07-21 09:30:00', '2026-08-14 09:45:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(62, 22, 'Gandhinagar', 1.16, '2026-09-04 17:45:00', '2026-09-28 20:20:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(63, 23, 'Gandhinagar', 1.30, '2026-05-22 07:45:00', '2026-07-05 15:34:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(64, 24, 'Gandhinagar', 1.31, '2026-10-25 01:00:00', '2026-11-16 05:11:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(65, 25, 'Gandhinagar', 1.20, '2026-10-23 11:30:00', '2026-11-01 16:50:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(66, 26, 'Gandhinagar', 1.30, '2026-05-23 03:15:00', '2026-06-30 09:28:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(67, 27, 'Gandhinagar', 1.16, '2026-08-17 10:45:00', '2026-09-05 15:02:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(68, 28, 'Lucknow', 1.10, '2026-11-05 20:15:00', '2026-11-30 01:21:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(69, 29, 'Lucknow', 1.40, '2026-09-13 18:15:00', '2026-10-27 22:40:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(70, 30, 'Lucknow', 1.24, '2026-06-29 05:15:00', '2026-07-14 09:39:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(71, 31, 'Lucknow', 1.15, '2026-05-21 16:45:00', '2026-06-03 17:26:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(72, 32, 'Lucknow', 1.21, '2026-07-25 09:45:00', '2026-08-09 11:27:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(73, 33, 'Lucknow', 1.27, '2026-06-03 03:30:00', '2026-07-17 11:35:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(74, 34, 'Lucknow', 1.23, '2026-06-04 18:45:00', '2026-06-29 02:41:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(75, 35, 'Lucknow', 1.03, '2026-11-02 05:45:00', '2026-11-30 13:37:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(76, 36, 'Lucknow', 1.13, '2026-09-09 09:45:00', '2026-09-22 12:55:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(77, 37, 'Delhi', 1.24, '2026-08-16 06:45:00', '2026-09-17 12:20:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(78, 38, 'Delhi', 1.31, '2026-10-22 10:00:00', '2026-11-21 15:12:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(79, 39, 'Delhi', 1.31, '2026-09-29 20:15:00', '2026-10-08 00:51:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
+(80, 40, 'Delhi', 1.19, '2026-09-25 18:30:00', '2026-11-08 22:26:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL);
+
+
+
+--
+-- Data for Name: fks_coupons; Type: TABLE DATA; Schema: public; Owner: folks
+--
+
+INSERT INTO public.fks_coupons (coupon_id, code, title, description, terms, discount_type, discount_value, max_discount, expiry_date, usage_limit, created_at, updated_at)
+ OVERRIDING SYSTEM VALUE
+ VALUES
+ (1, 'WELCOME50', 'Welcome offer', 'Flat ₹50 off your first booking on Folks.', 'Valid on orders above ₹299. One-time use per account.', 'FLAT', 50.00, 50.00, NULL, 1, '2026-09-02 23:22:47.717698', '2026-09-02 23:22:47.717698'),
+ (2, 'FOLKS100', '₹100 off', '₹100 off any booking above ₹999.', 'Valid on all categories. Cannot be combined with other offers.', 'FLAT', 100.00, 100.00, '2026-08-31', NULL, '2026-09-02 23:22:47.717698', '2026-09-02 23:22:47.717698'),
+ (3, 'SALON20', '20% off Salon & Makeup', '20% off on any Salon & Makeup service, up to ₹200.', 'Applicable on Women''s Salon, Men''s Salon and Bridal & Party Makeup.', 'PERCENTAGE', 20.00, 200.00, '2026-08-15', NULL, '2026-09-02 23:22:47.717698', '2026-09-02 23:22:47.717698'),
+ (4, 'REFER200', 'Refer & earn', '₹200 Folks credit for every friend who completes their first booking.', 'Credit is added to your account within 24 hours of their booking.', 'CREDIT', 200.00, 200.00, NULL, NULL, '2026-09-02 23:22:47.717698', '2026-09-02 23:22:47.717698');
+
+
+--
 -- Data for Name: fks_users; Type: TABLE DATA; Schema: public; Owner: folks
 --
 -- 1. 5 Admin user (3 created + 2 slots available). user_id BETWEEN 1 AND 5.
@@ -1728,113 +1831,6 @@ SELECT
  WHERE p.professional_id BETWEEN 1 AND 552
  ORDER BY p.professional_id, date, start_time;
 
-
---
--- Data for Name: fks_categories; Type: TABLE DATA; Schema: public; Owner: folks
---
-
-INSERT INTO public.fks_categories (category_id, name, parent_id, icon, tag_line, image, created_at, updated_at)
- OVERRIDING SYSTEM VALUE
- VALUES
- (1, 'Salon & Makeup', NULL, 'scissors', 'Professional grooming and beauty services at home.', 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (2, 'Cleaning & Pest Control', NULL, 'broom', 'Deep cleaning and pest treatments that actually last.', 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (3, 'Appliance Repair', NULL, 'wrench', 'Fast, reliable repairs for the appliances you rely on daily.', 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (4, 'Electrician, Plumbing & Carpentry', NULL, 'bolt', 'Trusted hands for wiring, leaks and everyday fixes.', 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (5, 'Painting & Décor', NULL, 'paint-roller', 'Fresh coats and finishing touches, handled end to end.', 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (6, 'Women''s Salon', 1, NULL, NULL, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (7, 'Men''s Salon', 1, NULL, NULL, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (8, 'Bridal & Party Makeup', 1, NULL, NULL, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (9, 'Home Cleaning', 2, NULL, NULL, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (10, 'Pest Control', 2, NULL, NULL, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (11, 'Office Cleaning', 2, NULL, NULL, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (12, 'AC Service & Repair', 3, NULL, NULL, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (13, 'Kitchen & Home Appliances', 3, NULL, NULL, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (14, 'Electronics Repair', 3, NULL, NULL, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (15, 'Electrician', 4, NULL, NULL, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (16, 'Plumbing', 4, NULL, NULL, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (17, 'Carpentry', 4, NULL, NULL, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (18, 'Interior Painting', 5, NULL, NULL, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (19, 'Exterior Painting', 5, NULL, NULL, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL);
-
-
---
--- Data for Name: fks_services; Type: TABLE DATA; Schema: public; Owner: folks
---
-
-INSERT INTO public.fks_services (service_id, category_id, name, description, base_price, duration_minutes, image, rating_avg, reviews, currency, created_at, updated_at)
- OVERRIDING SYSTEM VALUE
- VALUES
- (1, 6, 'Fruit Facial Glow', 'A refreshing fruit-based facial that brightens and hydrates tired skin.', 799.00, 60, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.80, 2140, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (2, 6, 'Hair Spa & Care', 'A deep-conditioning hair spa that repairs damage and restores natural shine.', 899.00, 75, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.70, 1560, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (3, 6, 'Full Arms & Legs Waxing', 'Smooth, salon-grade waxing for arms and legs using a gentle wax.', 599.00, 45, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.60, 3200, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (4, 6, 'Threading (Eyebrows + Upper Lip)', 'Quick, precise threading for perfectly shaped brows and upper lip.', 149.00, 20, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.50, 4100, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (5, 6, 'Manicure & Pedicure', 'A classic mani-pedi that leaves hands and feet soft, neat and polished.', 649.00, 60, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.60, 2450, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (6, 6, 'Global Hair Colour', 'Ammonia-friendly global colour application for full, even coverage.', 1299.00, 90, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.50, 870, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (7, 7, 'Haircut & Styling', 'A precision haircut and styling from an experienced men''s stylist.', 299.00, 30, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', 4.70, 5200, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (8, 7, 'Beard Shape-up & Trim', 'Sharp beard shaping and trim to keep your look fresh.', 199.00, 20, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', 4.60, 4700, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (9, 7, 'Head & Shoulder Massage', 'A relaxing head and shoulder massage to relieve stress and tension.', 399.00, 30, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', 4.80, 2300, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (10, 7, 'De-Tan Facial for Men', 'A de-tan facial that clears dullness and refreshes sun-exposed skin.', 549.00, 45, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', 4.50, 1340, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (11, 7, 'Beard & Hair Colour', 'Natural-looking colour touch-up for greying hair and beard.', 349.00, 30, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', 4.40, 980, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (12, 8, 'Party Makeup', 'Camera-ready party makeup tailored to your outfit and occasion.', 1499.00, 90, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.90, 860, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (13, 8, 'Bridal Makeup (HD)', 'Long-lasting HD bridal makeup with draping and hairstyling included.', 6999.00, 150, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.90, 410, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (14, 8, 'Nail Art & Manicure', 'A gel manicure with custom nail art finished by a trained nail artist.', 499.00, 40, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.60, 1980, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (15, 8, 'Engagement Makeup', 'Soft-glam engagement makeup designed to photograph beautifully.', 2999.00, 100, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', 4.80, 320, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (16, 9, 'Full Home Deep Cleaning', 'A comprehensive deep clean covering every room, kitchen and bathroom.', 3499.00, 240, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.80, 6200, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (17, 9, 'Kitchen Deep Cleaning', 'Degreasing and sanitising of chimney, hob, cabinets and countertops.', 899.00, 90, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.70, 3100, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (18, 9, 'Bathroom Deep Cleaning', 'Descaling and disinfecting tiles, fittings and fixtures until spotless.', 499.00, 60, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.60, 4400, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (19, 9, 'Sofa & Carpet Shampooing', 'A machine shampoo wash to lift dirt and stains from sofas and carpets.', 799.00, 75, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.50, 1870, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (20, 9, 'Balcony & Grille Cleaning', 'Scrubbing and de-staining of balcony floors, grilles and railings.', 399.00, 40, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.40, 760, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (21, 9, 'Move-in / Move-out Cleaning', 'A thorough top-to-bottom clean to prep a home before or after moving.', 2799.00, 180, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.70, 1120, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (22, 10, 'General Pest Control', 'An odourless spray treatment that keeps common household pests away.', 999.00, 60, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.60, 2800, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (23, 10, 'Cockroach Control', 'A gel-based treatment that targets cockroaches at the source.', 699.00, 45, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.50, 2100, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (24, 10, 'Termite Control', 'An anti-termite treatment with long-lasting protection for wood and walls.', 2499.00, 120, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.70, 940, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (25, 10, 'Mosquito Fogging', 'A fogging treatment that clears mosquito breeding spots indoors and out.', 599.00, 30, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.40, 1330, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (26, 10, 'Bed Bug Treatment', 'A targeted treatment that eliminates bed bugs from mattresses and furniture.', 1299.00, 90, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.50, 640, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (27, 10, 'Rodent Control', 'Safe trapping and sealing to keep rodents out for good.', 899.00, 50, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.40, 510, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (28, 11, 'Office Deep Cleaning', 'A full deep clean for workstations, common areas and pantries.', 4999.00, 300, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.60, 380, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (29, 11, 'Carpet & Upholstery Cleaning', 'Machine cleaning for office carpets, chairs and fabric partitions.', 1899.00, 120, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.50, 210, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (30, 11, 'Sanitization Service', 'Disinfectant fogging across surfaces, desks and high-touch points.', 2499.00, 90, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', 4.60, 300, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (31, 12, 'AC General Service', 'A foam-jet cleaning that restores cooling efficiency and airflow.', 549.00, 45, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.70, 7100, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (32, 12, 'AC Repair Visit', 'A diagnostic visit to identify and fix cooling or noise issues.', 299.00, 30, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.50, 3900, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (33, 12, 'AC Gas Refill', 'A refrigerant top-up for ACs that have lost cooling performance.', 2199.00, 90, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.60, 1200, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (34, 12, 'Split AC Installation', 'Professional mounting and installation of a new split AC unit.', 1499.00, 120, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.60, 860, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (35, 12, 'Window AC Installation', 'Secure fitting and sealing for a new window AC unit.', 999.00, 90, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.50, 540, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (36, 13, 'Refrigerator Repair', 'A diagnostic and repair visit for cooling, noise or leakage issues.', 399.00, 45, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.50, 2600, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (37, 13, 'Washing Machine Repair', 'Troubleshooting and repair for drainage, spin or drum issues.', 399.00, 45, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.50, 3300, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (38, 13, 'Microwave Repair', 'A repair visit for heating, sparking or control panel problems.', 349.00, 30, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.40, 1150, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (39, 13, 'Water Purifier Service', 'A filter check and service to keep your RO purifier running safely.', 449.00, 40, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.60, 1980, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (40, 13, 'Chimney Repair & Cleaning', 'Degreasing filters and checking suction for a smoke-free kitchen.', 599.00, 50, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.50, 890, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (41, 13, 'Geyser Repair & Service', 'A safety check and repair for heating elements and thermostats.', 449.00, 40, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.40, 760, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (42, 14, 'TV Repair', 'A diagnostic visit for display, sound or power issues on any TV.', 449.00, 45, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.40, 720, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (43, 14, 'Laptop Repair', 'Hardware and software troubleshooting for slow or malfunctioning laptops.', 599.00, 60, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.30, 480, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (44, 14, 'Inverter & Battery Repair', 'Testing and repair to keep your home inverter backup reliable.', 499.00, 45, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', 4.40, 390, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (45, 15, 'Switch & Socket Repair', 'Fix or replace faulty switches and sockets safely.', 149.00, 20, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.60, 3400, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (46, 15, 'Ceiling Fan Installation', 'Secure mounting and wiring of a new ceiling fan.', 249.00, 30, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.60, 2700, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (47, 15, 'House Wiring Inspection', 'A full electrical safety check to catch wiring issues early.', 499.00, 60, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.50, 980, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (48, 15, 'MCB & Fuse Repair', 'Diagnosis and repair of tripping MCBs or blown fuses.', 299.00, 30, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.50, 1340, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (49, 15, 'Inverter Installation', 'Wiring and setup for a new home inverter and battery backup.', 799.00, 75, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.50, 610, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (50, 15, 'CCTV / Video Doorbell Install', 'Mounting and wiring for a smart camera or video doorbell.', 649.00, 60, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.60, 540, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (51, 16, 'Tap & Mixer Repair', 'Fix leaking or jammed taps and mixers in the kitchen or bathroom.', 149.00, 20, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 4.60, 3900, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (52, 16, 'Pipe Leakage Repair', 'Locate and seal pipe leaks before they cause water damage.', 349.00, 40, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 4.50, 2200, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (53, 16, 'Toilet & Flush Repair', 'Repair of flush tanks, jets or toilet seat fittings.', 299.00, 35, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 4.50, 1870, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (54, 16, 'Water Tank Cleaning', 'Deep cleaning and disinfection of overhead or underground tanks.', 599.00, 60, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 4.40, 990, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (55, 16, 'Water Heater Installation', 'Safe mounting and plumbing connection for a new geyser.', 549.00, 60, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 4.50, 720, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (56, 16, 'Drainage Cleaning', 'Clearing clogged drains to restore normal water flow.', 449.00, 45, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', 4.30, 650, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (57, 17, 'Furniture Assembly', 'Assembly of flat-pack furniture like beds, wardrobes and desks.', 349.00, 45, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.60, 1650, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (58, 17, 'Door & Lock Repair', 'Fix sticking doors, loose hinges or faulty locks.', 299.00, 30, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.50, 1420, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (59, 17, 'Furniture Repair', 'Repair of wobbly, broken or damaged wooden furniture.', 399.00, 40, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.40, 870, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (60, 17, 'Curtain Rod Installation', 'Levelled mounting of curtain rods and brackets on any wall.', 249.00, 30, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.50, 610, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (61, 17, 'Wall Shelf Installation', 'Secure fitting of wall-mounted shelves and storage units.', 299.00, 35, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', 4.40, 480, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (62, 18, 'Single Room Painting', 'Two coats of premium emulsion for one room''s walls and ceiling.', 3999.00, 480, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.60, 610, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (63, 18, 'Full Home Painting', 'A complete interior painting package sized for 2-3 BHK homes.', 24999.00, 2400, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.70, 340, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (64, 18, 'Accent Wall Texture Design', 'A textured finish applied to a feature wall for a design accent.', 4999.00, 480, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.50, 210, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (65, 18, 'Wood Polish & Varnish', 'Refinishing for doors, furniture and wood trims to restore their shine.', 2499.00, 480, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.50, 260, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (66, 18, 'Wall Stencil Art', 'A custom stencil design hand-painted onto a wall of your choice.', 1999.00, 300, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.40, 180, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (67, 19, 'Exterior Wall Painting', 'A weatherproof exterior painting package for independent houses.', 18999.00, 2040, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.60, 260, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (68, 19, 'Waterproofing Treatment', 'Preventive waterproofing for terraces, walls and bathrooms.', 5999.00, 480, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.70, 430, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (69, 19, 'Metal Grill & Gate Painting', 'Anti-rust primer and enamel finish for grilles, gates and railings.', 2999.00, 480, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', 4.40, 150, 'INR', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL);
-
-
 --
 -- Data for Name: fks_professional_services; Type: TABLE DATA; Schema: public; Owner: folks
 --
@@ -1848,104 +1844,4 @@ SELECT p.professional_id, s.service_id, s.base_price AS price, 1 AS is_active, C
  ORDER BY s.service_id, p.professional_id;
  
 
---
--- Data for Name: fks_pricing_rules; Type: TABLE DATA; Schema: public; Owner: folks
---
 
-INSERT INTO public.fks_pricing_rules (rule_id, service_id, city, multiplier, start_time, end_time, created_at, updated_at) 
-OVERRIDING SYSTEM VALUE
-VALUES 
-(1, 1, 'Kolkata', 1.08, '2026-08-25 12:45:00', '2026-09-23 18:24:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(2, 2, 'Kolkata', 1.30, '2026-08-30 19:15:00', '2026-09-27 19:25:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(3, 3, 'Kolkata', 1.10, '2026-08-07 14:00:00', '2026-09-07 18:02:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(4, 4, 'Kolkata', 1.19, '2026-09-10 17:30:00', '2026-10-10 22:24:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(5, 5, 'Kolkata', 1.06, '2026-06-04 01:00:00', '2026-06-16 03:38:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(6, 6, 'Kolkata', 1.26, '2026-06-27 19:00:00', '2026-07-17 00:27:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(7, 7, 'Bangalore', 1.14, '2026-09-17 06:00:00', '2026-10-17 12:42:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(8, 8, 'Bangalore', 1.33, '2026-10-13 20:15:00', '2026-11-23 21:46:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(9, 9, 'Bangalore', 1.18, '2026-06-21 00:45:00', '2026-08-05 05:18:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(10, 10, 'Bangalore', 1.15, '2026-07-07 09:15:00', '2026-07-23 11:01:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(11, 11, 'Bangalore', 1.14, '2026-06-26 17:30:00', '2026-07-13 21:54:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(12, 12, 'Bangalore', 1.26, '2026-09-21 15:00:00', '2026-10-05 21:32:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(13, 13, 'Bangalore', 1.24, '2026-09-27 04:00:00', '2026-10-24 04:25:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(14, 14, 'Bangalore', 1.30, '2026-09-27 11:45:00', '2026-10-24 12:53:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(15, 15, 'Mumbai', 1.18, '2026-07-24 02:00:00', '2026-09-06 03:37:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(16, 16, 'Mumbai', 1.13, '2026-06-23 16:15:00', '2026-07-03 23:55:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(17, 17, 'Mumbai', 1.30, '2026-09-01 06:30:00', '2026-09-25 08:20:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(18, 18, 'Mumbai', 1.28, '2026-09-26 14:30:00', '2026-10-14 15:24:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(19, 19, 'Mumbai', 1.19, '2026-07-23 16:15:00', '2026-08-14 18:56:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(20, 20, 'Mumbai', 1.13, '2026-09-21 15:30:00', '2026-09-28 16:02:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(21, 21, 'Mumbai', 1.08, '2026-07-30 06:15:00', '2026-08-08 08:22:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(22, 22, 'Mumbai', 1.16, '2026-05-19 09:45:00', '2026-06-13 10:33:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(23, 23, 'Chennai', 1.22, '2026-09-15 18:30:00', '2026-09-30 02:06:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(24, 24, 'Chennai', 1.27, '2026-07-22 09:30:00', '2026-09-02 12:15:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(25, 25, 'Chennai', 1.11, '2026-09-25 06:45:00', '2026-10-03 10:32:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(26, 26, 'Chennai', 1.10, '2026-08-27 10:15:00', '2026-09-04 11:08:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(27, 27, 'Chennai', 1.21, '2026-07-24 18:30:00', '2026-09-06 00:04:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(28, 28, 'Chennai', 1.12, '2026-11-05 01:30:00', '2026-11-28 06:18:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(29, 29, 'Chennai', 1.32, '2026-10-23 03:45:00', '2026-11-28 09:03:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(30, 30, 'Chennai', 1.20, '2026-07-14 22:00:00', '2026-07-23 00:30:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(31, 31, 'Hyderabad', 1.15, '2026-08-26 01:45:00', '2026-09-19 06:51:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(32, 32, 'Hyderabad', 1.23, '2026-08-06 08:45:00', '2026-09-12 10:23:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(33, 33, 'Hyderabad', 1.33, '2026-07-13 07:45:00', '2026-08-22 12:13:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(34, 34, 'Hyderabad', 1.21, '2026-06-11 09:15:00', '2026-07-03 09:50:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(35, 35, 'Hyderabad', 1.21, '2026-09-05 18:45:00', '2026-10-17 01:35:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(36, 36, 'Hyderabad', 1.16, '2026-06-17 12:00:00', '2026-07-25 16:37:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(37, 37, 'Hyderabad', 1.17, '2026-05-24 08:00:00', '2026-06-27 10:09:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(38, 38, 'Hyderabad', 1.23, '2026-05-20 13:15:00', '2026-06-20 13:53:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(39, 39, 'Hyderabad', 1.21, '2026-08-09 05:00:00', '2026-08-16 08:28:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(40, 40, 'Hyderabad', 1.16, '2026-09-12 06:30:00', '2026-09-26 15:23:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(41, 1, 'Hyderabad', 1.26, '2026-08-18 22:15:00', '2026-09-17 04:38:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(42, 2, 'Hyderabad', 1.16, '2026-10-30 14:00:00', '2026-11-29 15:47:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(43, 3, 'Dispur', 1.10, '2026-07-12 10:15:00', '2026-07-31 16:11:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(44, 4, 'Dispur', 1.22, '2026-08-13 13:45:00', '2026-08-30 18:25:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(45, 5, 'Dispur', 1.29, '2026-08-26 13:30:00', '2026-09-03 21:11:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(46, 6, 'Dispur', 1.15, '2026-07-24 04:45:00', '2026-08-03 06:13:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(47, 7, 'Dispur', 1.13, '2026-11-02 07:45:00', '2026-11-28 12:10:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(48, 8, 'Dispur', 1.10, '2026-10-27 08:15:00', '2026-12-09 11:08:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(49, 9, 'Dispur', 1.20, '2026-08-12 15:15:00', '2026-08-20 19:15:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(50, 10, 'Dispur', 1.04, '2026-08-31 17:45:00', '2026-09-17 00:36:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(51, 11, 'Dispur', 1.24, '2026-07-18 07:00:00', '2026-08-22 11:18:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(52, 12, 'Dispur', 1.22, '2026-05-12 16:00:00', '2026-06-10 22:50:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(53, 13, 'Dispur', 1.16, '2026-10-02 20:15:00', '2026-10-13 23:55:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(54, 14, 'Dispur', 1.17, '2026-06-23 10:30:00', '2026-07-20 18:46:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(55, 15, 'Dispur', 1.08, '2026-10-26 17:15:00', '2026-12-08 22:14:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(56, 16, 'Dispur', 1.29, '2026-08-21 20:00:00', '2026-09-18 01:44:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(57, 17, 'Dispur', 1.37, '2026-08-04 01:15:00', '2026-09-16 02:24:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(58, 18, 'Gandhinagar', 1.10, '2026-09-08 18:45:00', '2026-10-05 22:05:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(59, 19, 'Gandhinagar', 1.24, '2026-05-27 10:00:00', '2026-07-02 18:22:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(60, 20, 'Gandhinagar', 1.29, '2026-08-14 21:45:00', '2026-09-13 04:56:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(61, 21, 'Gandhinagar', 1.18, '2026-07-21 09:30:00', '2026-08-14 09:45:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(62, 22, 'Gandhinagar', 1.16, '2026-09-04 17:45:00', '2026-09-28 20:20:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(63, 23, 'Gandhinagar', 1.30, '2026-05-22 07:45:00', '2026-07-05 15:34:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(64, 24, 'Gandhinagar', 1.31, '2026-10-25 01:00:00', '2026-11-16 05:11:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(65, 25, 'Gandhinagar', 1.20, '2026-10-23 11:30:00', '2026-11-01 16:50:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(66, 26, 'Gandhinagar', 1.30, '2026-05-23 03:15:00', '2026-06-30 09:28:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(67, 27, 'Gandhinagar', 1.16, '2026-08-17 10:45:00', '2026-09-05 15:02:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(68, 28, 'Lucknow', 1.10, '2026-11-05 20:15:00', '2026-11-30 01:21:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(69, 29, 'Lucknow', 1.40, '2026-09-13 18:15:00', '2026-10-27 22:40:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(70, 30, 'Lucknow', 1.24, '2026-06-29 05:15:00', '2026-07-14 09:39:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(71, 31, 'Lucknow', 1.15, '2026-05-21 16:45:00', '2026-06-03 17:26:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(72, 32, 'Lucknow', 1.21, '2026-07-25 09:45:00', '2026-08-09 11:27:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(73, 33, 'Lucknow', 1.27, '2026-06-03 03:30:00', '2026-07-17 11:35:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(74, 34, 'Lucknow', 1.23, '2026-06-04 18:45:00', '2026-06-29 02:41:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(75, 35, 'Lucknow', 1.03, '2026-11-02 05:45:00', '2026-11-30 13:37:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(76, 36, 'Lucknow', 1.13, '2026-09-09 09:45:00', '2026-09-22 12:55:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(77, 37, 'Delhi', 1.24, '2026-08-16 06:45:00', '2026-09-17 12:20:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(78, 38, 'Delhi', 1.31, '2026-10-22 10:00:00', '2026-11-21 15:12:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(79, 39, 'Delhi', 1.31, '2026-09-29 20:15:00', '2026-10-08 00:51:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
-(80, 40, 'Delhi', 1.19, '2026-09-25 18:30:00', '2026-11-08 22:26:00', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL);
-
-
-
---
--- Data for Name: fks_coupons; Type: TABLE DATA; Schema: public; Owner: folks
---
-
-INSERT INTO public.fks_coupons (coupon_id, code, title, description, terms, discount_type, discount_value, max_discount, expiry_date, usage_limit, created_at, updated_at)
- OVERRIDING SYSTEM VALUE
- VALUES
- (1, 'WELCOME50', 'Welcome offer', 'Flat ₹50 off your first booking on Folks.', 'Valid on orders above ₹299. One-time use per account.', 'FLAT', 50.00, 50.00, NULL, 1, '2026-09-02 23:22:47.717698', '2026-09-02 23:22:47.717698'),
- (2, 'FOLKS100', '₹100 off', '₹100 off any booking above ₹999.', 'Valid on all categories. Cannot be combined with other offers.', 'FLAT', 100.00, 100.00, '2026-08-31', NULL, '2026-09-02 23:22:47.717698', '2026-09-02 23:22:47.717698'),
- (3, 'SALON20', '20% off Salon & Makeup', '20% off on any Salon & Makeup service, up to ₹200.', 'Applicable on Women''s Salon, Men''s Salon and Bridal & Party Makeup.', 'PERCENTAGE', 20.00, 200.00, '2026-08-15', NULL, '2026-09-02 23:22:47.717698', '2026-09-02 23:22:47.717698'),
- (4, 'REFER200', 'Refer & earn', '₹200 Folks credit for every friend who completes their first booking.', 'Credit is added to your account within 24 hours of their booking.', 'CREDIT', 200.00, 200.00, NULL, NULL, '2026-09-02 23:22:47.717698', '2026-09-02 23:22:47.717698');
