@@ -26,7 +26,7 @@
 \echo '====================================================='
 
 \i ./3-test-data/categories.sql
---\i ./3-test-data/mock_data.sql
+\i ./3-test-data/mock_data.sql
 \i ./3-test-data/post_insert.sql
 
 \echo '====================================================='
