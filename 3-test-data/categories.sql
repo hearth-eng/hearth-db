@@ -21,28 +21,28 @@ SET row_security = off;
 -- Data for Name: fks_categories, Type: TABLE DATA, Schema: public, Owner: folks
 --
 
-INSERT INTO public.fks_categories (category_id, name, parent_id, icon, tag_line, image, created_at, updated_at)
+INSERT INTO public.fks_categories (category_id, name, icon, tag_line, image, parent_id, created_at, updated_at)
  OVERRIDING SYSTEM VALUE
- VALUES
- (1, 'Salon & Makeup', NULL, 'scissors', 'Professional grooming and beauty services at home.', 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (2, 'Cleaning & Pest Control', NULL, 'broom', 'Deep cleaning and pest treatments that actually last.', 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (3, 'Appliance Repair', NULL, 'wrench', 'Fast, reliable repairs for the appliances you rely on daily.', 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (4, 'Electrician, Plumbing & Carpentry', NULL, 'bolt', 'Trusted hands for wiring, leaks and everyday fixes.', 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (5, 'Painting & Décor', NULL, 'paint-roller', 'Fresh coats and finishing touches, handled end to end.', 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (6, 'Women''s Salon', 1, NULL, NULL, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (7, 'Men''s Salon', 1, NULL, NULL, 'https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (8, 'Bridal & Party Makeup', 1, NULL, NULL, 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (9, 'Home Cleaning', 2, NULL, NULL, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (10, 'Pest Control', 2, NULL, NULL, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (11, 'Office Cleaning', 2, NULL, NULL, 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (12, 'AC Service & Repair', 3, NULL, NULL, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (13, 'Kitchen & Home Appliances', 3, NULL, NULL, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (14, 'Electronics Repair', 3, NULL, NULL, 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (15, 'Electrician', 4, NULL, NULL, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (16, 'Plumbing', 4, NULL, NULL, 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (17, 'Carpentry', 4, NULL, NULL, 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (18, 'Interior Painting', 5, NULL, NULL, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL),
- (19, 'Exterior Painting', 5, NULL, NULL, 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', CAST ((TO_CHAR(CURRENT_DATE, 'yyyy-mm-dd') || ' 00:00:00') AS TIMESTAMP), NULL);
+ VALUES 
+ (1, 'Salon & Makeup', 'scissors', 'Professional grooming and beauty services at home.', 'https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&q=80&auto=format&fit=crop', NULL, '2026-10-02 00:00:00', NULL),
+ (2, 'Cleaning & Pest Control', 'broom', 'Deep cleaning and pest treatments that actually last.', 'https://images.unsplash.com/photo-1647381518264-97ff1835026f?w=800&q=80&auto=format&fit=crop', NULL, '2026-10-02 00:00:00', NULL),
+ (3, 'Appliance Repair', 'wrench', 'Fast, reliable repairs for the appliances you rely on daily.', 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80&auto=format&fit=crop', NULL, '2026-10-02 00:00:00', NULL),
+ (4, 'Electrician, Plumbing & Carpentry', 'bolt', 'Trusted hands for wiring, leaks and everyday fixes.', 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80&auto=format&fit=crop', NULL, '2026-10-02 00:00:00', NULL),
+ (5, 'Painting & Décor', 'paint-roller', 'Fresh coats and finishing touches, handled end to end.', 'https://images.unsplash.com/photo-1693985120993-e9b203ce7631?w=800&q=80&auto=format&fit=crop', NULL, '2026-10-02 00:00:00', NULL),
+ (6, 'Women''s Salon', NULL, NULL, 'https://images.unsplash.com/photo-1695527081848-1e46c06e6458?w=800&q=80&auto=format&fit=crop', 1, '2026-10-02 00:00:00', NULL),
+ (7, 'Men''s Salon', NULL, NULL, 'https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=800&q=80&auto=format&fit=crop', 1, '2026-10-02 00:00:00', NULL),
+ (8, 'Bridal & Party Makeup', NULL, NULL, 'https://images.unsplash.com/photo-1636023730877-233b9237d4ec?w=800&q=80&auto=format&fit=crop', 1, '2026-10-02 00:00:00', NULL),
+ (9, 'Home Cleaning', NULL, NULL, 'https://images.unsplash.com/photo-1646980241033-cd7abda2ee88?w=800&q=80&auto=format&fit=crop', 2, '2026-10-02 00:00:00', NULL),
+ (10, 'Pest Control', NULL, NULL, 'https://images.unsplash.com/photo-1581578017093-cd30fce4eeb7?w=800&q=80&auto=format&fit=crop', 2, '2026-10-02 00:00:00', NULL),
+ (11, 'Office Cleaning', NULL, NULL, 'https://images.unsplash.com/photo-1669101602108-fa5ba89507ee?w=800&q=80&auto=format&fit=crop', 2, '2026-10-02 00:00:00', NULL),
+ (12, 'AC Service & Repair', NULL, NULL, 'https://images.unsplash.com/photo-1762341123870-d706f257a12e?w=800&q=80&auto=format&fit=crop', 3, '2026-10-02 00:00:00', NULL),
+ (13, 'Kitchen & Home Appliances', NULL, NULL, 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80&auto=format&fit=crop', 3, '2026-10-02 00:00:00', NULL),
+ (14, 'Electronics Repair', NULL, NULL, 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?w=800&q=80&auto=format&fit=crop', 3, '2026-10-02 00:00:00', NULL),
+ (15, 'Electrician', NULL, NULL, 'https://images.unsplash.com/photo-1682345262055-8f95f3c513ea?w=800&q=80&auto=format&fit=crop', 4, '2026-10-02 00:00:00', NULL),
+ (16, 'Plumbing', NULL, NULL, 'https://images.unsplash.com/photo-1749532125405-70950966b0e5?w=800&q=80&auto=format&fit=crop', 4, '2026-10-02 00:00:00', NULL),
+ (17, 'Carpentry', NULL, NULL, 'https://images.unsplash.com/photo-1544164560-adac3045edb2?w=800&q=80&auto=format&fit=crop', 4, '2026-10-02 00:00:00', NULL),
+ (18, 'Interior Painting', NULL, NULL, 'https://images.unsplash.com/photo-1717281234297-3def5ae3eee1?w=800&q=80&auto=format&fit=crop', 5, '2026-10-02 00:00:00', NULL),
+ (19, 'Exterior Painting', NULL, NULL, 'https://images.unsplash.com/photo-1574359411659-15573a27fd0c?w=800&q=80&auto=format&fit=crop', 5, '2026-10-02 00:00:00', NULL);
 
 
 --
