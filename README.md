@@ -8,7 +8,7 @@ Refer to [Data Dictionary](docs/DATA_DICTIONARY.md) for more details about heart
 
 ```text
 
-folks-db/
+hearth-db/
 ├── README.md
 ├── .gitignore
 ├── docs/
@@ -63,7 +63,7 @@ In `Mac`
 In `Windows`
 
 ```
-<prompt> C:\Project\folks-db>tasklist | findstr /I "postgres"
+<prompt> C:\Project\hearth-db>tasklist | findstr /I "postgres"
 
 # Expected Result
 
@@ -290,7 +290,7 @@ Output:
 
 ```
 
-### Backup Folks schema
+### Backup Hearth schema
 
 #### Backup Database Objects
 

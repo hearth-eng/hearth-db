@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.javalabs</groupId>
-    <artifactId>folks-db</artifactId>
+    <artifactId>hearth-db</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
 </project>
