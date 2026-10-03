@@ -1,8 +1,8 @@
-## Folks Database Repository
+## Hearth Database Repository
 
 This repository contains PostgreSQL schema, seed data, and optional local/QA test data, plus a deployment script that runs the SQL files in the correct order.
 
-Refer to [Data Dictionary](docs/DATA_DICTIONARY.md) for more details about folks schema design.
+Refer to [Data Dictionary](docs/DATA_DICTIONARY.md) for more details about hearth schema design.
 
 ### Repository layout
 
@@ -112,9 +112,9 @@ Although the recent version of Postgres may provide the UI to manage the databas
 issue with the UI, you can always use the above set of commands.
 
 
-### Setup Folks database
+### Setup Hearth database
 
-#### Create Folks Schema
+#### Create Hearth Schema
 
 **Connect to Postgres:**
 
@@ -127,7 +127,7 @@ password for postgres:<postgres user pwd>
 **Create User:**
 
 ```
-postgres# CREATE ROLE folks WITH
+postgres# CREATE ROLE hearth WITH
         LOGIN
         NOSUPERUSER
         CREATEDB
@@ -138,56 +138,56 @@ postgres# CREATE ROLE folks WITH
 
 ```
 
-**Set password for the folks role:**
+**Set password for the hearth role:**
 
 ```
-postgres# ALTER ROLE folks  WITH PASSWORD 'p@$$word';
+postgres# ALTER ROLE hearth  WITH PASSWORD 'p@$$word';
 
 ```
 
 **Create Database:**
 
 ```
-postgres# CREATE DATABASE folksdb
+postgres# CREATE DATABASE hearthdb
     WITH
-    OWNER = folks
+    OWNER = hearth
     ENCODING = 'UTF8'
     CONNECTION LIMIT = -1;
 
 ```
 
-At this stage, you have created an empty schema for Folks. Now we need to run the db scripts to create the required tables.
+At this stage, you have created an empty schema for Hearth. Now we need to run the db scripts to create the required tables.
 
 **Exit from the database prompt** and ...
 
-**Run the below table script:** Ensure to run it with folks user and folksdb database.
+**Run the below table script:** Ensure to run it with hearth user and hearthdb database.
 
 ```
 <prompt> /Library/PostgreSQL/17/bin/psql \
   -h localhost \
-  -U folks \
-  -d folksdb \
+  -U hearth \
+  -d hearthdb \
   -v ON_ERROR_STOP=1 \
   -f scripts/setup.sql
 
-Password for user folks: p@$$word
+Password for user hearth: p@$$word
 
 ```
 
 For Windows
 
 ```
-<prompt> C:\Progra~1\PostgreSQL\18\bin\psql -h localhost -U folks -d folksdb -v ON_ERROR_STOP=1 -f scripts/setup.sql
+<prompt> C:\Progra~1\PostgreSQL\18\bin\psql -h localhost -U hearth -d hearthdb -v ON_ERROR_STOP=1 -f scripts/setup.sql
 ```
 
 
-**Login back to Postgres with folks user:**
+**Login back to Postgres with hearth user:**
 
 ```
-<prompt> /Library/PostgreSQL/17/bin/psql -d folksdb -U folks
-Password for user folks: p@$$word
+<prompt> /Library/PostgreSQL/17/bin/psql -d hearthdb -U hearth
+Password for user hearth: p@$$word
 
-folksdb=>
+hearthdb=>
 
 ```
 
@@ -195,30 +195,30 @@ folksdb=>
 
 
 ```
-folksdb=> \dt
+hearthdb=> \dt
                  List of relations
  Schema |           Name            | Type  | Owner 
 --------+---------------------------+-------+-------
- public | fks_addresses             | table | folks
- public | fks_audit_logs            | table | folks
- public | fks_availability          | table | folks
- public | fks_bookings              | table | folks
- public | fks_categories            | table | folks
- public | fks_conversations         | table | folks
- public | fks_coupon_usage          | table | folks
- public | fks_coupons               | table | folks
- public | fks_documents             | table | folks
- public | fks_job_status            | table | folks
- public | fks_messages              | table | folks
- public | fks_payments              | table | folks
- public | fks_pricing_rules         | table | folks
- public | fks_professional_services | table | folks
- public | fks_professionals         | table | folks
- public | fks_reviews               | table | folks
- public | fks_services              | table | folks
- public | fks_users                 | table | folks
- public | fks_wallet_transactions   | table | folks
- public | fks_wallets               | table | folks
+ public | fks_addresses             | table | hearth
+ public | fks_audit_logs            | table | hearth
+ public | fks_availability          | table | hearth
+ public | fks_bookings              | table | hearth
+ public | fks_categories            | table | hearth
+ public | fks_conversations         | table | hearth
+ public | fks_coupon_usage          | table | hearth
+ public | fks_coupons               | table | hearth
+ public | fks_documents             | table | hearth
+ public | fks_job_status            | table | hearth
+ public | fks_messages              | table | hearth
+ public | fks_payments              | table | hearth
+ public | fks_pricing_rules         | table | hearth
+ public | fks_professional_services | table | hearth
+ public | fks_professionals         | table | hearth
+ public | fks_reviews               | table | hearth
+ public | fks_services              | table | hearth
+ public | fks_users                 | table | hearth
+ public | fks_wallet_transactions   | table | hearth
+ public | fks_wallets               | table | hearth
 (20 rows)
 
 ```
@@ -226,27 +226,27 @@ folksdb=> \dt
 **Verify the sequence creation**
 
 ```
-folksdb=> \ds
+hearthdb=> \ds
                          List of relations
  Schema |                 Name                  |   Type   | Owner 
 --------+---------------------------------------+----------+-------
- public | fks_addresses_address_id_seq          | sequence | folks
- public | fks_audit_logs_log_id_seq             | sequence | folks
- public | fks_availability_availability_id_seq  | sequence | folks
- public | fks_categories_category_id_seq        | sequence | folks
- public | fks_conversations_conversation_id_seq | sequence | folks
- public | fks_coupon_usage_usage_id_seq         | sequence | folks
- public | fks_coupons_coupon_id_seq             | sequence | folks
- public | fks_documents_document_id_seq         | sequence | folks
- public | fks_job_status_log_id_seq             | sequence | folks
- public | fks_messages_message_id_seq           | sequence | folks
- public | fks_payments_payment_id_seq           | sequence | folks
- public | fks_pricing_rules_rule_id_seq         | sequence | folks
- public | fks_professional_services_id_seq      | sequence | folks
- public | fks_professionals_professional_id_seq | sequence | folks
- public | fks_reviews_review_id_seq             | sequence | folks
- public | fks_services_service_id_seq           | sequence | folks
- public | fks_users_user_id_seq                 | sequence | folks
+ public | fks_addresses_address_id_seq          | sequence | hearth
+ public | fks_audit_logs_log_id_seq             | sequence | hearth
+ public | fks_availability_availability_id_seq  | sequence | hearth
+ public | fks_categories_category_id_seq        | sequence | hearth
+ public | fks_conversations_conversation_id_seq | sequence | hearth
+ public | fks_coupon_usage_usage_id_seq         | sequence | hearth
+ public | fks_coupons_coupon_id_seq             | sequence | hearth
+ public | fks_documents_document_id_seq         | sequence | hearth
+ public | fks_job_status_log_id_seq             | sequence | hearth
+ public | fks_messages_message_id_seq           | sequence | hearth
+ public | fks_payments_payment_id_seq           | sequence | hearth
+ public | fks_pricing_rules_rule_id_seq         | sequence | hearth
+ public | fks_professional_services_id_seq      | sequence | hearth
+ public | fks_professionals_professional_id_seq | sequence | hearth
+ public | fks_reviews_review_id_seq             | sequence | hearth
+ public | fks_services_service_id_seq           | sequence | hearth
+ public | fks_users_user_id_seq                 | sequence | hearth
 (17 rows)
 
 ```
@@ -254,7 +254,7 @@ folksdb=> \ds
 **Check the estimated row count**
 
 ```
-folksdb=> SELECT relname AS table_name, n_live_tup AS estimated_row_count
+hearthdb=> SELECT relname AS table_name, n_live_tup AS estimated_row_count
   FROM pg_stat_user_tables
  WHERE schemaname = 'public'
  ORDER BY relname;
@@ -297,43 +297,43 @@ Output:
 To create a backup of all database objects, run the below command:
 
 ```
-<prompt> /Library/PostgreSQL/17/bin/pg_dump -U folks -d folksdb --schema-only -F p -f ./folks_schema.sql
+<prompt> /Library/PostgreSQL/17/bin/pg_dump -U hearth -d hearthdb --schema-only -F p -f ./hearth_schema.sql
 
 Password: ********
 
 ```
 
-It will create a sql file `folks_schema.sql` in the current directory. The file will have the ddl scripts for tables, view, sequences, etc.
+It will create a sql file `hearth_schema.sql` in the current directory. The file will have the ddl scripts for tables, view, sequences, etc.
 
 #### Backup All Table Data
 
 ```
-<prompt> /Library/PostgreSQL/17/bin/pg_dump -U folks -d folksdb --data-only --column-inserts -f ./folks_test_data.sql
+<prompt> /Library/PostgreSQL/17/bin/pg_dump -U hearth -d hearthdb --data-only --column-inserts -f ./hearth_test_data.sql
 
 Password: ********
 
 ```
 
-This will create a file `folks_test_data.sql` in the current directory containing all the sql insert scripts.
+This will create a file `hearth_test_data.sql` in the current directory containing all the sql insert scripts.
 
 
 #### Backup Single Table Data
 
 ```
-<prompt> /Library/PostgreSQL/17/bin/pg_dump -U folks -d folksdb --table <table_name> --data-only --column-inserts -f ./folks_test_data_table_name.sql
+<prompt> /Library/PostgreSQL/17/bin/pg_dump -U hearth -d hearthdb --table <table_name> --data-only --column-inserts -f ./hearth_test_data_table_name.sql
 
 Password: ********
 
 ```
 
-This will create a file `folks_test_data_table_name.sql` in the current directory containing all the sql insert scripts.
+This will create a file `hearth_test_data_table_name.sql` in the current directory containing all the sql insert scripts.
 
 
 ### View Sequence Status
 
-Since most of the tables in folks do have an identity column as primary key, hence it is important to periodically review the sequences to see whether they have reached their maximum values.
+Since most of the tables in hearth do have an identity column as primary key, hence it is important to periodically review the sequences to see whether they have reached their maximum values.
 
-Data type of all the identity columns in folks schema is INT. INT in PostgreSQL is a 32-bit signed integer, so the maximum value is `214,74,83,647`, which is about `214.74 crore`.
+Data type of all the identity columns in hearth schema is INT. INT in PostgreSQL is a 32-bit signed integer, so the maximum value is `214,74,83,647`, which is about `214.74 crore`.
 That means the identity column range is finite. However, never make it cyclic, as it might leads to primary key violation in future.
 
 The safer approach is:
@@ -378,13 +378,13 @@ Both the above queries should return `17` rows.
 ### Drop Database
 
 ```
-DROP DATABASE IF EXISTS folksdb;
+DROP DATABASE IF EXISTS hearthdb;
 ```
 
 ### Drop a Role
 
 ```
-DROP ROLE folks;
+DROP ROLE hearth;
 ```
 
 ### Check The Available Databases
