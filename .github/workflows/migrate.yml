@@ -1,0 +1,112 @@
+# hearth-db: push tag vX.Y.Z -> build psql migration-runner image with the real
+#            1-schema/2-seed-data/3-test-data layout -> push to ECR
+#            -> run a one-off ECS task in the private subnet -> fail the job if migration fails
+name: migrate
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing git tag to (re)run, e.g. v1.4.0"
+        required: true
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: migrate-${{ github.repository }}
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: ap-south-1
+  ECR_REPOSITORY: hearth-db
+  TASK_FAMILY: hearth-prod-migrate
+  CONTAINER_NAME: migrate
+  SSM_PREFIX: /hearth/prod/ci
+  LOG_GROUP: /ecs/hearth-prod-migrate
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    environment: prod
+    timeout-minutes: 30
+    steps:
+      - name: Resolve tag
+        id: v
+        env:
+          INPUT_TAG: ${{ github.event.inputs.tag }}
+          REF_NAME: ${{ github.ref_name }}
+        run: echo "tag=${INPUT_TAG:-$REF_NAME}" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.v.outputs.tag }}
+
+      - name: Check expected directories exist
+        run: |
+          missing=""
+          for d in 1-schema 2-seed-data 3-test-data; do
+            [ -d "$d" ] || missing="$missing $d"
+          done
+          if [ -n "$missing" ]; then echo "::error::Missing expected directories:$missing"; exit 1; fi
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - uses: aws-actions/amazon-ecr-login@v2
+        id: ecr
+
+      - name: Build & push image (skip if tag exists)
+        env:
+          IMAGE: ${{ steps.ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ steps.v.outputs.tag }}
+          TAG: ${{ steps.v.outputs.tag }}
+        run: |
+          if aws ecr describe-images --repository-name "$ECR_REPOSITORY" --image-ids imageTag="$TAG" >/dev/null 2>&1; then
+            echo "Image exists - skipping build"
+          else
+            docker build -t "$IMAGE" . && docker push "$IMAGE"
+          fi
+
+      - name: Run migration on ECS
+        env:
+          IMAGE: ${{ steps.ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ steps.v.outputs.tag }}
+        run: |
+          set -euo pipefail
+          if ! CLUSTER=$(aws ssm get-parameter --name "$SSM_PREFIX/cluster" --query Parameter.Value --output text 2>/dev/null); then
+            echo "::warning::Infra not created yet - image pushed only (first-time bring-up)."
+            exit 0
+          fi
+          SUBNETS=$(aws ssm get-parameter --name "$SSM_PREFIX/private_subnets" --query Parameter.Value --output text)
+          SG=$(aws ssm get-parameter --name "$SSM_PREFIX/migrate_sg" --query Parameter.Value --output text)
+
+          aws ecs describe-task-definition --task-definition "$TASK_FAMILY" --query taskDefinition > td.json
+          jq --arg IMG "$IMAGE" --arg C "$CONTAINER_NAME" '
+              .containerDefinitions |= map(if .name == $C then .image = $IMG else . end)
+            | del(.taskDefinitionArn, .revision, .status, .requiresAttributes,
+                  .compatibilities, .registeredAt, .registeredBy, .deregisteredAt)' td.json > td-new.json
+          TD=$(aws ecs register-task-definition --cli-input-json file://td-new.json \
+                 --query 'taskDefinition.taskDefinitionArn' --output text)
+
+          TASK=$(aws ecs run-task --cluster "$CLUSTER" --launch-type FARGATE --task-definition "$TD" \
+                   --started-by "gha-${GITHUB_RUN_ID}" \
+                   --network-configuration "awsvpcConfiguration={subnets=[$SUBNETS],securityGroups=[$SG],assignPublicIp=DISABLED}" \
+                   --query 'tasks[0].taskArn' --output text)
+          echo "Started $TASK"
+          aws ecs wait tasks-stopped --cluster "$CLUSTER" --tasks "$TASK"
+
+          EXIT=$(aws ecs describe-tasks --cluster "$CLUSTER" --tasks "$TASK" \
+                   --query 'tasks[0].containers[0].exitCode' --output text)
+          REASON=$(aws ecs describe-tasks --cluster "$CLUSTER" --tasks "$TASK" \
+                   --query 'tasks[0].stoppedReason' --output text)
+          echo "---------------- migration output ----------------"
+          aws logs get-log-events --log-group-name "$LOG_GROUP" \
+            --log-stream-name "migrate/$CONTAINER_NAME/${TASK##*/}" \
+            --query 'events[].message' --output text | tr '\t' '\n' || true
+          echo "----------------------------------------------------"
+          echo "exitCode=$EXIT  stoppedReason=$REASON"
+          [ "$EXIT" = "0" ] || { echo "::error::Migration failed"; exit 1; }
