@@ -35,6 +35,7 @@ echo ">> Database is ready."
 # anyway, destroying all existing data. Deliberately opt-in only (no default), so a
 # plain re-run of this task is always a safe no-op.
 ALREADY_BOOTSTRAPPED=$(psql -tA -c "SELECT to_regclass('public.fks_users') IS NOT NULL;")
+echo ">> DEBUG: FORCE_REBUILD='${FORCE_REBUILD:-<unset>}' ALREADY_BOOTSTRAPPED='${ALREADY_BOOTSTRAPPED}'"
 if [ "$ALREADY_BOOTSTRAPPED" = "t" ] && [ "${FORCE_REBUILD:-}" != "true" ]; then
   echo ">> fks_users already exists - database already bootstrapped. Skipping (safe no-op)."
   echo ">> To apply a schema change, add a new, separate migration path; this script does not support re-running against existing data."
