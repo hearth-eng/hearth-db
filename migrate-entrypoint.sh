@@ -23,6 +23,17 @@ until pg_isready -q; do
 done
 echo ">> Database is ready."
 
+# RUN_QUERY=<sql> runs a single ad hoc read-only-by-convention statement and exits,
+# bypassing the bootstrap guard/migration entirely. For one-off lookups (e.g. reading
+# a seeded row's generated UUID) when no other DB access path exists. Not intended
+# for writes - nothing stops a write here, but the normal migration path below is
+# the only thing this script otherwise does to the schema/data.
+if [ -n "${RUN_QUERY:-}" ]; then
+  echo ">> RUN_QUERY set - running ad hoc statement and exiting:"
+  psql -tA -c "$RUN_QUERY"
+  exit 0
+fi
+
 # This is a one-shot bootstrap (drop_tables.sql + fixed-ID INSERTs in reference_data.sql
 # and the 3-test-data/ files are NOT safe to re-run against a populated database -
 # drop_tables.sql destroys all data, and the INSERTs would fail/duplicate on their
