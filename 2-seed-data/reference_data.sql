@@ -36,7 +36,7 @@ VALUES
     (8,  1, 'Haryana',              'NORTH',     'Hindi',      'PLANNED', NULL, CURRENT_TIMESTAMP, NULL),
     (9,  1, 'Himachal Pradesh',     'NORTH',     'Hindi',      'PLANNED', NULL, CURRENT_TIMESTAMP, NULL),
     (10, 1, 'Jharkhand',            'EAST',      'Hindi',      'PLANNED', NULL, CURRENT_TIMESTAMP, NULL),
-    (11, 1, 'Karnataka',            'SOUTH',     'Kannada',    'PLANNED', NULL, CURRENT_TIMESTAMP, NULL),
+    (11, 1, 'Karnataka',            'SOUTH',     'Kannada',    'ACTIVE', NULL, CURRENT_TIMESTAMP, NULL),
     (12, 1, 'Kerala',               'SOUTH',     'Malayalam',  'PLANNED', NULL, CURRENT_TIMESTAMP, NULL),
     (13, 1, 'Madhya Pradesh',       'CENTRAL',   'Hindi',      'PLANNED', NULL, CURRENT_TIMESTAMP, NULL),
     (14, 1, 'Maharashtra',          'WEST',      'Marathi',    'PLANNED', NULL, CURRENT_TIMESTAMP, NULL),
