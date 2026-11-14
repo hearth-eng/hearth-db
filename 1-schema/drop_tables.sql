@@ -15,6 +15,7 @@ DROP TABLE IF EXISTS fks_coupon_usage;
 DROP TABLE IF EXISTS fks_messages;
 DROP TABLE IF EXISTS fks_conversations;
 DROP TABLE IF EXISTS fks_reviews;
+DROP TABLE IF EXISTS fks_recurring_plans;
 DROP TABLE IF EXISTS fks_bookings;
 DROP TABLE IF EXISTS fks_coupons;
 

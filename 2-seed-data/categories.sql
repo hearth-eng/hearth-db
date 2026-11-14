@@ -42,7 +42,10 @@ INSERT INTO public.fks_categories (category_id, name, icon, tag_line, image, par
  (16, 'Plumbing', NULL, NULL, 'https://images.unsplash.com/photo-1749532125405-70950966b0e5?w=800&q=80&auto=format&fit=crop', 4, '2026-10-02 00:00:00', NULL),
  (17, 'Carpentry', NULL, NULL, 'https://images.unsplash.com/photo-1544164560-adac3045edb2?w=800&q=80&auto=format&fit=crop', 4, '2026-10-02 00:00:00', NULL),
  (18, 'Interior Painting', NULL, NULL, 'https://images.unsplash.com/photo-1717281234297-3def5ae3eee1?w=800&q=80&auto=format&fit=crop', 5, '2026-10-02 00:00:00', NULL),
- (19, 'Exterior Painting', NULL, NULL, 'https://images.unsplash.com/photo-1574359411659-15573a27fd0c?w=800&q=80&auto=format&fit=crop', 5, '2026-10-02 00:00:00', NULL);
+ (19, 'Exterior Painting', NULL, NULL, 'https://images.unsplash.com/photo-1574359411659-15573a27fd0c?w=800&q=80&auto=format&fit=crop', 5, '2026-10-02 00:00:00', NULL),
+ (20, 'Cooks & Maids', 'utensils', 'Reliable home help for daily cooking and housekeeping.', 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80&auto=format&fit=crop', NULL, '2026-10-02 00:00:00', NULL),
+ (21, 'Cook', NULL, NULL, 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80&auto=format&fit=crop', 20, '2026-10-02 00:00:00', NULL),
+ (22, 'Maid', NULL, NULL, 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80&auto=format&fit=crop', 20, '2026-10-02 00:00:00', NULL);
 
 
 --
@@ -120,4 +123,12 @@ INSERT INTO public.fks_categories (category_id, name, icon, tag_line, image, par
  (66, 18, 'Wall Stencil Art', 'A custom stencil design hand-painted onto a wall of your choice.', 1999.00, 'INR', 300, 'https://images.unsplash.com/photo-1775210326611-890803b318fa?w=800&q=80&auto=format&fit=crop', 4.40, 180, '2026-10-01 00:00:00', NULL),
  (67, 19, 'Exterior Wall Painting', 'A weatherproof exterior painting package for independent houses.', 18999.00, 'INR', 2040, 'https://images.unsplash.com/photo-1742900280864-bcc27353ceba?w=800&q=80&auto=format&fit=crop', 4.60, 260, '2026-10-01 00:00:00', NULL),
  (68, 19, 'Waterproofing Treatment', 'Preventive waterproofing for terraces, walls and bathrooms.', 5999.00, 'INR', 480, 'https://images.unsplash.com/photo-1674485169641-bcb2bf6f1df9?w=800&q=80&auto=format&fit=crop', 4.70, 430, '2026-10-01 00:00:00', NULL),
- (69, 19, 'Metal Grill & Gate Painting', 'Anti-rust primer and enamel finish for grilles, gates and railings.', 2999.00, 'INR', 480, 'https://images.unsplash.com/photo-1576169510450-fd0392650023?w=800&q=80&auto=format&fit=crop', 4.40, 150, '2026-10-01 00:00:00', NULL);
+ (69, 19, 'Metal Grill & Gate Painting', 'Anti-rust primer and enamel finish for grilles, gates and railings.', 2999.00, 'INR', 480, 'https://images.unsplash.com/photo-1576169510450-fd0392650023?w=800&q=80&auto=format&fit=crop', 4.40, 150, '2026-10-01 00:00:00', NULL),
+ (70, 21, 'Daily Cook - One Meal', 'A home cook prepares one fresh meal (lunch or dinner) for your family.', 299.00, 'INR', 60, 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop', 4.60, 1240, '2026-10-01 00:00:00', NULL),
+ (71, 21, 'Daily Cook - Two Meals', 'A home cook prepares both lunch and dinner in a single visit.', 549.00, 'INR', 120, 'https://images.unsplash.com/photo-1600335895229-6e75511892c8?w=800&q=80&auto=format&fit=crop', 4.70, 980, '2026-10-01 00:00:00', NULL),
+ (72, 21, 'Weekly Meal Prep (Tiffin Batch)', 'Batch-cooked meals prepped and packed for the week ahead.', 1499.00, 'INR', 180, 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80&auto=format&fit=crop', 4.50, 410, '2026-10-01 00:00:00', NULL),
+ (73, 21, 'Party & Event Cooking', 'A cook handles the full menu for a get-together or small event at home.', 2999.00, 'INR', 240, 'https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80&auto=format&fit=crop', 4.80, 260, '2026-10-01 00:00:00', NULL),
+ (74, 22, 'Daily Maid - Utensils & Sweeping', 'Daily washing of utensils and sweeping of all rooms.', 249.00, 'INR', 45, 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80&auto=format&fit=crop', 4.50, 1680, '2026-10-01 00:00:00', NULL),
+ (75, 22, 'Daily Maid - Full Housekeeping', 'Sweeping, mopping, dusting and utensils handled in one daily visit.', 449.00, 'INR', 75, 'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=800&q=80&auto=format&fit=crop', 4.60, 2050, '2026-10-01 00:00:00', NULL),
+ (76, 22, 'Daily Maid - Utensils, Sweeping & Laundry', 'Utensils, sweeping and clothes washing covered in a single visit.', 399.00, 'INR', 60, 'https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=800&q=80&auto=format&fit=crop', 4.50, 1320, '2026-10-01 00:00:00', NULL),
+ (77, 22, 'One-Day Deep House Help', 'An extended single visit covering deep cleaning, utensils and laundry together.', 899.00, 'INR', 150, 'https://images.unsplash.com/photo-1581578017093-cd30fce4eeb7?w=800&q=80&auto=format&fit=crop', 4.60, 540, '2026-10-01 00:00:00', NULL);

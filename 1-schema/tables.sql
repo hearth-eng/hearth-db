@@ -181,11 +181,31 @@ CREATE TABLE fks_bookings (
     time_slot           VARCHAR(24)     NOT NULL,
     status              VARCHAR(16)     CHECK (status IN ('PENDING', 'CONFIRMED', 'IN_PROGRESS', 'COMPLETED', 'CANCELLED')),
     status_msg          VARCHAR(255)    NUll,
-    total_amount        NUMERIC(20, 6)  NOT NULL,
+    total_amount        NUMERIC(20, 2)  NOT NULL,
     payment_method      VARCHAR(16)     CHECK (payment_method IN ('CARD', 'UPI', 'WALLET', 'COD')),
+    is_recurring        SMALLINT        NOT NULL,
     created_at          TIMESTAMP       NOT NULL,
     updated_at          TIMESTAMP       ,
     updated_by          VARCHAR(50)
+);
+
+-- Recurring Booking Plan (Cook/Maid-style repeating services, e.g. every Mon/Wed/Fri
+-- for up to 30 days). One plan per recurring booking: booking_id IS the plan's key,
+-- so a plan only exists when fks_bookings.is_recurring = 1 for that booking. After
+-- end_date, the plan lapses; the customer creates a fresh booking + plan for the
+-- next 30-day window rather than this one auto-renewing.
+
+CREATE TABLE fks_recurring_plans (
+    plan_id             INT             GENERATED ALWAYS AS IDENTITY NOT NULL,
+    booking_id          VARCHAR(36)     NOT NULL,
+    days_of_week        VARCHAR(3)[]    NOT NULL,
+    meal_type           VARCHAR(16)     CHECK (meal_type IN ('BREAKFAST', 'LUNCH', 'DINNER', 'MULTIPLE')),
+    headcount           INT             ,
+    notes               VARCHAR(255)    ,
+    start_date          DATE            NOT NULL,
+    end_date            DATE            NOT NULL CHECK (end_date >= start_date AND end_date <= start_date + 30),
+    created_at          TIMESTAMP       NOT NULL,
+    updated_at          TIMESTAMP
 );
 
 -- 5. Payments & Pricing

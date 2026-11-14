@@ -84,7 +84,23 @@
 | scheduled_at | Scheduled service date and time | TIMESTAMP | No | No |
 | status | Booking lifecycle status | VARCHAR(32) | Yes | No |
 | total_amount | Total booking amount | DECIMAL(10,2) | No | No |
+| is_recurring | Whether this booking has a linked recurring plan (see fks_recurring_plans) | SMALLINT | No | No |
 | created_at | Booking creation timestamp | TIMESTAMP | No | No |
+
+## fks_recurring_plans
+
+Recurring plan details for a Cook/Maid-style repeating booking. One plan per booking, keyed by the same `booking_id` (so a plan row only exists when that booking's `is_recurring` = 1). Capped at 30 days from `start_date`; after `end_date` the plan lapses and the customer must create a fresh booking + plan for the next window.
+
+| Column | Description | Data Type | Nullable? | Primary Key |
+|----------|-------------|------------|------------|-------------|
+| booking_id | The recurring booking this plan belongs to (also its own PK, FK to fks_bookings) | VARCHAR(36) | No | Yes |
+| days_of_week | Days the service repeats on, e.g. {MON,WED,FRI} | VARCHAR(3)[] | No | No |
+| meal_type | BREAKFAST / LUNCH / DINNER / MULTIPLE (Cook services only) | VARCHAR(16) | Yes | No |
+| headcount | Number of people the service is for | SMALLINT | Yes | No |
+| notes | Dietary or other special instructions | VARCHAR(255) | Yes | No |
+| start_date | First date of the recurring plan | DATE | No | No |
+| end_date | Last date of the recurring plan (max 30 days after start_date) | DATE | No | No |
+| created_at | Plan creation timestamp | TIMESTAMP | No | No |
 
 ## fks_availability
 

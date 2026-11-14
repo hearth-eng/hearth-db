@@ -55,6 +55,10 @@ ALTER TABLE fks_bookings
 ADD CONSTRAINT fks_bookings_pk
 PRIMARY KEY (booking_id);
 
+ALTER TABLE fks_recurring_plans
+ADD CONSTRAINT fks_recurring_plans_pk
+PRIMARY KEY (plan_id);
+
 ALTER TABLE fks_availabilities
 ADD CONSTRAINT fks_availabilities_pk
 PRIMARY KEY (availability_id);
@@ -225,6 +229,11 @@ ALTER TABLE fks_bookings
 ADD CONSTRAINT fks_bookings_fk3
 FOREIGN KEY (service_id)
 REFERENCES fks_services (service_id);
+
+ALTER TABLE fks_recurring_plans
+ADD CONSTRAINT fks_recurring_plans_fk1
+FOREIGN KEY (booking_id)
+REFERENCES fks_bookings (booking_id);
 
 ALTER TABLE fks_messages
 ADD CONSTRAINT fks_messages_fk1
