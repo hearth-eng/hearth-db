@@ -196,30 +196,37 @@ hearthdb=>
 
 ```
 hearthdb=> \dt
-                 List of relations
- Schema |           Name            | Type  | Owner 
---------+---------------------------+-------+-------
- public | fks_addresses             | table | hearth
- public | fks_audit_logs            | table | hearth
- public | fks_availability          | table | hearth
- public | fks_bookings              | table | hearth
- public | fks_categories            | table | hearth
- public | fks_conversations         | table | hearth
- public | fks_coupon_usage          | table | hearth
- public | fks_coupons               | table | hearth
- public | fks_documents             | table | hearth
- public | fks_job_status            | table | hearth
- public | fks_messages              | table | hearth
- public | fks_payments              | table | hearth
- public | fks_pricing_rules         | table | hearth
- public | fks_professional_services | table | hearth
- public | fks_professionals         | table | hearth
- public | fks_reviews               | table | hearth
- public | fks_services              | table | hearth
- public | fks_users                 | table | hearth
- public | fks_wallet_transactions   | table | hearth
- public | fks_wallets               | table | hearth
-(20 rows)
+                     List of relations
+ Schema |              Name               | Type  | Owner  
+--------+---------------------------------+-------+--------
+ public | fks_addresses                   | table | hearth
+ public | fks_audit_logs                  | table | hearth
+ public | fks_availabilities              | table | hearth
+ public | fks_bookings                    | table | hearth
+ public | fks_categories                  | table | hearth
+ public | fks_cities                      | table | hearth
+ public | fks_conversations               | table | hearth
+ public | fks_countries                   | table | hearth
+ public | fks_coupon_usage                | table | hearth
+ public | fks_coupons                     | table | hearth
+ public | fks_documents                   | table | hearth
+ public | fks_job_status                  | table | hearth
+ public | fks_messages                    | table | hearth
+ public | fks_neighbourhoods              | table | hearth
+ public | fks_payments                    | table | hearth
+ public | fks_pricing_rules               | table | hearth
+ public | fks_professional_neighbourhoods | table | hearth
+ public | fks_professional_services       | table | hearth
+ public | fks_professionals               | table | hearth
+ public | fks_provinces                   | table | hearth
+ public | fks_recurring_plans             | table | hearth
+ public | fks_reviews                     | table | hearth
+ public | fks_services                    | table | hearth
+ public | fks_users                       | table | hearth
+ public | fks_wallet_transactions         | table | hearth
+ public | fks_wallets                     | table | hearth
+(26 rows)
+
 
 ```
 
@@ -227,27 +234,33 @@ hearthdb=> \dt
 
 ```
 hearthdb=> \ds
-                         List of relations
- Schema |                 Name                  |   Type   | Owner 
---------+---------------------------------------+----------+-------
- public | fks_addresses_address_id_seq          | sequence | hearth
- public | fks_audit_logs_log_id_seq             | sequence | hearth
- public | fks_availability_availability_id_seq  | sequence | hearth
- public | fks_categories_category_id_seq        | sequence | hearth
- public | fks_conversations_conversation_id_seq | sequence | hearth
- public | fks_coupon_usage_usage_id_seq         | sequence | hearth
- public | fks_coupons_coupon_id_seq             | sequence | hearth
- public | fks_documents_document_id_seq         | sequence | hearth
- public | fks_job_status_log_id_seq             | sequence | hearth
- public | fks_messages_message_id_seq           | sequence | hearth
- public | fks_payments_payment_id_seq           | sequence | hearth
- public | fks_pricing_rules_rule_id_seq         | sequence | hearth
- public | fks_professional_services_id_seq      | sequence | hearth
- public | fks_professionals_professional_id_seq | sequence | hearth
- public | fks_reviews_review_id_seq             | sequence | hearth
- public | fks_services_service_id_seq           | sequence | hearth
- public | fks_users_user_id_seq                 | sequence | hearth
-(17 rows)
+                          List of relations
+ Schema |                  Name                   |   Type   | Owner  
+--------+-----------------------------------------+----------+--------
+ public | fks_addresses_address_id_seq            | sequence | hearth
+ public | fks_audit_logs_log_id_seq               | sequence | hearth
+ public | fks_availabilities_availability_id_seq  | sequence | hearth
+ public | fks_categories_category_id_seq          | sequence | hearth
+ public | fks_cities_city_id_seq                  | sequence | hearth
+ public | fks_conversations_conversation_id_seq   | sequence | hearth
+ public | fks_countries_country_id_seq            | sequence | hearth
+ public | fks_coupon_usage_usage_id_seq           | sequence | hearth
+ public | fks_coupons_coupon_id_seq               | sequence | hearth
+ public | fks_documents_document_id_seq           | sequence | hearth
+ public | fks_job_status_log_id_seq               | sequence | hearth
+ public | fks_messages_message_id_seq             | sequence | hearth
+ public | fks_neighbourhoods_neighbourhood_id_seq | sequence | hearth
+ public | fks_payments_payment_id_seq             | sequence | hearth
+ public | fks_pricing_rules_rule_id_seq           | sequence | hearth
+ public | fks_professional_neighbourhoods_id_seq  | sequence | hearth
+ public | fks_professional_services_id_seq        | sequence | hearth
+ public | fks_professionals_professional_id_seq   | sequence | hearth
+ public | fks_provinces_province_id_seq           | sequence | hearth
+ public | fks_recurring_plans_plan_id_seq         | sequence | hearth
+ public | fks_reviews_review_id_seq               | sequence | hearth
+ public | fks_services_service_id_seq             | sequence | hearth
+ public | fks_users_user_id_seq                   | sequence | hearth
+(23 rows)
 
 ```
 
@@ -264,29 +277,35 @@ hearthdb=> SELECT relname AS table_name, n_live_tup AS estimated_row_count
 Output:
 
 ```
-        table_name         | estimated_row_count 
----------------------------+---------------------
- fks_addresses             |                 100
- fks_audit_logs            |                   0
- fks_availability          |                 200
- fks_bookings              |                1000
- fks_categories            |                 100
- fks_conversations         |                   0
- fks_coupon_usage          |                  25
- fks_coupons               |                  40
- fks_documents             |                  30
- fks_job_status            |                   0
- fks_messages              |                   0
- fks_payments              |                 700
- fks_pricing_rules         |                  80
- fks_professional_services |                 100
- fks_professionals         |                  30
- fks_reviews               |                 400
- fks_services              |                 270
- fks_users                 |                 100
- fks_wallet_transactions   |                 120
- fks_wallets               |                  50
-(20 rows)
+           table_name            | estimated_row_count 
+---------------------------------+---------------------
+ fks_addresses                   |                 552
+ fks_audit_logs                  |                   0
+ fks_availabilities              |               24840
+ fks_bookings                    |                   0
+ fks_categories                  |                  22
+ fks_cities                      |                  50
+ fks_conversations               |                   0
+ fks_countries                   |                   1
+ fks_coupon_usage                |                   0
+ fks_coupons                     |                   4
+ fks_documents                   |                   0
+ fks_job_status                  |                   0
+ fks_messages                    |                   0
+ fks_neighbourhoods              |                 250
+ fks_payments                    |                   0
+ fks_pricing_rules               |                  80
+ fks_professional_neighbourhoods |                   0
+ fks_professional_services       |                 552
+ fks_professionals               |                 552
+ fks_provinces                   |                  36
+ fks_recurring_plans             |                   0
+ fks_reviews                     |                   0
+ fks_services                    |                  77
+ fks_users                       |                 555
+ fks_wallet_transactions         |                   0
+ fks_wallets                     |                   0
+(26 rows)
 
 ```
 
